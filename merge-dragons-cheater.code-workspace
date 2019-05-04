@@ -3,6 +3,12 @@
 		{
 			"path": "."
 		},
+		{
+			"path": "python-tools"
+		},
+		{
+			"path": "MergeDragonsTools"
+		},
 	],
 	"settings": {
 		"files.exclude": {
