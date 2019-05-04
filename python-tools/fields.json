@@ -1,0 +1,53 @@
+{
+    "_playerData": {
+        "3": "points?",
+        "4": {
+            "key": "gold_max",
+            "type": "int"
+        },
+        "5": {
+            "key": "stone_max",
+            "type": "int"
+        },
+        "6": {
+            "key": "gem_max",
+            "type": "int"
+        },
+        "7": {
+            "key": "chalice_max",
+            "type": "int"
+        },
+        "8": {
+            "key": "gold",
+            "type": "int"
+        },
+        "9": {
+            "key": "stone",
+            "type": "int"
+        },
+        "10": {
+            "key": "gem",
+            "type": "int"
+        },
+        "11": {
+            "key": "chalice",
+            "type": "int"
+        },
+        "12": "timestamp?",
+        "18": "PermInc?",
+        "20": "daily_quest?",
+        "30": "TimedChest_timestamp?",
+        "32": "TimedChest?",
+        "33": "Level_event?",
+        "55": "kala-shop?"
+    },
+    "Level_Home": {
+        "0": "points?",
+        "1": "cells?",
+        "2": "objects?",
+        "3": "camera?"
+    },
+    "Level_Home_stats": {
+        "7": "home enter times?"
+    }
+}
