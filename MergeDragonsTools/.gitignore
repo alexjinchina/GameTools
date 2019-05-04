@@ -1,0 +1,80 @@
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+
+# Bundle artifact
+*.jsbundle
+
+
+#vscode
+.vscode/.react/
+.vscode-test/
+vscode-react-native-*.vsix
+out/
+
+# react-native-vector-icons
+/android/app/src/main/assets/fonts/AntDesign.ttf
+/android/app/src/main/assets/fonts/Entypo.ttf
+/android/app/src/main/assets/fonts/EvilIcons.ttf
+/android/app/src/main/assets/fonts/Feather.ttf
+/android/app/src/main/assets/fonts/FontAwesome.ttf
+/android/app/src/main/assets/fonts/FontAwesome5_Brands.ttf
+/android/app/src/main/assets/fonts/FontAwesome5_Regular.ttf
+/android/app/src/main/assets/fonts/FontAwesome5_Solid.ttf
+/android/app/src/main/assets/fonts/Foundation.ttf
+/android/app/src/main/assets/fonts/Ionicons.ttf
+/android/app/src/main/assets/fonts/MaterialCommunityIcons.ttf
+/android/app/src/main/assets/fonts/MaterialIcons.ttf
+/android/app/src/main/assets/fonts/Octicons.ttf
+/android/app/src/main/assets/fonts/SimpleLineIcons.ttf
+/android/app/src/main/assets/fonts/Zocial.ttf
