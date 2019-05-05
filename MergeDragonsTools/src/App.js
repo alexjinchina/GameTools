@@ -17,8 +17,8 @@ import {
 } from 'react-native';
 
 import { ListItem, Text } from 'react-native-elements'
-import NumericInput from 'react-native-numeric-input'
-//import Spinner from 'react-native-number-spinner';
+// import NumericInput from 'react-native-numeric-input'
+// import Spinner from 'react-native-number-spinner';
 import Spinner from './spinner';
 import { fs, path, lodash } from "./utils"
 import DB from "./db"
