@@ -15,6 +15,7 @@ import {
   Dimensions,
   View,
   ScrollView,
+  TextInput,
   ActivityIndicator
 } from "react-native";
 
@@ -135,22 +136,40 @@ export default class App extends Component<Props> {
           .getKeys()
           .sort()
           .map((key, index) => {
+            const app = this;
             const { type, displayText = key } = this.state.db.getKeyInfo(key);
             const oldValue = this.state.db.getValue(key);
             const updatedValue = this.state.updatedValues[key];
             const updated = !lodash.isUndefined(updatedValue);
+            if (updatedValue) {
+              debugger;
+            }
+            console.log(key, oldValue, updatedValue);
             // console.log(oldValue,updatedValue,updated)
             return (
               <ListItem
                 key={`item-${key}`}
                 title={displayText}
                 rightElement={
-                  <Spinner
-                    onNumChange={value => {}}
-                    value={oldValue}
-                    min={0}
-                    width={240}
-                    // btnWidth={20}
+                  // <Spinner
+                  //   onNumChange={value => {}}
+                  //   value={oldValue}
+                  //   min={0}
+                  //   width={240}
+                  //   // btnWidth={20}
+                  // />
+                  <TextInput
+                    style={{}}
+                    keyboardType="numeric"
+                    value={(updated ? updatedValue : oldValue).toString()}
+                    onChangeText={text => {
+                      console.debug(key, oldValue, updatedValue, text);
+                      const updatedValues = lodash.clone(
+                        this.state.updatedValues
+                      );
+                      updatedValues[key] = parseInt(text);
+                      this.setState({ updatedValues });
+                    }}
                   />
                 }
               />
