@@ -3,6 +3,7 @@ package com.mergedragonstools;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.swmansion.reanimated.ReanimatedPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.rnfs.RNFSPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(new MainReactPackage(),
+            new ReanimatedPackage(),
             new VectorIconsPackage(), new RNGestureHandlerPackage(), new RNFSPackage(),
           new SQLitePluginPackage());
     }
