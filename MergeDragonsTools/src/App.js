@@ -45,7 +45,8 @@ export default class App extends Component<Props> {
         { key: "area", title: "Area" },
         { key: "items", title: "Items" }
       ],
-      updatedValues: {}
+      values: {},
+      valuesUpdated: false
     };
   }
   componentDidMount() {
@@ -62,7 +63,6 @@ export default class App extends Component<Props> {
           this.setState({ loadingInfo: msg });
         },
         errorCallback: error => {
-          // debugger
           this.setState({
             isError: true,
             errorMessage: error.message || error
@@ -70,7 +70,14 @@ export default class App extends Component<Props> {
         }
       });
       await db.open();
-      this.setState({ isLoading: false, db });
+      const values = {};
+      db.getKeys().map(key => {
+        const info = db.getKeyInfo(key);
+        const oldValue = db.getValue(key);
+        values[key] = { info, oldValue, value: oldValue };
+      });
+
+      this.setState({ isLoading: false, db, values, valueUpdated: false });
     } catch (error) {
       // debugger
       this.handleError(error);
@@ -120,11 +127,7 @@ export default class App extends Component<Props> {
         />
         <Button
           title="Apply"
-          disabled={
-            this.state.index === 0
-              ? lodash.isEmpty(this.state.updatedValues)
-              : false
-          }
+          disabled={this.state.index === 0 ? !this.state.valuesUpdated : false}
         />
       </View>
     );
@@ -135,40 +138,35 @@ export default class App extends Component<Props> {
         {this.state.db
           .getKeys()
           .sort()
-          .map((key, index) => {
-            const app = this;
-            const { type, displayText = key } = this.state.db.getKeyInfo(key);
-            const oldValue = this.state.db.getValue(key);
-            const updatedValue = this.state.updatedValues[key];
-            const updated = !lodash.isUndefined(updatedValue);
-            if (updatedValue) {
-              debugger;
-            }
-            console.log(key, oldValue, updatedValue);
-            // console.log(oldValue,updatedValue,updated)
+          .map(key => {
+            const { displayText = key } = this.state.values[key].info;
             return (
               <ListItem
                 key={`item-${key}`}
                 title={displayText}
                 rightElement={
-                  // <Spinner
-                  //   onNumChange={value => {}}
-                  //   value={oldValue}
-                  //   min={0}
-                  //   width={240}
-                  //   // btnWidth={20}
-                  // />
                   <TextInput
                     style={{}}
                     keyboardType="numeric"
-                    value={(updated ? updatedValue : oldValue).toString()}
+                    value={this.state.values[key].value.toString()}
                     onChangeText={text => {
-                      console.debug(key, oldValue, updatedValue, text);
-                      const updatedValues = lodash.clone(
-                        this.state.updatedValues
-                      );
-                      updatedValues[key] = parseInt(text);
-                      this.setState({ updatedValues });
+                      const values = lodash.clone(this.state.values);
+                      const valueItem = values[key];
+                      switch (valueItem.info.type) {
+                        case "int":
+                          valueItem.value = parseInt(text);
+                          break;
+                        default:
+                          valueItem.value = text;
+                          break;
+                      }
+                      let valuesUpdated = false;
+                      lodash.map(values, valueItem => {
+                        if (valueItem.oldValue === valueItem.value) {
+                          valuesUpdated = true;
+                        }
+                      });
+                      this.setState({ values, valuesUpdated });
                     }}
                   />
                 }
