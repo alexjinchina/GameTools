@@ -56,6 +56,7 @@ export default class App extends Component<Props> {
     try {
       this.setState({
         isLoading: true,
+        loadingInfo: "opening data base...",
         isError: false
       });
       const db = new DB({
@@ -113,13 +114,14 @@ export default class App extends Component<Props> {
     );
   }
   _renderMainView() {
+    console.log("_renderMainView");
     return (
       <View style={[{ flex: 1 }]}>
         <TabView
           navigationState={this.state}
           renderScene={SceneMap({
-            data: this._renderDataView,
-            area: () => <View style={[styles.tabSceneView]} />,
+            data: () => this._renderDataView(),
+            area: () => this._renderAreaView(),
             items: () => <View style={[styles.tabSceneView]} />
           })}
           onIndexChange={index => this.setState({ index })}
@@ -127,29 +129,41 @@ export default class App extends Component<Props> {
         />
         <Button
           title="Apply"
-          disabled={this.state.index === 0 ? !this.state.valuesUpdated : false}
+          disabled={this.state.index === 0 ? !this.state.valuesUpdated : true}
         />
       </View>
     );
   }
-  _renderDataView = () => {
+
+  _renderDataView() {
+    console.log("_renderDataView");
     return (
       <ScrollView style={styles.tabSceneView}>
         {this.state.db
           .getKeys()
           .sort()
           .map(key => {
-            const { displayText = key } = this.state.values[key].info;
+            const { info, value, oldValue } = this.state.values[key];
+            const { displayText = key } = info;
+            const updated = value !== oldValue;
+            console.log(key, value, oldValue, updated);
             return (
               <ListItem
                 key={`item-${key}`}
-                title={displayText}
+                title={`${displayText}`}
                 rightElement={
                   <TextInput
-                    style={{}}
+                    style={[
+                      updated
+                        ? styles.updatedValueItemText
+                        : styles.valueItemText,
+                      {}
+                    ]}
                     keyboardType="numeric"
-                    value={this.state.values[key].value.toString()}
-                    onChangeText={text => {
+                    defaultValue={value.toString()}
+                    // onChangeText={text => {
+                    onEndEditing={({ nativeEvent }) => {
+                      const { text } = nativeEvent;
                       const values = lodash.clone(this.state.values);
                       const valueItem = values[key];
                       switch (valueItem.info.type) {
@@ -167,6 +181,7 @@ export default class App extends Component<Props> {
                         }
                       });
                       this.setState({ values, valuesUpdated });
+                      console.log(text);
                     }}
                   />
                 }
@@ -175,20 +190,34 @@ export default class App extends Component<Props> {
           })}
       </ScrollView>
     );
-  };
+  }
+
+  _renderAreaView() {
+    console.log("_renderAreaView");
+    return (
+      <View style={[styles.tabSceneView]}>
+        <Text>AREA</Text>
+      </View>
+    );
+  }
+
   render() {
     if (this.state.db) return this._renderMainView();
     return (
       <View style={styles.container}>
-        {this.state.isError
+        {this._renderTest
+          ? this._renderTest()
+          : this.state.isError
           ? this._renderError()
           : this.state.isLoading
           ? this._renderLoading()
           : null}
-        {/* <Text style={styles.instructions}>{this.state.dBFilePath}</Text>
-        <Text style={styles.instructions}>{this.state.dbMTime && this.state.dbMTime.toISOString()}</Text> */}
       </View>
     );
+  }
+
+  _xrenderTest() {
+    return <TextInput defaultValue="123" />;
   }
 }
 
@@ -218,5 +247,11 @@ const styles = StyleSheet.create({
   tabSceneView: {
     flex: 1,
     backgroundColor: "#F5FCFF"
+  },
+  valueItemText: {
+    color: "green"
+  },
+  updatedValueItemText: {
+    color: "red"
   }
 });
