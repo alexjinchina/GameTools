@@ -146,7 +146,7 @@ export default class App extends Component<Props> {
             const { info, value, oldValue } = this.state.values[key];
             const { displayText = key } = info;
             const updated = value !== oldValue;
-            console.log(key, value, oldValue, updated);
+            // console.log(key, value, oldValue, updated);
             return (
               <ListItem
                 key={`item-${key}`}
@@ -164,24 +164,22 @@ export default class App extends Component<Props> {
                     // onChangeText={text => {
                     onEndEditing={({ nativeEvent }) => {
                       const { text } = nativeEvent;
-                      const values = lodash.clone(this.state.values);
-                      const valueItem = values[key];
+                      const valueItem = this.state.values[key];
                       switch (valueItem.info.type) {
                         case "int":
                           valueItem.value = parseInt(text);
+                          const maxValueItem = this.state.values[`${key}_max`];
+                          if (
+                            maxValueItem &&
+                            maxValueItem.value < valueItem.value
+                          )
+                            maxValueItem.value = valueItem.value;
                           break;
                         default:
                           valueItem.value = text;
                           break;
                       }
-                      let valuesUpdated = false;
-                      lodash.map(values, valueItem => {
-                        if (valueItem.oldValue === valueItem.value) {
-                          valuesUpdated = true;
-                        }
-                      });
-                      this.setState({ values, valuesUpdated });
-                      console.log(text);
+                      this._checkUpdated();
                     }}
                   />
                 }
@@ -191,7 +189,6 @@ export default class App extends Component<Props> {
       </ScrollView>
     );
   }
-
   _renderAreaView() {
     console.log("_renderAreaView");
     return (
@@ -199,6 +196,18 @@ export default class App extends Component<Props> {
         <Text>AREA</Text>
       </View>
     );
+  }
+
+  _checkUpdated() {
+    let valuesUpdated = false;
+
+    const values = lodash.clone(this.state.values);
+    lodash.map(values, valueItem => {
+      if (valueItem.oldValue === valueItem.value) {
+        valuesUpdated = true;
+      }
+    });
+    this.setState({ values, valuesUpdated });
   }
 
   render() {
