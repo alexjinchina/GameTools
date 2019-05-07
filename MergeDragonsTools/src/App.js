@@ -122,7 +122,7 @@ export default class App extends Component<Props> {
           renderScene={SceneMap({
             data: () => this._renderDataView(),
             area: () => this._renderAreaView(),
-            items: () => <View style={[styles.tabSceneView]} />
+            items: () => this._renderItemsView()
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: Dimensions.get("window").width }}
@@ -163,23 +163,7 @@ export default class App extends Component<Props> {
                     defaultValue={value.toString()}
                     // onChangeText={text => {
                     onEndEditing={({ nativeEvent }) => {
-                      const { text } = nativeEvent;
-                      const valueItem = this.state.values[key];
-                      switch (valueItem.info.type) {
-                        case "int":
-                          valueItem.value = parseInt(text);
-                          const maxValueItem = this.state.values[`${key}_max`];
-                          if (
-                            maxValueItem &&
-                            maxValueItem.value < valueItem.value
-                          )
-                            maxValueItem.value = valueItem.value;
-                          break;
-                        default:
-                          valueItem.value = text;
-                          break;
-                      }
-                      this._checkUpdated();
+                      this._setValueItem(key, nativeEvent.text);
                     }}
                   />
                 }
@@ -197,17 +181,13 @@ export default class App extends Component<Props> {
       </View>
     );
   }
-
-  _checkUpdated() {
-    let valuesUpdated = false;
-
-    const values = lodash.clone(this.state.values);
-    lodash.map(values, valueItem => {
-      if (valueItem.oldValue === valueItem.value) {
-        valuesUpdated = true;
-      }
-    });
-    this.setState({ values, valuesUpdated });
+  _renderItemsView() {
+    console.log("_renderItemsView");
+    return (
+      <View style={[styles.tabSceneView]}>
+        <Text>ITEM</Text>
+      </View>
+    );
   }
 
   render() {
@@ -227,6 +207,34 @@ export default class App extends Component<Props> {
 
   _xrenderTest() {
     return <TextInput defaultValue="123" />;
+  }
+
+  _setValueItem(key, value) {
+    const valueItem = this.state.values[key];
+    switch (valueItem.info.type) {
+      case "int":
+        valueItem.value = parseInt(value);
+        break;
+      default:
+        valueItem.value = value;
+        break;
+    }
+    const maxValueItem = this.state.values[`${key}_max`];
+    if (maxValueItem && maxValueItem.value < valueItem.value)
+      maxValueItem.value = valueItem.value;
+    this._checkUpdated();
+  }
+  
+  _checkUpdated() {
+    let valuesUpdated = false;
+
+    const values = lodash.clone(this.state.values);
+    lodash.map(values, valueItem => {
+      if (valueItem.oldValue === valueItem.value) {
+        valuesUpdated = true;
+      }
+    });
+    this.setState({ values, valuesUpdated });
   }
 }
 
