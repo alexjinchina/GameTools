@@ -23,7 +23,7 @@ export const path = {
 
 export const Permission = {
   READ_EXTERNAL_STORAGE: PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-
+  WRITE_EXTERNAL_STORAGE: PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
   async request(permission, params = {}) {
     const granted = await PermissionsAndroid.request(permission, {
       title: params.title || `${APP_DISPLAY_NAME} Permission request`,

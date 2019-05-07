@@ -34,12 +34,11 @@ type Props = {};
 export default class App extends Component<Props> {
   constructor(props) {
     super(props);
-    this.debug = 1;
     this.state = {
       isError: false,
       errorMessage: null,
-      isLoading: true,
-      loadingInfo: null,
+      isInProgress: false,
+      progressMessage: null,
       db: null,
       index: 0,
       routes: [
@@ -57,13 +56,13 @@ export default class App extends Component<Props> {
   async openDatabase() {
     try {
       this.setState({
-        isLoading: true,
-        loadingInfo: "opening data base...",
+        isInProgress: true,
+        progressMessage: "opening data base...",
         isError: false
       });
       const db = new DB({
         messageCallback: msg => {
-          this.setState({ loadingInfo: msg });
+          this.setState({ progressMessage: msg });
         },
         errorCallback: error => {
           this.setState({
@@ -74,7 +73,7 @@ export default class App extends Component<Props> {
       });
       await db.open();
       this._buildData(db);
-      this.setState({ isLoading: false, db });
+      this.setState({ isInProgress: false, db });
     } catch (error) {
       // debugger
       this.handleError(error);
@@ -103,24 +102,28 @@ export default class App extends Component<Props> {
     return (
       <View>
         <Text style={[styles.welcome, { color: "#FF0000" }]}>ERROR</Text>
-        <Text style={styles.instructions}>{this.state.loadingInfo || ""}</Text>
+        <Text style={styles.instructions}>
+          {this.state.progressMessage || ""}
+        </Text>
         <Text style={[styles.instructions, { color: "#FF0000" }]}>
           {this.state.errorMessage || ""}
         </Text>
       </View>
     );
   }
-  _renderLoading() {
+  _renderProgress() {
     return (
       <View>
         <ActivityIndicator />
-        <Text style={styles.instructions}>{this.state.loadingInfo || ""}</Text>
+        <Text style={styles.instructions}>
+          {this.state.progressMessage || ""}
+        </Text>
       </View>
     );
   }
   _renderMainView() {
     console.log("_renderMainView");
-    console.log(this.state.valuesUpdated);
+    // console.log(this.state.valuesUpdated);
     return (
       <View style={[{ flex: 1 }]}>
         <TabView
@@ -143,7 +146,7 @@ export default class App extends Component<Props> {
   }
 
   _renderDataView() {
-    // console.log("_renderDataView");
+    console.log("_renderDataView");
     return (
       <ScrollView style={styles.tabSceneView}>
         {this.state.db
@@ -181,7 +184,7 @@ export default class App extends Component<Props> {
     );
   }
   _renderAreaView() {
-    // console.log("_renderAreaView");
+    console.log("_renderAreaView");
     return (
       <View style={[styles.tabSceneView]}>
         <Text>AREA</Text>
@@ -189,27 +192,21 @@ export default class App extends Component<Props> {
     );
   }
   _renderItemsView() {
-    // console.log("_renderItemsView");
+    console.log("_renderItemsView");
     return (
       <View style={[styles.tabSceneView]}>
         <Text>ITEMS</Text>
       </View>
     );
   }
-
+  _render() {
+    if (this._renderTest) return this._renderTest();
+    else if (this.state.isError) return this._renderError();
+    else if (this.state.isInProgress) return this._renderProgress();
+    else if (this.state.db) return this._renderMainView();
+  }
   render() {
-    if (this.state.db) return this._renderMainView();
-    return (
-      <View style={styles.container}>
-        {this._renderTest
-          ? this._renderTest()
-          : this.state.isError
-          ? this._renderError()
-          : this.state.isLoading
-          ? this._renderLoading()
-          : null}
-      </View>
-    );
+    return <View style={styles.container}>{this._render()}</View>;
   }
 
   _xrenderTest() {
@@ -238,8 +235,13 @@ export default class App extends Component<Props> {
   }
 
   _applyChanges() {
-    console.log(`_applyChanges:${this.debug}`);
-    this.debug += 1;
+    console.log(`_applyChanges`);
+    this.setState({
+      isInProgress: true,
+      progressMessage: "applying changes...",
+      isError: false
+    });
+
     const { db } = this.state;
     lodash.map(this.state.values, (valueItem, key) => {
       if (valueItem.value !== valueItem.oldValue) {
@@ -247,8 +249,12 @@ export default class App extends Component<Props> {
         db.setValue(key, valueItem.value);
       }
     });
+
     db.save().then(() => {
       this._buildData(db);
+      this.setState({
+        isInProgress: false
+      });
     });
   }
 }

@@ -67,7 +67,9 @@ export default class DB {
   }
 
   async open(params = {}) {
-    return await this._open(this._buildParams(params));
+    params = this._buildParams(params);
+    await this._pull(params);
+    return await this._open(params);
   }
 
   async save(params = {}) {
@@ -83,7 +85,9 @@ export default class DB {
       );
     }
     this.storageUpdatedFiles.clear();
-
+    await this._close(params);
+    await this._push(params);
+    await this._open(params);
     // await this.db.commit();
     return this;
   }
@@ -133,20 +137,6 @@ export default class DB {
   async _open(params) {
     try {
       await this._close(params);
-      const gameDBPath = await this._locateGameDB(params);
-      //const localDB = pathAppend(fs.ExternalStorageDirectoryPath, DB_FILENAME)
-      //const localDB = pathAppend(fs.DocumentDirectoryPath, DB_FILENAME)
-      const localDBPath = path.append(LOCAL_DB_DIR, DB_FILENAME);
-
-      params.messageCallback(`request permission...`);
-      const granted = await Permission.request(
-        Permission.READ_EXTERNAL_STORAGE
-      );
-      params.messageCallback(`permission ${granted}`);
-
-      params.messageCallback(`copying db file to ${localDBPath}...`);
-      await fs.copyFile(gameDBPath, localDBPath);
-
       params.messageCallback(`opening db file ${DB_FILENAME}...`);
       this.db = await SQLite.openDatabase(DB_FILENAME);
       params.messageCallback(`db opened.`);
@@ -185,6 +175,50 @@ export default class DB {
       this.storage = {};
     } catch (error) {
       debugger;
+      if (params.errorCallback) params.errorCallback(error);
+      else throw error;
+    }
+  }
+  async _pull(params) {
+    try {
+      await this._close(params);
+      const gameDBPath = await this._locateGameDB(params);
+      //const localDB = pathAppend(fs.ExternalStorageDirectoryPath, DB_FILENAME)
+      //const localDB = pathAppend(fs.DocumentDirectoryPath, DB_FILENAME)
+      const localDBPath = path.append(LOCAL_DB_DIR, DB_FILENAME);
+
+      params.messageCallback(`request permission...`);
+      const granted = await Permission.request(
+        Permission.READ_EXTERNAL_STORAGE
+      );
+      params.messageCallback(`permission ${granted}`);
+
+      params.messageCallback(`copying db file to ${localDBPath}...`);
+      await fs.copyFile(gameDBPath, localDBPath);
+
+      params.messageCallback(`copy db ok.`);
+    } catch (error) {
+      if (params.errorCallback) params.errorCallback(error);
+      else throw error;
+    }
+  }
+  async _push(params) {
+    try {
+      await this._close(params);
+      const gameDBPath = await this._locateGameDB(params);
+      const localDBPath = path.append(LOCAL_DB_DIR, DB_FILENAME);
+
+      params.messageCallback(`request permission...`);
+      const granted = await Permission.request(
+        Permission.WRITE_EXTERNAL_STORAGE
+      );
+      params.messageCallback(`permission ${granted}`);
+
+      params.messageCallback(`copying db file to ${gameDBPath}...`);
+      await fs.copyFile(localDBPath, gameDBPath);
+
+      params.messageCallback(`copy db ok.`);
+    } catch (error) {
       if (params.errorCallback) params.errorCallback(error);
       else throw error;
     }
