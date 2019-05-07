@@ -24,8 +24,9 @@ import { ListItem, Text, Button } from "react-native-elements";
 // import Spinner from 'react-native-number-spinner';
 import Spinner from "./spinner";
 import { TabView, SceneMap } from "react-native-tab-view";
-import { fs, path, lodash } from "./utils";
+import { fs, path, lodash, castValueType } from "./utils";
 import DB from "./db";
+import styles from "./styles";
 
 YellowBox.ignoreWarnings(["componentWillMount is deprecated"]);
 
@@ -33,6 +34,7 @@ type Props = {};
 export default class App extends Component<Props> {
   constructor(props) {
     super(props);
+    this.debug = 1;
     this.state = {
       isError: false,
       errorMessage: null,
@@ -71,18 +73,21 @@ export default class App extends Component<Props> {
         }
       });
       await db.open();
-      const values = {};
-      db.getKeys().map(key => {
-        const info = db.getKeyInfo(key);
-        const oldValue = db.getValue(key);
-        values[key] = { info, oldValue, value: oldValue };
-      });
-
-      this.setState({ isLoading: false, db, values, valueUpdated: false });
+      this._buildData(db);
+      this.setState({ isLoading: false, db });
     } catch (error) {
       // debugger
       this.handleError(error);
     }
+  }
+  _buildData(db) {
+    const values = {};
+    db.getKeys().map(key => {
+      const info = db.getKeyInfo(key);
+      const oldValue = db.getValue(key);
+      values[key] = { info, oldValue, value: oldValue };
+    });
+    this.setState({ values, valuesUpdated: false });
   }
   handleSQLError = (tx, error) => {
     this.handleError(error);
@@ -115,6 +120,7 @@ export default class App extends Component<Props> {
   }
   _renderMainView() {
     console.log("_renderMainView");
+    console.log(this.state.valuesUpdated);
     return (
       <View style={[{ flex: 1 }]}>
         <TabView
@@ -130,13 +136,14 @@ export default class App extends Component<Props> {
         <Button
           title="Apply"
           disabled={this.state.index === 0 ? !this.state.valuesUpdated : true}
+          onPress={() => this._applyChanges()}
         />
       </View>
     );
   }
 
   _renderDataView() {
-    console.log("_renderDataView");
+    // console.log("_renderDataView");
     return (
       <ScrollView style={styles.tabSceneView}>
         {this.state.db
@@ -174,7 +181,7 @@ export default class App extends Component<Props> {
     );
   }
   _renderAreaView() {
-    console.log("_renderAreaView");
+    // console.log("_renderAreaView");
     return (
       <View style={[styles.tabSceneView]}>
         <Text>AREA</Text>
@@ -182,10 +189,10 @@ export default class App extends Component<Props> {
     );
   }
   _renderItemsView() {
-    console.log("_renderItemsView");
+    // console.log("_renderItemsView");
     return (
       <View style={[styles.tabSceneView]}>
-        <Text>ITEM</Text>
+        <Text>ITEMS</Text>
       </View>
     );
   }
@@ -211,20 +218,13 @@ export default class App extends Component<Props> {
 
   _setValueItem(key, value) {
     const valueItem = this.state.values[key];
-    switch (valueItem.info.type) {
-      case "int":
-        valueItem.value = parseInt(value);
-        break;
-      default:
-        valueItem.value = value;
-        break;
-    }
+    valueItem.value = castValueType(valueItem.info.type, value);
     const maxValueItem = this.state.values[`${key}_max`];
     if (maxValueItem && maxValueItem.value < valueItem.value)
       maxValueItem.value = valueItem.value;
     this._checkUpdated();
   }
-  
+
   _checkUpdated() {
     let valuesUpdated = false;
 
@@ -236,39 +236,19 @@ export default class App extends Component<Props> {
     });
     this.setState({ values, valuesUpdated });
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  },
-  itemText: {
-    // fontSize: 20,
-    // textAlign: 'center',
-    // color: '#333333',
-    // marginBottom: 5,
-  },
-  tabSceneView: {
-    flex: 1,
-    backgroundColor: "#F5FCFF"
-  },
-  valueItemText: {
-    color: "green"
-  },
-  updatedValueItemText: {
-    color: "red"
+  _applyChanges() {
+    console.log(`_applyChanges:${this.debug}`);
+    this.debug += 1;
+    const { db } = this.state;
+    lodash.map(this.state.values, (valueItem, key) => {
+      if (valueItem.value !== valueItem.oldValue) {
+        console.log(`set value: ${key}=${valueItem.value}`);
+        db.setValue(key, valueItem.value);
+      }
+    });
+    db.save().then(() => {
+      this._buildData(db);
+    });
   }
-});
+}
