@@ -165,8 +165,8 @@ export default class DB {
   async _close(params) {
     try {
       if (this.db) {
-        params.onMessage("closing db...");
-        this.db.close();
+        params.messageCallback("closing db...");
+        await this.db.close();
         this.db = null;
       } else {
         const db = await SQLite.openDatabase(DB_FILENAME);

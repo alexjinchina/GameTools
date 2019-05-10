@@ -27,6 +27,7 @@ import { TabView, SceneMap } from "react-native-tab-view";
 import { fs, path, lodash, castValueType } from "./utils";
 import DB from "./db";
 import styles from "./styles";
+import MainView from "./main-view"
 
 YellowBox.ignoreWarnings(["componentWillMount is deprecated"]);
 
@@ -37,15 +38,9 @@ export default class App extends Component<Props> {
     this.state = {
       isError: false,
       errorMessage: null,
-      isInProgress: false,
-      progressMessage: null,
+      isInProgress: true,
+      progressMessage: "preparing...",
       db: null,
-      index: 0,
-      routes: [
-        { key: "data", title: "Data" },
-        { key: "area", title: "Area" },
-        { key: "items", title: "Items" }
-      ],
       values: {},
       valuesUpdated: false
     };
@@ -72,21 +67,11 @@ export default class App extends Component<Props> {
         }
       });
       await db.open();
-      this._buildData(db);
       this.setState({ isInProgress: false, db });
     } catch (error) {
       // debugger
       this.handleError(error);
     }
-  }
-  _buildData(db) {
-    const values = {};
-    db.getKeys().map(key => {
-      const info = db.getKeyInfo(key);
-      const oldValue = db.getValue(key);
-      values[key] = { info, oldValue, value: oldValue };
-    });
-    this.setState({ values, valuesUpdated: false });
   }
   handleSQLError = (tx, error) => {
     this.handleError(error);
@@ -100,7 +85,7 @@ export default class App extends Component<Props> {
   };
   _renderError() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={[styles.welcome, { color: "#FF0000" }]}>ERROR</Text>
         <Text style={styles.instructions}>
           {this.state.progressMessage || ""}
@@ -113,7 +98,7 @@ export default class App extends Component<Props> {
   }
   _renderProgress() {
     return (
-      <View>
+      <View style={styles.container}>
         <ActivityIndicator />
         <Text style={styles.instructions}>
           {this.state.progressMessage || ""}
@@ -122,119 +107,30 @@ export default class App extends Component<Props> {
     );
   }
   _renderMainView() {
-    console.log("_renderMainView");
-    // console.log(this.state.valuesUpdated);
-    return (
-      <View style={[{ flex: 1 }]}>
-        <TabView
-          navigationState={this.state}
-          renderScene={SceneMap({
-            data: () => this._renderDataView(),
-            area: () => this._renderAreaView(),
-            items: () => this._renderItemsView()
-          })}
-          onIndexChange={index => this.setState({ index })}
-          initialLayout={{ width: Dimensions.get("window").width }}
-        />
-        <Button
-          title="Apply"
-          disabled={this.state.index === 0 ? !this.state.valuesUpdated : true}
-          onPress={() => this._applyChanges()}
-        />
-      </View>
-    );
+    return (<MainView
+      db={this.state.db}
+      onApplyChanges={() => this._applyChanges()}
+    />)
   }
 
-  _renderDataView() {
-    console.log("_renderDataView");
-    return (
-      <ScrollView style={styles.tabSceneView}>
-        {this.state.db
-          .getKeys()
-          .sort()
-          .map(key => {
-            const { info, value, oldValue } = this.state.values[key];
-            const { displayText = key } = info;
-            const updated = value !== oldValue;
-            // console.log(key, value, oldValue, updated);
-            return (
-              <ListItem
-                key={`item-${key}`}
-                title={`${displayText}`}
-                rightElement={
-                  <TextInput
-                    style={[
-                      updated
-                        ? styles.updatedValueItemText
-                        : styles.valueItemText,
-                      {}
-                    ]}
-                    keyboardType="numeric"
-                    defaultValue={value.toString()}
-                    // onChangeText={text => {
-                    onEndEditing={({ nativeEvent }) => {
-                      this._setValueItem(key, nativeEvent.text);
-                    }}
-                  />
-                }
-              />
-            );
-          })}
-      </ScrollView>
-    );
-  }
-  _renderAreaView() {
-    console.log("_renderAreaView");
-    return (
-      <View style={[styles.tabSceneView]}>
-        <Text>AREA</Text>
-      </View>
-    );
-  }
-  _renderItemsView() {
-    console.log("_renderItemsView");
-    return (
-      <View style={[styles.tabSceneView]}>
-        <Text>ITEMS</Text>
-      </View>
-    );
-  }
-  _render() {
-    if (this._renderTest) return this._renderTest();
-    else if (this.state.isError) return this._renderError();
-    else if (this.state.isInProgress) return this._renderProgress();
-    else if (this.state.db) return this._renderMainView();
-  }
   render() {
-    return <View style={styles.container}>{this._render()}</View>;
+    if (this._renderTest) return this._renderTest()
+    if (this.state.isError) return this._renderError()
+    if (this.state.isInProgress) return this._renderProgress()
+    if (this.state.db) return this._renderMainView()
+
+    return this._renderError()
   }
 
   _xrenderTest() {
-    return <TextInput defaultValue="123" />;
+    return (
+      <View style={styles.container}>
+        <TextInput defaultValue="123" />
+      </View>
+    )
   }
 
-  _setValueItem(key, value) {
-    const valueItem = this.state.values[key];
-    valueItem.value = castValueType(valueItem.info.type, value);
-    const maxValueItem = this.state.values[`${key}_max`];
-    if (maxValueItem && maxValueItem.value < valueItem.value)
-      maxValueItem.value = valueItem.value;
-    this._checkUpdated();
-  }
-
-  _checkUpdated() {
-    let valuesUpdated = false;
-
-    const values = lodash.clone(this.state.values);
-    lodash.map(values, valueItem => {
-      if (valueItem.oldValue === valueItem.value) {
-        valuesUpdated = true;
-      }
-    });
-    this.setState({ values, valuesUpdated });
-  }
-
-  _applyChanges() {
+  async _applyChanges() {
     console.log(`_applyChanges`);
     this.setState({
       isInProgress: true,
@@ -242,19 +138,15 @@ export default class App extends Component<Props> {
       isError: false
     });
 
-    const { db } = this.state;
-    lodash.map(this.state.values, (valueItem, key) => {
-      if (valueItem.value !== valueItem.oldValue) {
-        console.log(`set value: ${key}=${valueItem.value}`);
-        db.setValue(key, valueItem.value);
-      }
-    });
+    try {
+      await this.state.db.save()
+      this.setState({ isInProgress: false });
+    } catch (error) {
+      this.handleError(error)
+    }
 
-    db.save().then(() => {
-      this._buildData(db);
-      this.setState({
-        isInProgress: false
-      });
-    });
   }
+
+
+
 }
