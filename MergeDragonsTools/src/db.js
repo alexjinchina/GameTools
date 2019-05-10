@@ -30,6 +30,8 @@ const KEYS = lodash.reduce(
   {}
 );
 
+const HOME_DATA_CONFIG = require("../home");
+
 const GAME_PACKAGE_NAME = "com.gramgames.mergedragons";
 const GAME_DB_PATHS = [
   `/sdcard/Android/data/${GAME_PACKAGE_NAME}/files/md_db.db`
@@ -65,6 +67,35 @@ export default class DB {
     lodash.set(this.storage[file], field, castValueType(type, value));
     this.storageUpdatedFiles.add(file);
   }
+
+  getAreas() {
+    return lodash.keys(HOME_DATA_CONFIG.areas)
+  }
+
+  getCashAreas() {
+    return lodash.keys(HOME_DATA_CONFIG.cash_areas)
+  }
+
+  getLevelHome() {
+    return this.storage["Level_Home"]
+  }
+  getAreasLockStateData() {
+    return this.getLevelHome()["1"]["1"]["0"]
+  }
+
+  getLockedAreas() {
+    const lockedAreas = new Set()
+    lodash.forEach(this.getAreasLockStateData(), (ys) => {
+      lodash.forEach(ys, (area) => {
+        if (area !== "NONE") {
+          lockedAreas.add(area)
+        }
+      })
+    })
+
+    return lockedAreas
+  }
+
 
   async open(params = {}) {
     params = this._buildParams(params);

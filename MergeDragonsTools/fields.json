@@ -60,7 +60,8 @@
     },
     "_homeStats": {
         "8": {
-            "key": "home_stars"
+            "key": "home_stars",
+            "displayText": "营地星数"
         }
     }
 }

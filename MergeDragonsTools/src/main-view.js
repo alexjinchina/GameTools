@@ -35,12 +35,12 @@ export default class MainView extends React.Component {
         };
     }
     componentDidMount() {
-        console.debug(`${this}.componentDidMount`)
+        // console.debug(`${this}.componentDidMount`)
         if (this.props.db) this._buildData(this.props.db)
     }
 
     componentDidUpdate(prevProps) {
-        console.debug(`${this}.componentDidUpdate`)
+        // console.debug(`${this}.componentDidUpdate`)
         if (this.props.db && this.props.db !== prevProps.db) this._buildData(this.props.db)
     }
 
@@ -65,7 +65,13 @@ export default class MainView extends React.Component {
                 />
                 <Button
                     title="Apply"
-                    disabled={this.state.index === 0 ? !this.state.valuesUpdated : true}
+                    disabled={
+                        [
+                            !lodash.values(this.state.values).some(({ oldValue, value }) => oldValue !== value),
+                            !lodash.values(this.state.areas).some(({ unlock }) => unlock),
+                            true,
+                            true
+                        ][this.state.index]}
                     onPress={() => this._applyChanges()}
                 />
             </View>
@@ -74,7 +80,7 @@ export default class MainView extends React.Component {
     }
 
     _renderDataView() {
-        console.log("_renderDataView");
+        // console.log("_renderDataView");
         return (
             <ScrollView style={styles.tabSceneView}>
                 {lodash.keys(this.state.values)
@@ -114,13 +120,48 @@ export default class MainView extends React.Component {
     _renderAreaView() {
         console.log("_renderAreaView");
         return (
-            <View style={[styles.tabSceneView]}>
-                <Text>AREA</Text>
-            </View>
+            <ScrollView style={styles.tabSceneView}>
+                {lodash.keys(this.state.areas)
+                    .sort()
+                    .map(area => {
+                        const { isCash, isLocked, unlock } = this.state.areas[area];
+                        if (!isLocked) {
+                            return (
+                                <ListItem
+                                    key={`item-area-${area}`}
+                                    title={`${area}`}
+                                    rightIcon={{
+                                        name: "check",
+                                        color: "green"
+                                    }}
+                                />
+                            );
+                        } else {
+
+                            return (
+                                <ListItem
+                                    key={`item-area-${area}`}
+                                    title={`${area}`}
+                                    switch={{
+                                        value: unlock,
+                                        onValueChange: (value) => {
+                                            console.debug(this, this.state.areas)
+                                            this.state.areas[area].unlock = value
+                                            this._checkUpdated();
+
+                                        }
+                                    }}
+                                />
+                            );
+                        }
+
+                    })}
+            </ScrollView>
         );
+
     }
     _renderItemsView() {
-        console.log("_renderItemsView");
+        // console.log("_renderItemsView");
         return (
             <View style={[styles.tabSceneView]}>
                 <Text>ITEM</Text>
@@ -144,20 +185,39 @@ export default class MainView extends React.Component {
             const oldValue = db.getValue(key);
             values[key] = { info, oldValue, value: oldValue };
         });
-        this.setState({ values, valuesUpdated: false });
+
+        const areas = {}
+        const cashAreas = new Set(db.getCashAreas())
+        const lockedAreas = db.getLockedAreas()
+        for (const area of db.getAreas()) {
+            areas[area] = {
+                isCash: cashAreas.has(area),
+                isLocked: lockedAreas.has(area),
+                unlock: false,
+            }
+        }
+
+        this.setState({
+            values, valuesUpdated: false,
+            areas
+        });
+
     }
 
 
     _checkUpdated() {
-        let valuesUpdated = false;
+        // let valuesUpdated = false;
 
-        const values = lodash.clone(this.state.values);
-        lodash.map(values, valueItem => {
-            if (valueItem.oldValue === valueItem.value) {
-                valuesUpdated = true;
-            }
-        });
-        this.setState({ values, valuesUpdated });
+        // const values = lodash.clone(this.state.values);
+        // lodash.map(values, valueItem => {
+        //     if (valueItem.oldValue === valueItem.value) {
+        //         valuesUpdated = true;
+        //     }
+        // });
+
+        // const areas = lodash.clone(this.state.areas)
+        // this.setState({ values, valuesUpdated, areas });
+        this.forceUpdate()
     }
 
     _applyChanges() {
