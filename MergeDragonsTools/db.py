@@ -152,7 +152,7 @@ class Database:
                     value_type = None
                 else:
                     key = value_info["key"]
-                    value_type = value_info["type"]
+                    value_type = value_info.get("type",None)
                 if key[-1] != '?':
                     self.key_fields[key] = (filename, field, value_type)
 
@@ -203,7 +203,7 @@ class Database:
     def dump_storage(self, dump_dir="db_dump", files=[]):
         table_dir = os.path.join(dump_dir, STORAGE_TABLE_NAME)
         if not os.path.isdir(table_dir):
-            os.mkdir(table_dir)
+            os.makedirs(table_dir)
         for filename, data in self.storage.iteritems():
             dump_filename = os.path.join(table_dir, filename+".json")
             print "dumping file: %s ..." % dump_filename
@@ -231,7 +231,7 @@ class Database:
         return self.storage[filename]
 
     def replace_storage_file(self, filename, data):
-        print data
+        # print data
         self.storage[filename] = load_json(data)
 
     def set_value(self, key, value, echo=False):

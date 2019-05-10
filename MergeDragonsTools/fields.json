@@ -3,34 +3,42 @@
         "3": "points?",
         "4": {
             "key": "gold_max",
+            "displayText": "魔法币上限",
             "type": "int"
         },
         "5": {
             "key": "stone_max",
+            "displayText": "石材上限",
             "type": "int"
         },
         "6": {
             "key": "gem_max",
+            "displayText": "龙晶上限",
             "type": "int"
         },
         "7": {
             "key": "chalice_max",
+            "displayText": "龙杯上限",
             "type": "int"
         },
         "8": {
             "key": "gold",
+            "displayText": "魔法币",
             "type": "int"
         },
         "9": {
             "key": "stone",
+            "displayText": "石材",
             "type": "int"
         },
         "10": {
             "key": "gem",
+            "displayText": "龙晶",
             "type": "int"
         },
         "11": {
             "key": "chalice",
+            "displayText": "龙杯",
             "type": "int"
         },
         "12": "timestamp?",
@@ -48,6 +56,11 @@
         "3": "camera?"
     },
     "Level_Home_stats": {
-        "7": "home enter times?"
+        "7": "home enter times"
+    },
+    "_homeStats": {
+        "8": {
+            "key": "home_stars"
+        }
     }
 }

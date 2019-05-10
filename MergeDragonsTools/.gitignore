@@ -78,3 +78,12 @@ out/
 /android/app/src/main/assets/fonts/Octicons.ttf
 /android/app/src/main/assets/fonts/SimpleLineIcons.ttf
 /android/app/src/main/assets/fonts/Zocial.ttf
+
+
+#python
+.pyenv/
+db_dump*/
+*.pyc
+*.bak
+*.db
+*.zip

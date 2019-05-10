@@ -14,13 +14,11 @@
             "outDir": "${workspaceRoot}/.vscode/.react"
         },
         {
-            "name": "Debug in Exponent",
-            "program": "${workspaceRoot}/.vscode/launchReactNative.js",
-            "type": "reactnative",
+            "name": "Python: Current File",
+            "type": "python",
             "request": "launch",
-            "platform": "exponent",
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/.vscode/.react"
+            "program": "${file}",
+            "console": "integratedTerminal"
         }
     ]
 }

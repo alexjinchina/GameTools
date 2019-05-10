@@ -159,6 +159,7 @@ if args.backup:
 db.open(args.db)
 
 if args.dump:
+    os.makedirs(args.db_dump_dir)
     db.dump_storage(args.db_dump_dir)
 
 

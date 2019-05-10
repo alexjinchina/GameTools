@@ -1,14 +1,11 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
-			"path": "python-tools"
+			"path": "ref-data"
 		},
 		{
 			"path": "MergeDragonsTools"
-		},
+		}
 	],
 	"settings": {
 		"files.exclude": {
