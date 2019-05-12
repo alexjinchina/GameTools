@@ -39,6 +39,9 @@ const GAME_DB_PATHS = [
 const DB_FILENAME = "md_db.db";
 const LOCAL_DB_DIR = `/data/user/0/com.mergedragonstools/databases`;
 
+const FILE_LEVEL_HOME = "Level_Home";
+const AREA_NONE = "NONE";
+
 export default class DB {
   constructor(params = {}) {
     this.db = null;
@@ -69,33 +72,58 @@ export default class DB {
   }
 
   getAreas() {
-    return lodash.keys(HOME_DATA_CONFIG.areas)
+    return lodash.keys(HOME_DATA_CONFIG.areas);
   }
 
   getCashAreas() {
-    return lodash.keys(HOME_DATA_CONFIG.cash_areas)
+    return HOME_DATA_CONFIG.cash_areas;
   }
 
   getLevelHome() {
-    return this.storage["Level_Home"]
+    return this.storage[FILE_LEVEL_HOME];
+  }
+  setLevelHomeModified() {
+    this.storageUpdatedFiles.add(FILE_LEVEL_HOME);
   }
   getAreasLockStateData() {
-    return this.getLevelHome()["1"]["1"]["0"]
+    return this.getLevelHome()["1"]["1"]["0"];
   }
-
+  getCellInfo() {
+    return this.getLevelHome()["1"]["0"];
+  }
   getLockedAreas() {
-    const lockedAreas = new Set()
-    lodash.forEach(this.getAreasLockStateData(), (ys) => {
-      lodash.forEach(ys, (area) => {
-        if (area !== "NONE") {
-          lockedAreas.add(area)
+    const lockedAreas = new Set();
+    lodash.forEach(this.getAreasLockStateData(), ys => {
+      lodash.forEach(ys, area => {
+        if (area !== AREA_NONE) {
+          lockedAreas.add(area);
         }
-      })
-    })
+      });
+    });
 
-    return lockedAreas
+    return lockedAreas;
   }
 
+  unlockArea(area, reset) {
+    const state = this.getAreasLockStateData();
+    const cells = this.getCellInfo();
+    HOME_DATA_CONFIG.areas[area].forEach(([x, y]) => {
+      console.log(`unlocking ${area}(${x},${y})`);
+      console.assert(state[x][y] === area || state[x][y] === AREA_NONE);
+      state[x][y] = AREA_NONE;
+      const n = `${x}_${y}`;
+      if (reset || !cells[n]) {
+        cells[n] = lodash.defaults(
+          {
+            "0": x,
+            "1": y
+          },
+          HOME_DATA_CONFIG.unlockedLandPieces
+        );
+      }
+    });
+    this.setLevelHomeModified();
+  }
 
   async open(params = {}) {
     params = this._buildParams(params);

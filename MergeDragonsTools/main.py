@@ -159,7 +159,8 @@ if args.backup:
 db.open(args.db)
 
 if args.dump:
-    os.makedirs(args.db_dump_dir)
+    if not os.path.isdir(args.db_dump_dir):
+        os.makedirs(args.db_dump_dir)
     db.dump_storage(args.db_dump_dir)
 
 
@@ -262,7 +263,7 @@ for filename in parse_filelist(args.replace_storage_file):
 if args.unlock_cash_areas:
     if not args.unlock_area:
         args.unlock_area = []
-    args.unlock_area += ["M3", "N3","O2"]
+    args.unlock_area += ["M3", "N3", "O2"]
 if args.unlock_area:
     db.Level_Home.unlock_area(*args.unlock_area)
 

@@ -233,6 +233,7 @@ class Database:
     def replace_storage_file(self, filename, data):
         # print data
         self.storage[filename] = load_json(data)
+        self.updated_storage_files.add(filename)
 
     def set_value(self, key, value, echo=False):
         filename, field, value_type = self.key_fields[key]
