@@ -81,3 +81,5 @@ out/
 /android/app/src/main/assets/fonts/Zocial.ttf
 
 
+# config
+/src/config
