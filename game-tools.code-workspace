@@ -1,11 +1,11 @@
 {
 	"folders": [
 		{
-			"path": "ref-data"
+			"path": "."
 		},
 		{
-			"path": "MergeDragonsTools"
-		}
+			"path": "GameTools"
+		},
 	],
 	"settings": {
 		"files.exclude": {
@@ -14,18 +14,12 @@
 			"**/.hg": true,
 			"**/CVS": true,
 			"**/.DS_Store": true,
-			"**/.pyenv": true,
 			"**/.classpath": true,
 			"**/.project": true,
 			"**/.settings": true,
-			"**/.factorypath": true
-		},
-		"sqltools.connections": [
-			{
-				"database": "md_db.db",
-				"dialect": "SQLite",
-				"name": "md_db.db"
-			}
-		]
+			"**/.factorypath": true,
+			"**/.pyenv": true,
+"GameTools/":true
+		}
 	}
 }
