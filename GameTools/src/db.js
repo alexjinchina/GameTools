@@ -7,7 +7,7 @@ import { fs, path, lodash, Permission, castValueType } from "./utils";
 SQLite.DEBUG(true);
 SQLite.enablePromise(true);
 
-const FIELDS = require("./config2/merge_dragons/fields");
+const FIELDS = require("./config/merge_dragons/fields");
 const KEYS = lodash.reduce(
   FIELDS,
   (keys, fields, file) => {
@@ -30,7 +30,7 @@ const KEYS = lodash.reduce(
   {}
 );
 
-const HOME_DATA_CONFIG = require("../home");
+const HOME_DATA_CONFIG = require("./config/merge_dragons/home");
 
 const GAME_PACKAGE_NAME = "com.gramgames.mergedragons";
 const GAME_DB_PATHS = [
