@@ -9,7 +9,7 @@ logs
 .env
 
 #vscode
-*/.vscode/settings.json
+.vscode/settings.json
 
 #apks
 /apks/
