@@ -6,13 +6,32 @@ import argparse
 import shutil
 
 from utils import load_json, save_json
+import adb 
 from db import Database
 
 
-PACKAGE_NAME = "com.gramgames.mergedragons"
-ADB_REMOTE_ROOT = "/sdcard/Android/data/%s/files" % PACKAGE_NAME
+
+ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
+SAVE_FILES_DIR = os.path.join(ROOT_DIR,"save_files")
+
+GAMES_CONFIG_JSON= os.path.join(ROOT_DIR,"config","games-config.json")
 
 parser = argparse.ArgumentParser()
+
+parser.add_argument("--game",
+                    default="merge_dragons"
+                    )
+
+parser.add_argument("--device",
+                    default="emulator-5554"
+                    )
+
+
+parser.add_argument("--save-files-dir",
+                    default=None
+                    )
+
+
 parser.add_argument("--db",
                     default="md_db.db"
                     )
@@ -136,9 +155,22 @@ parser.add_argument("--list-keys",
 args = parser.parse_args()
 print args
 
+print GAMES_CONFIG_JSON
+try:
+    config = load_json(GAMES_CONFIG_JSON)[args.game]
+except KeyError:
+    print "Error: game %s not found!" % args.game
+    sys.exit(1)
+
+package_name = config["package_name"]
+
+save_files_dir = args.save_files_dir or os.path.join( SAVE_FILES_DIR,args.game)
+
+
+
 
 if (args.adb_pull and args.adb_stop) or args.adb_restart:
-    os.system("adb shell am force-stop %s" % PACKAGE_NAME)
+    adb.stop(package_name,device=args.device)
 
 if args.adb_pull:
     os.system("adb pull %s/md_db.db %s" % (ADB_REMOTE_ROOT, args.db))
@@ -147,6 +179,7 @@ if args.adb_pull:
 
 ROOT_DIR = os.path.dirname(args.db)
 db = Database()
+
 
 db_bak = args.db+".bak"
 if args.recover and os.path.isfile(db_bak):

@@ -1,10 +1,10 @@
-package com.mergedragonstools;
+package com.gametools;
 
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.swmansion.reanimated.ReanimatedPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.rnfs.RNFSPackage;
 import com.facebook.react.ReactNativeHost;
@@ -26,10 +26,14 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(),
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+            new VectorIconsPackage(),
             new ReanimatedPackage(),
-            new VectorIconsPackage(), new RNGestureHandlerPackage(), new RNFSPackage(),
-          new SQLitePluginPackage());
+            new RNGestureHandlerPackage(),
+            new RNFSPackage(),
+            new SQLitePluginPackage()
+      );
     }
 
     @Override

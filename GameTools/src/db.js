@@ -7,7 +7,7 @@ import { fs, path, lodash, Permission, castValueType } from "./utils";
 SQLite.DEBUG(true);
 SQLite.enablePromise(true);
 
-const FIELDS = require("../fields");
+const FIELDS = require("./config2/merge_dragons/fields");
 const KEYS = lodash.reduce(
   FIELDS,
   (keys, fields, file) => {

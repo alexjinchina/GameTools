@@ -31,8 +31,7 @@ import MainView from "./main-view"
 
 YellowBox.ignoreWarnings(["componentWillMount is deprecated"]);
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -73,6 +72,7 @@ export default class App extends Component<Props> {
       this.handleError(error);
     }
   }
+
   handleSQLError = (tx, error) => {
     this.handleError(error);
   };
@@ -83,6 +83,8 @@ export default class App extends Component<Props> {
       errorMessage: error.message || error
     });
   };
+
+
   _renderError() {
     return (
       <View style={styles.container}>
