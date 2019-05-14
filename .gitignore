@@ -13,3 +13,12 @@ logs
 
 #apks
 /apks/
+
+
+#python
+.pyenv/
+db_dump*/
+*.pyc
+*.bak
+*.db
+*.zip

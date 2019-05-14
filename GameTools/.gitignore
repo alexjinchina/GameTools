@@ -81,10 +81,3 @@ out/
 /android/app/src/main/assets/fonts/Zocial.ttf
 
 
-#python
-.pyenv/
-db_dump*/
-*.pyc
-*.bak
-*.db
-*.zip
