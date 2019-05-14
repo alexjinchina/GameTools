@@ -103,7 +103,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.gametools"
+        applicationId "xyz.alexjinchina.gametools"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

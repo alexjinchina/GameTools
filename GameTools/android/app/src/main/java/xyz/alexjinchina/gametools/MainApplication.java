@@ -1,4 +1,4 @@
-package com.gametools;
+package xyz.alexjinchina.gametools;
 
 import android.app.Application;
 

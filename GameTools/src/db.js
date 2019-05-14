@@ -37,7 +37,7 @@ const GAME_DB_PATHS = [
   `/sdcard/Android/data/${GAME_PACKAGE_NAME}/files/md_db.db`
 ];
 const DB_FILENAME = "md_db.db";
-const LOCAL_DB_DIR = `/data/user/0/com.gametools/databases`;
+const LOCAL_DB_DIR = `/data/user/0/xyz.alexjinchina.gametools/databases`;
 
 const FILE_LEVEL_HOME = "Level_Home";
 const AREA_NONE = "NONE";

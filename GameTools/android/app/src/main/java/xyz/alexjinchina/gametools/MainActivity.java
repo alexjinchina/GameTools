@@ -1,4 +1,4 @@
-package com.gametools;
+package xyz.alexjinchina.gametools;
 
 import com.facebook.react.ReactActivity;
 
