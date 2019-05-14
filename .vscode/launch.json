@@ -5,13 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Android",
-            "program": "${workspaceRoot}/.vscode/launchReactNative.js",
-            "type": "reactnative",
+            "name": "Python: Current File",
+            "type": "python",
             "request": "launch",
-            "platform": "android",
-            "sourceMaps": true,
-            "outDir": "${workspaceRoot}/.vscode/.react"
+            "program": "${file}",
+            "console": "integratedTerminal"
         }
     ]
 }
