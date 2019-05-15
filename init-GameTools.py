@@ -26,4 +26,4 @@ def link(src, dst):
     pass
 
 
-link("config", os.path.join("GameTools", "src", "config"))
+link("config", os.path.join("GameTools",  "config"))

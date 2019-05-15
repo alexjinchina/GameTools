@@ -17,7 +17,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react-native"
     ],
     "rules": {
         "no-debugger": "warn",

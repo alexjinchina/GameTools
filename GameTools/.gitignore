@@ -62,4 +62,4 @@ vscode-react-native-*.vsix
 out/
 
 #config
-/src/config/
+/config/
