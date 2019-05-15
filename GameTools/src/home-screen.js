@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
 
 import React from "react";
 import { View, Text } from "react-native";
@@ -23,9 +16,14 @@ export default class HomeScreen extends React.Component {
     }
 
     render() {
-        return (<View style={styles.screen}>
-            <Text>Home Screen: {this}</Text>
-        </View>
+        return (<View style={{
+            ...styles.screen,
+            backgroundColor: "green"
+        }} >
+            <Text>Home Screen</Text>
+        </ View>
         )
     }
+
+
 }

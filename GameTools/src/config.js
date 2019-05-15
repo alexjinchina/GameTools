@@ -1,4 +1,4 @@
-import { fs } from "./utils"
+import { } from "./utils"
 
 const config = {
     remote_url: "https://raw.githubusercontent.com/alexjinchina/game-tools/master/"

@@ -8,18 +8,12 @@
 
 import React, { Component } from "react";
 import {
-    Platform,
-    PermissionsAndroid,
-    YellowBox,
-    StyleSheet,
-    Dimensions,
     View,
-    ScrollView,
+    Text,
     TextInput,
-    ActivityIndicator
 } from "react-native";
 
-const FIELDS = require("./config/merge_dragons/fields");
+const FIELDS = require("../config/merge_dragons/fields");
 
 
 export default class App extends Component {
@@ -29,7 +23,8 @@ export default class App extends Component {
     render() {
         return (
             <View>
-                <TextInput defaultValue="123" />
+                <Text>AppTest</Text>
+                {/* <TextInput defaultValue="AppTest" /> */}
             </View>
         )
     }
