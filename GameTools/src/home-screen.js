@@ -18,7 +18,7 @@ export default class HomeScreen extends React.Component {
     render() {
         return (<View style={{
             ...styles.screen,
-            backgroundColor: "green"
+            // backgroundColor: "green"
         }} >
             <Text>Home Screen</Text>
         </ View>

@@ -1,9 +1,6 @@
-
-
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
-
-import HomeScreen from "./home-screen"
+import HomeScreen from "./home-screen";
 // import React from "react";
 // import { View, Text } from "react-native";
 // class HomeScreen extends React.Component {
@@ -16,10 +13,14 @@ import HomeScreen from "./home-screen"
 //   }
 // }
 
-const AppNavigator = createStackNavigator({
-  Home: { screen: HomeScreen }
-}, {
-    initialRouteName: 'Home',
-  });
+const AppNavigator = createStackNavigator(
+  {
+    Home: { screen: HomeScreen }
+  },
+  {
+    initialRouteName: "Home",
+    headerMode: "none"
+  }
+);
 
 export default createAppContainer(AppNavigator);
