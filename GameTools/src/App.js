@@ -1,6 +1,7 @@
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 import HomeScreen from "./home-screen";
+import DetailesScreen from "./details-screen";
 // import React from "react";
 // import { View, Text } from "react-native";
 // class HomeScreen extends React.Component {
@@ -15,7 +16,8 @@ import HomeScreen from "./home-screen";
 
 const AppNavigator = createStackNavigator(
   {
-    Home: { screen: HomeScreen }
+    Home: { screen: HomeScreen },
+    Details: { screen: DetailesScreen }
   },
   {
     initialRouteName: "Home",

@@ -1,16 +1,18 @@
-import { } from "./utils"
+import {} from "./utils";
 
 const config = {
-    remote_url: "https://raw.githubusercontent.com/alexjinchina/game-tools/master/"
+  remote_url:
+    "https://raw.githubusercontent.com/alexjinchina/game-tools/master/"
+};
 
+let gamesConfig;
 
-}
-
-export default config
+export default config;
 
 export async function loadGamesConfig() {
-    const gamesConfig = require("../config/games-config")
-    return gamesConfig
+  if (!gamesConfig) {
+    gamesConfig = require("../config/games-config");
+  }
 
+  return gamesConfig;
 }
-
