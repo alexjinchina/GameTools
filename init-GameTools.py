@@ -26,4 +26,7 @@ def link(src, dst):
     pass
 
 
-link("config", os.path.join("GameTools",  "config"))
+dirname = os.path.dirname(__file__)
+
+link(os.path.join(dirname, "config"),
+     os.path.join(dirname, "GameTools",  "config"))
