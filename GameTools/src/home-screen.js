@@ -41,22 +41,22 @@ export default class HomeScreen extends React.Component {
           ) : lodash.keys(this.state.gamesConfig).length === 0 ? (
             <Text style={styles.errorText}>No game defined in config!</Text>
           ) : (
-            lodash.map(this.state.gamesConfig, (config, game) => {
-              return (
-                <ListItem
-                  key={`game-${game}`}
-                  title={`${game}`}
-                  chevron={true}
-                  onPress={() => {
-                    this.props.navigation.navigate("Details", {
-                      game,
-                      config
-                    });
-                  }}
-                />
-              );
-            })
-          )}
+                lodash.map(this.state.gamesConfig, (config, game) => {
+                  return (
+                    <ListItem
+                      key={`game-${game}`}
+                      title={`${game}`}
+                      chevron={true}
+                      onPress={() => {
+                        this.props.navigation.push("Details", {
+                          game,
+                          config
+                        });
+                      }}
+                    />
+                  );
+                })
+              )}
         </ScrollView>
       </View>
     );

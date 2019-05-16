@@ -2,7 +2,7 @@ import React from "react";
 import { Dimensions, View, ScrollView, Text } from "react-native";
 
 import { TabView, SceneMap } from "react-native-tab-view";
-import { ListItem } from "react-native-elements";
+import { ListItem, Button } from "react-native-elements";
 import { lodash } from "./utils";
 
 import styles from "./styles";
@@ -13,9 +13,9 @@ export default class DetailesScreen extends React.Component {
     this.state = {
       index: 0,
       routes: [
-        { key: "data", title: "Data" },
-        { key: "area", title: "Area" },
-        { key: "items", title: "Items" }
+        { key: "values", title: "VALUES" },
+        { key: "locks", title: "LOCKS" },
+        { key: "items", title: "ITEMS" }
       ],
       isError: false,
       errorMessage: null,
@@ -24,21 +24,32 @@ export default class DetailesScreen extends React.Component {
     };
   }
 
+  _renderEmptyView(name) {
+    console.log(`_renderEmptyView(${name})`)
+    return (
+      <View style={[styles.tabSceneView]}>
+        <Text>{name}</Text>
+      </View>
+    );
+  }
+
   render() {
     const { navigation } = this.props;
     const { game, config } = navigation.state.params;
     if (game !== this.state.game || config !== this.state.config) {
-      this.setState({});
+      // this.setState({});
     }
+
+    console.log("render")
     return (
       <View style={styles.screen}>
         {/* <Text>{game}</Text> */}
         <TabView
           navigationState={this.state}
           renderScene={SceneMap({
-            // data: () => this._renderDataView(),
-            // area: () => this._renderAreaView(),
-            // items: () => this._renderItemsView()
+            values: () => this._renderEmptyView("values"),
+            locks: () => this._renderEmptyView("locks"),
+            items: () => this._renderEmptyView("items")
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: Dimensions.get("window").width }}
