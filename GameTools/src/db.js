@@ -244,7 +244,7 @@ export default class DB {
       const gameDBPath = await this._locateGameDB(params);
       //const localDB = pathAppend(fs.ExternalStorageDirectoryPath, DB_FILENAME)
       //const localDB = pathAppend(fs.DocumentDirectoryPath, DB_FILENAME)
-      const localDBPath = path.append(LOCAL_DB_DIR, DB_FILENAME);
+      const localDBPath = path.join(LOCAL_DB_DIR, DB_FILENAME);
 
       params.messageCallback(`request permission...`);
       const granted = await Permission.request(
@@ -265,7 +265,7 @@ export default class DB {
     try {
       await this._close(params);
       const gameDBPath = await this._locateGameDB(params);
-      const localDBPath = path.append(LOCAL_DB_DIR, DB_FILENAME);
+      const localDBPath = path.join(LOCAL_DB_DIR, DB_FILENAME);
 
       params.messageCallback(`request permission...`);
       const granted = await Permission.request(

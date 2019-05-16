@@ -1,4 +1,4 @@
-import { fs, path, lodash, Permission, castValueType } from "../utils";
+import { fs, path, lodash, Permission, getPackageExternalDirectoryPath } from "../utils";
 
 export default class Game {
     constructor(name, config, params = {}) {
@@ -18,6 +18,28 @@ export default class Game {
 
         });
 
+        this.saveFiles = {}
+
+        this.packageName = config.package_name
+        this.externalDirectoryPath = getPackageExternalDirectoryPath(this.packageName)
+
+    }
+
+    get packageName() {
+        return this.config.package_name
+    }
+
+    get externalDirectoryPath() {
+        return getPackageExternalDirectoryPath(this.packageName)
+    }
+
+    parseFilePath(filePath) {
+
+        if (filePath.startsWith("${externalDirectoryPath}"))
+            return filePath.repale("${externalDirectoryPath}", this.externalDirectoryPath)
+
+        return filePath
+
     }
 
     toString() {
@@ -28,5 +50,18 @@ export default class Game {
         params = lodash.defaults(params || {}, this.params)
 
         params.info(`loading ${this.name}...`)
+
+        this.saveFiles = {}
+        for (const [saveFileName, saveFileConfig] of lodash.toPairs(this.config.save_files)) {
+            params.info(`loading save file ${saveFileName}...`)
+            // switch (saveFileConfig.type) {
+
+            // }
+
+        }
     }
+
+
+
+
 }

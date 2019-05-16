@@ -2937,7 +2937,7 @@
         "package_name": "com.gramgames.mergedragons",
         "save_files": {
             "md_db": {
-                "file": "/sdcard/Android/data/com.gramgames.mergedragons/files/md_db.db",
+                "file": "${ExternalDirectoryPath}/md_db.db",
                 "tables": {
                     "storage": {
                         "key": "file",
