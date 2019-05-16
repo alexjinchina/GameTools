@@ -2,10 +2,12 @@ import React from "react";
 import { Dimensions, View, ScrollView, Text } from "react-native";
 
 import { TabView, SceneMap } from "react-native-tab-view";
-import { ListItem, Button } from "react-native-elements";
+import { ListItem, Button, Overlay } from "react-native-elements";
+
 import { lodash } from "./utils";
 
 import styles from "./styles";
+import ProgressInfo from "./progress-info"
 
 export default class DetailesScreen extends React.Component {
   constructor(props) {
@@ -17,11 +19,41 @@ export default class DetailesScreen extends React.Component {
         { key: "locks", title: "LOCKS" },
         { key: "items", title: "ITEMS" }
       ],
+      isInProgress: true,
+      progressMessage: "prepareing...",
       isError: false,
       errorMessage: null,
-      isInProgress: true,
-      progressMessage: "working..."
+
     };
+  }
+
+
+
+  componentDidMount() {
+    // console.log("DetailesScreen.componentDidMount")
+    this.loadGameData(this.props.navigation.state.params)
+  }
+  // componentDidUpdate() {
+  //   console.log("DetailesScreen.componentDidUpdate")
+  //   this.loadGameData(this.props.navigation.state.params)
+  // }
+
+  async loadGameData({ game, config }) {
+    // if (game === this.state.game && config === this.state.config)
+    //   return
+
+    this.setState({
+      isInProgress: true,
+      progressMessage: "loading game data...",
+      isError: false,
+      errorMessage: null,
+
+      game: null,
+      config: null
+    })
+
+    setTimeout(() => this.setState({ isInProgress: false }), 5)
+
   }
 
   _renderEmptyView(name) {
@@ -32,19 +64,24 @@ export default class DetailesScreen extends React.Component {
       </View>
     );
   }
-
   render() {
-    const { navigation } = this.props;
-    const { game, config } = navigation.state.params;
-    if (game !== this.state.game || config !== this.state.config) {
-      // this.setState({});
-    }
+    // const { navigation } = this.props;
+    // const { game, config } = navigation.state.params;
+    // if (game !== this.state.game || config !== this.state.config) {
+    //   // this.setState({});
+    // }
 
     console.log("render")
+
     return (
       <View style={styles.screen}>
-        {/* <Text>{game}</Text> */}
-        <TabView
+        {this.state.isInProgress && (<ProgressInfo
+          isInProgress={this.state.isInProgress}
+          progressMessage={this.state.progressMessage}
+          isError={this.state.isError}
+          errorMessage={this.state.errorMessage}
+        />)}
+        {!this.state.isInProgress && <TabView
           navigationState={this.state}
           renderScene={SceneMap({
             values: () => this._renderEmptyView("values"),
@@ -53,12 +90,12 @@ export default class DetailesScreen extends React.Component {
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: Dimensions.get("window").width }}
-        />
-        <ApplyButton
+        />}
+        {!this.state.isInProgress && <ApplyButton
           title="Apply"
           ref={"applyButton"}
           onPress={() => this._applyChanges()}
-        />
+        />}
       </View>
     );
   }
