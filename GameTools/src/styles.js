@@ -15,6 +15,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F5FCFF"
   },
+
+  progressView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
+  },
+
   welcome: {
     fontSize: 20,
     textAlign: "center",

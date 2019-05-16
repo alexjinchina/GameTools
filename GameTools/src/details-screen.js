@@ -7,11 +7,14 @@ import { ListItem, Button, Overlay } from "react-native-elements";
 import { lodash } from "./utils";
 
 import styles from "./styles";
-import ProgressInfo from "./progress-info"
+import * as ProgressInfo from "./progress-info"
+
+import Game from "./game"
 
 export default class DetailesScreen extends React.Component {
   constructor(props) {
     super(props);
+    // console.log(ProgressInfo)
     this.state = {
       index: 0,
       routes: [
@@ -19,10 +22,7 @@ export default class DetailesScreen extends React.Component {
         { key: "locks", title: "LOCKS" },
         { key: "items", title: "ITEMS" }
       ],
-      isInProgress: true,
-      progressMessage: "prepareing...",
-      isError: false,
-      errorMessage: null,
+      ...ProgressInfo.stateTemplate
 
     };
   }
@@ -38,21 +38,17 @@ export default class DetailesScreen extends React.Component {
   //   this.loadGameData(this.props.navigation.state.params)
   // }
 
-  async loadGameData({ game, config }) {
+  async loadGameData({ name, config }) {
     // if (game === this.state.game && config === this.state.config)
     //   return
+    const game = new Game(name, config, {
+      ...ProgressInfo.makeCallbacks(this)
+    });
+    ProgressInfo.startProgress(this, "loading game data...")
 
-    this.setState({
-      isInProgress: true,
-      progressMessage: "loading game data...",
-      isError: false,
-      errorMessage: null,
+    await game.load()
 
-      game: null,
-      config: null
-    })
-
-    setTimeout(() => this.setState({ isInProgress: false }), 5)
+    setTimeout(() => ProgressInfo.endProgress(this, { game }), 5)
 
   }
 
@@ -73,14 +69,10 @@ export default class DetailesScreen extends React.Component {
 
     console.log("render")
 
+    if (ProgressInfo.isInProgress(this))
+      return ProgressInfo.render(this)
     return (
       <View style={styles.screen}>
-        {this.state.isInProgress && (<ProgressInfo
-          isInProgress={this.state.isInProgress}
-          progressMessage={this.state.progressMessage}
-          isError={this.state.isError}
-          errorMessage={this.state.errorMessage}
-        />)}
         {!this.state.isInProgress && <TabView
           navigationState={this.state}
           renderScene={SceneMap({

@@ -1,7 +1,5 @@
 import React from "react";
 
-import propTypes from "prop-types"
-
 import {
     Platform,
     PermissionsAndroid,
@@ -18,39 +16,66 @@ import { Text, ListItem, Button, Overlay, Icon } from "react-native-elements";
 import styles from "./styles";
 
 
-export default class ProgressInfo extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
-    // componentDidMount() {
+export const stateTemplate = {
+    isInProgress: true,
+    progressMessage: null,
+    isError: false,
+    errorMessage: null,
+}
 
-    // }
-    // componentWillUnmount() {
+export function makeCallbacks(comp) {
+    return {
+        infoCallback: msg => {
+            comp.setState({ progressMessage: msg });
+        },
+        errorCallback: error => {
+            comp.setState({
+                isError: true,
+                errorMessage: error.message || error
+            });
 
-    // }
-    // componentDidUpdate(prevProps, prevState) {
+        }
 
-    // }
-
-    render() {
-        return (<View style={styles.container}>
-            {!this.props.isError ? <ActivityIndicator size="large" /> : <Icon name="error" />}
-            <Text style={styles.infoText}>
-                {this.props.progressMessage || ""}
-            </Text>
-            {this.props.isError && (<Text style={styles.errorText}>
-                {this.props.errorMessage || ""}
-            </Text>)}
-
-        </View>);
     }
 }
 
-// ProgressInfo.propTypes = {
-//     isInProgress: propTypes.bool,
-// }
+export function startProgress(comp, initMessage) {
+    comp.setState({
+        isInProgress: true,
+        progressMessage: initMessage || "starting...",
+        isError: false,
+        errorMessage: null,
+    })
 
-// ProgressInfo.defaultProps = {
-//     isInProgress: false
-// }
+}
+
+export function endProgress(comp, state = {}) {
+    comp.setState({
+        isInProgress: false,
+        progressMessage: null,
+        isError: false,
+        errorMessage: null,
+        ...state || {}
+    })
+
+}
+
+export function isInProgress(comp) {
+    return comp.isInProgress
+}
+
+export function render(comp) {
+    return (
+        <View style={styles.progressView}>
+            {!comp.state.isError ? <ActivityIndicator size="large" /> : <Icon name="error" />}
+            <Text style={styles.infoText}>
+                {comp.state.progressMessage || ""}
+            </Text>
+            {comp.state.isError && (<Text style={styles.errorText}>
+                {comp.state.errorMessage || ""}
+            </Text>)}
+
+        </View>
+    );
+}
