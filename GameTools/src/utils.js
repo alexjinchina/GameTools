@@ -6,7 +6,7 @@ import lodash from "lodash";
 import path from "path";
 
 import { name as APP_NAME, displayName as APP_DISPLAY_NAME } from "../app.json";
-export { APP_NAME, APP_DISPLAY_NAME, lodash };
+export { APP_NAME, APP_DISPLAY_NAME, lodash, path };
 
 export const fs = RNFS;
 
@@ -38,8 +38,8 @@ export const Permission = {
   }
 };
 
-export function castValueType(type, value) {
-  switch (type) {
+export function castValueType(type, value, refValue) {
+  switch (type || typeof refValue) {
     case "int":
       return parseInt(value);
     default:

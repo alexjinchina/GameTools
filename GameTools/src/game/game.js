@@ -42,6 +42,9 @@ export default class Game {
 
     }
 
+    get tempSaveFilePath() {
+        return path.join(fs.ExternalDirectoryPath, "game-safe-files", this.packageName)
+    }
     toString() {
         return `<Game: ${this.name}>`
     }

@@ -34,7 +34,8 @@ public class MainApplication extends Application implements ReactApplication {
             new ReanimatedPackage(),
             new RNGestureHandlerPackage(),
             new RNFSPackage(),
-            new SQLitePluginPackage()
+            new SQLitePluginPackage(),
+            new SqliteHelperPackage()
       );
     }
 
