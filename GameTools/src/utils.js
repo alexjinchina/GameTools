@@ -1,12 +1,13 @@
-import { Platform, PermissionsAndroid } from "react-native";
+import { PermissionsAndroid } from "react-native";
 
 import RNFS from "react-native-fs";
 import lodash from "lodash";
 
-import path from "path";
+// import path from "path";
+// export { path };
 
 import { name as APP_NAME, displayName as APP_DISPLAY_NAME } from "../app.json";
-export { APP_NAME, APP_DISPLAY_NAME, lodash, path };
+export { APP_NAME, APP_DISPLAY_NAME, lodash };
 
 export const fs = RNFS;
 
@@ -47,10 +48,9 @@ export function castValueType(type, value, refValue) {
   }
 }
 
-const bundleId = "xyz.alexjinchina.gametools"
+const bundleId = "xyz.alexjinchina.gametools";
 
 export function getPackageExternalDirectoryPath(packageName) {
-
-  const p = fs.ExternalDirectoryPath
-  return p.replace(bundleId, packageName)
+  const p = fs.ExternalDirectoryPath;
+  return p.replace(bundleId, packageName);
 }

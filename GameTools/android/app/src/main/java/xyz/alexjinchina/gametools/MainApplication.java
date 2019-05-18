@@ -35,7 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RNGestureHandlerPackage(),
             new RNFSPackage(),
             new SQLitePluginPackage(),
-            new SqliteHelperPackage()
+            new SaveFileHelperPackage()
       );
     }
 
