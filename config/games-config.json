@@ -2941,8 +2941,8 @@
                 "tables": {
                     "storage": {
                         "key": "file",
-                        "type": "json",
-                        "value": "data"
+                        "data": "data",
+                        "type": "json"
                     }
                 },
                 "type": "sqlite"

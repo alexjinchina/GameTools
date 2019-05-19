@@ -12,7 +12,7 @@ export const fs = RNFS;
 
 export const path = {
   ...RNPath,
-  join(base, paths) {
+  join(base, ...paths) {
     let out = base;
     paths.forEach(p => {
       if (!out.endsWith("/")) out += "/";
