@@ -4,6 +4,22 @@ import { lodash, Permission, path, fs } from "../../utils";
 
 const SaveFileHelper = NativeModules.SaveFileHelper;
 SaveFileHelper.setLoggingLevel(__DEV__ ? "debug" : "info");
+
+function saveFieldToDB(obj, key, fieldType) {
+  switch (fieldType) {
+    case "json":
+      obj[key] = JSON.stringify(obj[key]);
+      break;
+  }
+}
+function loadFieldFromDB(obj, key, fieldType) {
+  switch (fieldType) {
+    case "json":
+      obj[key] = JSON.parse(obj[key]);
+      break;
+  }
+}
+
 export default class SqliteSaveFile {
   constructor(game, name, config, params = {}) {
     this.game = game;
@@ -39,22 +55,21 @@ export default class SqliteSaveFile {
     lodash.forEach(this.config.tables, (config, tableName) => {
       const tableData = data[tableName];
       if (lodash.isPlainObject(config.fields)) {
-        const signleField = lodash.keys(config.fields).length === 1;
-        lodash.forEach(config.fields, (fieldConifg, fieldName) => {
-          if (fieldConifg == "json") {
-            if (signleField) {
-              lodash.keys(tableData).forEach(key => {
-                tableData[key] = JSON.parse(tableData[key]);
-              });
-            } else {
-              lodash.keys(tableData).forEach(key => {
-                tableData[key][fieldName] = JSON.parse(tableData[key][fieldName]);
-              });
-            }
+        const fields = lodash.toPairs(config.fields);
+        // const signleField = lodash.keys(config.fields).length === 1;
+        lodash.keys(tableData).forEach(key => {
+          if (fields.length === 1) {
+            const [, fieldType] = fields[0];
+            loadFieldFromDB(tableData, key, fieldType);
+          } else {
+            fields.forEach((fieldName, fieldType) => {
+              loadFieldFromDB(tableData[key], fieldName, fieldType);
+            });
           }
         });
       }
     });
-    debugger
+    this.data = data
+
   }
 }

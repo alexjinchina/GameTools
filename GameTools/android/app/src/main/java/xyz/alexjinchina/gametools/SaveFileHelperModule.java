@@ -190,7 +190,7 @@ public class SaveFileHelperModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void loadSQLiteData(String filepath, ReadableMap config, Promise promise) {
         FLog.d(TAG, "loading SQLite data from %s...", filepath);
-        SQLiteDatabase db;
+        SQLiteDatabase db = null;
         try {
             final String TABLES = "tables";
             WritableMap data = Arguments.createMap();
