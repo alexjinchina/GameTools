@@ -2941,7 +2941,7 @@
                 "tables": {
                     "storage": {
                         "key": "file",
-                        "data": {
+                        "fields": {
                             "data": "json"
                         }
                     }

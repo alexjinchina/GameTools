@@ -34,9 +34,9 @@ export default class Game {
   }
 
   parseFilePath(filePath) {
-    if (filePath.startsWith("${externalDirectoryPath}"))
-      return filePath.repale(
-        "${externalDirectoryPath}",
+    if (filePath.startsWith("${ExternalDirectoryPath}"))
+      return filePath.replace(
+        "${ExternalDirectoryPath}",
         this.externalDirectoryPath
       );
 

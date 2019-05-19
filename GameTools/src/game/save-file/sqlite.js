@@ -36,7 +36,25 @@ export default class SqliteSaveFile {
     params.info(`${this}: loading data...`);
     const data = await SaveFileHelper.loadSQLiteData(localDBPath, this.config);
     params.info(`${this}: parsing data...`);
-    console.debug(data);
-    debugger;
+    lodash.forEach(this.config.tables, (config, tableName) => {
+      const tableData = data[tableName];
+      if (lodash.isPlainObject(config.fields)) {
+        const signleField = lodash.keys(config.fields).length === 1;
+        lodash.forEach(config.fields, (fieldConifg, fieldName) => {
+          if (fieldConifg == "json") {
+            if (signleField) {
+              lodash.keys(tableData).forEach(key => {
+                tableData[key] = JSON.parse(tableData[key]);
+              });
+            } else {
+              lodash.keys(tableData).forEach(key => {
+                tableData[key][fieldName] = JSON.parse(tableData[key][fieldName]);
+              });
+            }
+          }
+        });
+      }
+    });
+    debugger
   }
 }
