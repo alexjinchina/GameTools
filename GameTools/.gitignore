@@ -61,5 +61,3 @@ buck-out/
 vscode-react-native-*.vsix
 out/
 
-#config
-/config/

@@ -8,11 +8,14 @@ function detectType(filename) {
   return;
 }
 
+const saveFileClasses = {
+  sqlite: require("./sqlite").default
+};
+
 export function createSaveFile(game, name, config, params = {}) {
   const { type, file } = config;
-  const modName = `./sqlite`
-  const mod = require(modName);
-  const saveFile = new mod.default(game, name, config, params || {});
+  const cls = saveFileClasses[type || detectType(file)];
+  const saveFile = new cls(game, name, config, params || {});
 
   return saveFile;
 }

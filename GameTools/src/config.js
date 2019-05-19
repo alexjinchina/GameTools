@@ -1,4 +1,5 @@
 import {} from "./utils";
+import defaultConfig from "../config/games-config";
 
 const config = {
   remote_url:
@@ -11,7 +12,7 @@ export default config;
 
 export async function loadGamesConfig() {
   if (!gamesConfig) {
-    gamesConfig = require("../config/games-config");
+    gamesConfig = defaultConfig;
   }
 
   return gamesConfig;
