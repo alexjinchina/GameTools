@@ -7,9 +7,11 @@ import { ListItem, Button, Overlay } from "react-native-elements";
 import { lodash } from "./utils";
 
 import styles from "./styles";
-import * as ProgressInfo from "./progress-info"
+import * as ProgressInfo from "./progress-info";
 
-import Game from "./game"
+import Game from "./game";
+
+import ValuesTab from "./values-tab";
 
 export default class DetailesScreen extends React.Component {
   constructor(props) {
@@ -23,15 +25,12 @@ export default class DetailesScreen extends React.Component {
         { key: "items", title: "ITEMS" }
       ],
       ...ProgressInfo.stateTemplate
-
     };
   }
 
-
-
   componentDidMount() {
     // console.log("DetailesScreen.componentDidMount")
-    this.loadGameData(this.props.navigation.state.params)
+    this.loadGameData(this.props.navigation.state.params);
   }
   // componentDidUpdate() {
   //   console.log("DetailesScreen.componentDidUpdate")
@@ -44,16 +43,15 @@ export default class DetailesScreen extends React.Component {
     const game = new Game(name, config, {
       ...ProgressInfo.makeCallbacks(this)
     });
-    ProgressInfo.startProgress(this, "loading game data...")
+    ProgressInfo.startProgress(this, "loading game data...");
 
-    await game.load()
+    await game.load();
 
     ProgressInfo.endProgress(this, { game });
-
   }
 
   _renderEmptyView(name) {
-    console.log(`_renderEmptyView(${name})`)
+    console.log(`_renderEmptyView(${name})`);
     return (
       <View style={[styles.tabSceneView]}>
         <Text>{name}</Text>
@@ -67,27 +65,26 @@ export default class DetailesScreen extends React.Component {
     //   // this.setState({});
     // }
 
-    console.log("render")
+    console.log("render");
 
-    if (ProgressInfo.isInProgress(this))
-      return ProgressInfo.render(this)
+    if (ProgressInfo.isInProgress(this)) return ProgressInfo.render(this);
     return (
       <View style={styles.screen}>
-        {!this.state.isInProgress && <TabView
+        <TabView
           navigationState={this.state}
           renderScene={SceneMap({
-            values: () => this._renderEmptyView("values"),
+            values: <ValuesTab game={this.state.game} />,
             locks: () => this._renderEmptyView("locks"),
             items: () => this._renderEmptyView("items")
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: Dimensions.get("window").width }}
-        />}
-        {!this.state.isInProgress && <ApplyButton
+        />
+        <ApplyButton
           title="Apply"
           ref={"applyButton"}
           onPress={() => this._applyChanges()}
-        />}
+        />
       </View>
     );
   }
