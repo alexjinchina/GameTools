@@ -48,7 +48,7 @@ export default class DetailesScreen extends React.Component {
 
     await game.load()
 
-    setTimeout(() => ProgressInfo.endProgress(this, { game }), 5)
+    ProgressInfo.endProgress(this, { game });
 
   }
 

@@ -38,19 +38,10 @@ export default class SqliteSaveFile {
   get localDBPath() {
     return path.join(this.game.tempSaveFilePath, this.name);
   }
+
   async load(params) {
     params = lodash.defaults(params, this.params);
-    params.info(`${this}: loading sqlite db ...`);
-    const remoteDBPath = this.remoteDBPath;
-    const localDBPath = this.localDBPath;
-    params.info(`${this}: request permission...`);
-    await Permission.request(Permission.READ_EXTERNAL_STORAGE);
-    params.info(`${this}: making local dir...`);
-    await fs.mkdir(path.dirname(localDBPath));
-    params.info(`${this}: copying remote db...`);
-    await fs.copyFile(remoteDBPath, localDBPath);
-    params.info(`${this}: loading data...`);
-    const data = await SaveFileHelper.loadSQLiteData(localDBPath, this.config);
+    const data = await this._load(params);
     params.info(`${this}: parsing data...`);
     lodash.forEach(this.config.tables, (config, tableName) => {
       const tableData = data[tableName];
@@ -69,7 +60,26 @@ export default class SqliteSaveFile {
         });
       }
     });
-    this.data = data
+    this.data = data;
+  }
 
+  async _loadData(params) {
+    params.info(`${this}: loading sqlite db ...`);
+    const remoteDBPath = this.remoteDBPath;
+    const localDBPath = this.localDBPath;
+    params.info(`${this}: request permission...`);
+    await Permission.request(Permission.READ_EXTERNAL_STORAGE);
+    try {
+      return await SaveFileHelper.loadSQLiteData(remoteDBPath, this.config);
+    } catch (error) {
+      debugger;
+      console.log(error);
+    }
+    params.info(`${this}: making local dir...`);
+    await fs.mkdir(path.dirname(localDBPath));
+    params.info(`${this}: copying remote db...`);
+    await fs.copyFile(remoteDBPath, localDBPath);
+    params.info(`${this}: loading data...`);
+    return await SaveFileHelper.loadSQLiteData(localDBPath, this.config);
   }
 }
