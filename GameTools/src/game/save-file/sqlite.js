@@ -41,7 +41,7 @@ export default class SqliteSaveFile {
 
   async load(params) {
     params = lodash.defaults(params, this.params);
-    const data = await this._load(params);
+    const data = await this._loadData(params);
     params.info(`${this}: parsing data...`);
     lodash.forEach(this.config.tables, (config, tableName) => {
       const tableData = data[tableName];
