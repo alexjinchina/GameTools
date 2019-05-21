@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "react-native/react-native": true
     },
     "extends": "eslint:recommended",
     "globals": {
@@ -22,6 +23,7 @@ module.exports = {
     ],
     "rules": {
         "no-debugger": "warn",
-        "no-console": "warn"
+        "no-console": "warn",
+        "react/jsx-uses-vars": 1,
     }
 };
