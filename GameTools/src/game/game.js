@@ -77,4 +77,11 @@ export default class Game {
       // }
     }
   }
+
+  getValueByKey(key) {
+    const { valuePath } = this.config.values[key];
+    if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
+    const parts = valuePath.split(".");
+    
+  }
 }

@@ -1,12 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ListItem } from "react-native-elements";
+
 import { lodash } from "../utils";
+import styles from "../styles";
 
 export default class ValueItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      newValue: undefined
+    };
   }
 
   render() {
@@ -20,10 +24,9 @@ export default class ValueItem extends React.Component {
         title={displayText || valueKey}
         rightElement={
           <TextInput
-            style={[
-              updated ? styles.updatedValueItemText : styles.valueItemText,
-              {}
-            ]}
+            style={{
+              ...(updated ? styles.updatedValueItemText : styles.valueItemText)
+            }}
             keyboardType="numeric"
             defaultValue={value.toString()}
             // onChangeText={text => {
