@@ -23,7 +23,7 @@ export default class ValueItem extends React.Component {
 
     const oldValue = game.getValueByPath(valuePath)
     if (lodash.isUndefined(oldValue)) {
-      return <ListItem title={displayText || valueKey} />
+      return <ListItem title={displayText || valueKey} rightTitle={"NOT FOUND!"} />
     }
 
     const { newValue } = this.state;
