@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { TextInput } from "react-native"
 import { ListItem } from "react-native-elements";
 
-import { lodash } from "../utils";
+import { lodash, castValueType } from "../utils";
 import styles from "../styles";
 
 export default class ValueItem extends React.Component {
@@ -19,6 +20,14 @@ export default class ValueItem extends React.Component {
     const { valuePath, displayText } = lodash.isString(config)
       ? { valuePath: config }
       : config;
+
+    const oldValue = game.getValueByPath(valuePath)
+    if (lodash.isUndefined(oldValue)) {
+      return <ListItem title={displayText || valueKey} />
+    }
+
+    const { newValue } = this.state;
+    const updated = !lodash.isUndefined(newValue) && (oldValue !== newValue)
     return (
       <ListItem
         title={displayText || valueKey}
@@ -28,10 +37,15 @@ export default class ValueItem extends React.Component {
               ...(updated ? styles.updatedValueItemText : styles.valueItemText)
             }}
             keyboardType="numeric"
-            defaultValue={value.toString()}
-            // onChangeText={text => {
+            defaultValue={(updated ? newValue : oldValue).toString()}
             onEndEditing={({ nativeEvent }) => {
-              this._setValueItem(key, nativeEvent.text);
+              const newValue = castValueType(nativeEvent.text, null, oldValue)
+              this.setState({ newValue })
+              if (this.props.onValueChanged) {
+                this.props.onValueChanged({ valueKey, oldValue, newValue })
+              }
+              // this._setValueItem(key, nativeEvent.text);
+
             }}
           />
         }

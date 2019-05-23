@@ -40,27 +40,31 @@ export default class SqliteSaveFile {
   }
 
   async load(params) {
-    params = lodash.defaults(params, this.params);
-    const data = await this._loadData(params);
-    params.info(`${this}: parsing data...`);
-    lodash.forEach(this.config.tables, (config, tableName) => {
-      const tableData = data[tableName];
-      if (lodash.isPlainObject(config.fields)) {
-        const fields = lodash.toPairs(config.fields);
-        // const signleField = lodash.keys(config.fields).length === 1;
-        lodash.keys(tableData).forEach(key => {
-          if (fields.length === 1) {
-            const [, fieldType] = fields[0];
-            loadFieldFromDB(tableData, key, fieldType);
-          } else {
-            fields.forEach((fieldName, fieldType) => {
-              loadFieldFromDB(tableData[key], fieldName, fieldType);
-            });
-          }
-        });
-      }
-    });
-    this.data = data;
+    try {
+      params = lodash.defaults(params, this.params);
+      const data = await this._loadData(params);
+      params.info(`${this}: parsing data...`);
+      lodash.forEach(this.config.tables, (config, tableName) => {
+        const tableData = data[tableName];
+        if (lodash.isPlainObject(config.fields)) {
+          const fields = lodash.toPairs(config.fields);
+          // const signleField = lodash.keys(config.fields).length === 1;
+          lodash.keys(tableData).forEach(key => {
+            if (fields.length === 1) {
+              const [, fieldType] = fields[0];
+              loadFieldFromDB(tableData, key, fieldType);
+            } else {
+              fields.forEach((fieldName, fieldType) => {
+                loadFieldFromDB(tableData[key], fieldName, fieldType);
+              });
+            }
+          });
+        }
+      });
+      this.data = data;
+    } catch (error) {
+      params.error(error)
+    }
   }
 
   async _loadData(params) {
@@ -72,8 +76,13 @@ export default class SqliteSaveFile {
     try {
       return await SaveFileHelper.loadSQLiteData(remoteDBPath, this.config);
     } catch (error) {
-      debugger;
-      console.log(error);
+      switch (error.code) {
+        case "SQLiteCantOpenDatabaseException":
+          console.debug(error.message);
+          break;
+        default:
+          throw error
+      }
     }
     params.info(`${this}: making local dir...`);
     await fs.mkdir(path.dirname(localDBPath));
@@ -81,5 +90,13 @@ export default class SqliteSaveFile {
     await fs.copyFile(remoteDBPath, localDBPath);
     params.info(`${this}: loading data...`);
     return await SaveFileHelper.loadSQLiteData(localDBPath, this.config);
+  }
+
+  getValueByPath(valuePath) {
+    const parts = lodash.isString(valuePath) ? valuePath.split(".") : valuePath
+    const tableName = parts.shift()
+    const table = this.data[tableName]
+    return lodash.get(table, parts.join("."))
+
   }
 }

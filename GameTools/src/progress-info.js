@@ -62,7 +62,7 @@ export function endProgress(comp, state = {}) {
 }
 
 export function isInProgress(comp) {
-    return comp.isInProgress
+    return comp.state.isInProgress
 }
 
 export function render(comp) {

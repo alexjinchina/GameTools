@@ -2,15 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-  Platform,
-  PermissionsAndroid,
-  YellowBox,
-  StyleSheet,
   Dimensions,
   View,
   ScrollView,
   TextInput,
-  ActivityIndicator
 } from "react-native";
 
 import { ListItem, Text, Button } from "react-native-elements";
@@ -240,37 +235,37 @@ class AreaItem extends React.Component {
         rightIcon={
           !isLocked
             ? {
-                name: "check",
-                color: reset ? "red" : "green",
-                onPress: () => {
-                  const reset = !this.state.reset;
-                  this.props.areaState.reset = reset;
-                  this.setState({ reset });
-                  if (this.props.onChange)
-                    this.props.onChange({
-                      area,
-                      reset,
-                      unlock: this.state.unlock
-                    });
-                }
+              name: "check",
+              color: reset ? "red" : "green",
+              onPress: () => {
+                const reset = !this.state.reset;
+                this.props.areaState.reset = reset;
+                this.setState({ reset });
+                if (this.props.onChange)
+                  this.props.onChange({
+                    area,
+                    reset,
+                    unlock: this.state.unlock
+                  });
               }
+            }
             : null
         }
         switch={
           isLocked
             ? {
-                value: unlock,
-                onValueChange: value => {
-                  this.props.areaState.unlock = value;
-                  this.setState({ unlock: value });
-                  if (this.props.onChange)
-                    this.props.onChange({
-                      area,
-                      reset: this.state.reset,
-                      unlock: value
-                    });
-                }
+              value: unlock,
+              onValueChange: value => {
+                this.props.areaState.unlock = value;
+                this.setState({ unlock: value });
+                if (this.props.onChange)
+                  this.props.onChange({
+                    area,
+                    reset: this.state.reset,
+                    unlock: value
+                  });
               }
+            }
             : null
         }
       />

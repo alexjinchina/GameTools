@@ -6,6 +6,8 @@ import { View, Text, ScrollView } from "react-native";
 import styles from "../styles";
 import { lodash } from "../utils";
 
+import ValueItem from "./value-item"
+
 export default class ValuesTab extends React.Component {
   constructor(props) {
     super(props);
@@ -35,6 +37,23 @@ export default class ValuesTab extends React.Component {
                 valueKey={key}
                 game={game}
                 valueKey={key}
+                onValueChanged={
+                  ({ valueKey, oldValue, newValue }) => {
+                    const changedValues = this.props.changedValues;
+                    if (!changedValues) return
+                    if (oldValue === newValue) {
+                      changedValues.delete(valueKey)
+                    } else {
+                      changedValues.set(valueKey, newValue)
+                    }
+                    if (this.props.onValueChanged) {
+                      this.props.onValueChanged({
+                        changedValues,
+                        valueKey
+                      })
+                    }
+                  }
+                }
               />
             );
           })}

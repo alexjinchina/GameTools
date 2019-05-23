@@ -72,6 +72,7 @@ export default class Game {
       );
 
       await saveFile.load(params);
+      this.saveFiles[saveFileName] = saveFile
       // switch (saveFileConfig.type) {
 
       // }
@@ -81,7 +82,14 @@ export default class Game {
   getValueByKey(key) {
     const { valuePath } = this.config.values[key];
     if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
+    return this.getValueByPath(valuePath)
+  }
+
+  getValueByPath(valuePath) {
     const parts = valuePath.split(".");
-    
+    const saveFileName = parts.shift();
+    const saveFile = this.saveFiles[saveFileName]
+    return saveFile.getValueByPath(parts)
+
   }
 }

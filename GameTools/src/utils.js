@@ -39,8 +39,18 @@ export const Permission = {
   }
 };
 
-export function castValueType(type, value, refValue) {
-  switch (type || typeof refValue) {
+export function castValueType(value, type, refValue) {
+  if (!type) {
+    switch (typeof refValue) {
+      case "number":
+        type = lodash.isInteger(refValue) ? "int" : "number"
+        break
+      default:
+        break
+    }
+
+  }
+  switch (type) {
     case "int":
       return parseInt(value);
     default:
