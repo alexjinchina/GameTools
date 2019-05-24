@@ -2,6 +2,7 @@
 
 package xyz.alexjinchina.gametools;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
@@ -13,6 +14,7 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.bridge.ReadableType;
@@ -43,27 +45,27 @@ public class SaveFileHelperModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void setLoggingLevel(@NonNull String level) {
         switch (level.toLowerCase()) {
-        case "verbose":
-            FLog.setMinimumLoggingLevel(FLog.VERBOSE);
-            break;
-        case "debug":
-            FLog.setMinimumLoggingLevel(FLog.DEBUG);
-            break;
-        case "info":
-            FLog.setMinimumLoggingLevel(FLog.INFO);
-            break;
-        case "warn":
-            FLog.setMinimumLoggingLevel(FLog.WARN);
-            break;
-        case "error":
-            FLog.setMinimumLoggingLevel(FLog.ERROR);
-            break;
-        case "assert":
-            FLog.setMinimumLoggingLevel(FLog.ASSERT);
-            break;
-        default:
-            FLog.setMinimumLoggingLevel(FLog.INFO);
-            break;
+            case "verbose":
+                FLog.setMinimumLoggingLevel(FLog.VERBOSE);
+                break;
+            case "debug":
+                FLog.setMinimumLoggingLevel(FLog.DEBUG);
+                break;
+            case "info":
+                FLog.setMinimumLoggingLevel(FLog.INFO);
+                break;
+            case "warn":
+                FLog.setMinimumLoggingLevel(FLog.WARN);
+                break;
+            case "error":
+                FLog.setMinimumLoggingLevel(FLog.ERROR);
+                break;
+            case "assert":
+                FLog.setMinimumLoggingLevel(FLog.ASSERT);
+                break;
+            default:
+                FLog.setMinimumLoggingLevel(FLog.INFO);
+                break;
         }
     }
 
@@ -72,23 +74,23 @@ public class SaveFileHelperModule extends ReactContextBaseJavaModule {
             key = cursor.getColumnName(columnIndex);
         }
         switch (cursor.getType(columnIndex)) {
-        case Cursor.FIELD_TYPE_NULL:
-            map.putNull(key);
-            break;
-        case Cursor.FIELD_TYPE_INTEGER:
-            map.putInt(key, cursor.getInt(columnIndex));
-            break;
-        case Cursor.FIELD_TYPE_FLOAT:
-            map.putDouble(key, cursor.getFloat(columnIndex));
-            break;
-        case Cursor.FIELD_TYPE_STRING:
-            map.putString(key, cursor.getString(columnIndex));
-            break;
-        case Cursor.FIELD_TYPE_BLOB:
-            map.putString(key, Base64.encodeToString(cursor.getBlob(columnIndex), Base64.DEFAULT));
-            break;
-        default:
-            throw (new RuntimeException(String.format("invalid field type %d", cursor.getType(columnIndex))));
+            case Cursor.FIELD_TYPE_NULL:
+                map.putNull(key);
+                break;
+            case Cursor.FIELD_TYPE_INTEGER:
+                map.putInt(key, cursor.getInt(columnIndex));
+                break;
+            case Cursor.FIELD_TYPE_FLOAT:
+                map.putDouble(key, cursor.getFloat(columnIndex));
+                break;
+            case Cursor.FIELD_TYPE_STRING:
+                map.putString(key, cursor.getString(columnIndex));
+                break;
+            case Cursor.FIELD_TYPE_BLOB:
+                map.putString(key, Base64.encodeToString(cursor.getBlob(columnIndex), Base64.DEFAULT));
+                break;
+            default:
+                throw (new RuntimeException(String.format("invalid field type %d", cursor.getType(columnIndex))));
         }
     }
 
@@ -122,40 +124,40 @@ public class SaveFileHelperModule extends ReactContextBaseJavaModule {
             dataCols = new ArrayList<>();
             String columnName;
             switch (config.getType(FIELDS)) {
-            case String:
-                columnName = config.getString(FIELDS);
-                FLog.d(TAG, "add data column: %s", columnName);
-                dataCols.add(columnName);
-                break;
-            case Map:
-                for (ReadableMapKeySetIterator iter = config.getMap(FIELDS).keySetIterator(); iter.hasNextKey();) {
-                    columnName = iter.nextKey();
+                case String:
+                    columnName = config.getString(FIELDS);
                     FLog.d(TAG, "add data column: %s", columnName);
                     dataCols.add(columnName);
-                }
+                    break;
+                case Map:
+                    for (ReadableMapKeySetIterator iter = config.getMap(FIELDS).keySetIterator(); iter.hasNextKey(); ) {
+                        columnName = iter.nextKey();
+                        FLog.d(TAG, "add data column: %s", columnName);
+                        dataCols.add(columnName);
+                    }
 
-                break;
-            // case Array:
-            // ReadableArray data = config.getArray("data");
-            // for (int i = 0; i < data.size(); ++i) {
-            // switch (data.getType(i)) {
-            // case String:
-            // columnName = data.getString(i);
-            // break;
-            // case Map:
-            // columnName = getDataColumnName(data.getMap(i));
-            // break;
-            // default:
-            // throw new RuntimeException(String.format("invalid data column type: %s",
-            // data.getType(i)));
-            // }
-            // FLog.d(TAG, "add data column: %s", columnName);
-            // dataCols.add(columnName);
-            // }
-            // break;
-            default:
-                throw (new RuntimeException(
-                        String.format("invalid type `%s` of `%s`!", config.getType(FIELDS), FIELDS)));
+                    break;
+                // case Array:
+                // ReadableArray data = config.getArray("data");
+                // for (int i = 0; i < data.size(); ++i) {
+                // switch (data.getType(i)) {
+                // case String:
+                // columnName = data.getString(i);
+                // break;
+                // case Map:
+                // columnName = getDataColumnName(data.getMap(i));
+                // break;
+                // default:
+                // throw new RuntimeException(String.format("invalid data column type: %s",
+                // data.getType(i)));
+                // }
+                // FLog.d(TAG, "add data column: %s", columnName);
+                // dataCols.add(columnName);
+                // }
+                // break;
+                default:
+                    throw (new RuntimeException(
+                            String.format("invalid type `%s` of `%s`!", config.getType(FIELDS), FIELDS)));
             }
         }
 
@@ -168,18 +170,13 @@ public class SaveFileHelperModule extends ReactContextBaseJavaModule {
         if (cursor.moveToFirst()) {
             int dataColumnStartIndex = keyField == null ? 0 : 1;
             do {
-
                 String key = keyField == null ? Integer.toString(cursor.getPosition()) : cursor.getString(0);
                 FLog.d(TAG, "putting row %s ...", key);
-                if (dataCols.size() == dataColumnStartIndex + 1) {
-                    putSQLiteField(cursor, tableData, key, dataColumnStartIndex);
-                } else {
-                    WritableMap dataMap = Arguments.createMap();
-                    for (int i = dataColumnStartIndex; i < dataCols.size(); ++i) {
-                        putSQLiteField(cursor, dataMap, null, i);
-                    }
-                    tableData.putMap(key, dataMap);
+                WritableMap dataMap = Arguments.createMap();
+                for (int i = dataColumnStartIndex; i < dataCols.size(); ++i) {
+                    putSQLiteField(cursor, dataMap, null, i);
                 }
+                tableData.putMap(key, dataMap);
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -195,8 +192,7 @@ public class SaveFileHelperModule extends ReactContextBaseJavaModule {
             final String TABLES = "tables";
             WritableMap data = Arguments.createMap();
             FLog.d(TAG, "opening SQLite db...");
-            db = SQLiteDatabase.openDatabase(
-                    filepath, null, SQLiteDatabase.OPEN_READONLY);
+            db = SQLiteDatabase.openDatabase(filepath, null, SQLiteDatabase.OPEN_READONLY);
 
             if (config.hasKey(TABLES)) {
                 ReadableMap tables = config.getMap(TABLES);
@@ -216,11 +212,74 @@ public class SaveFileHelperModule extends ReactContextBaseJavaModule {
         } catch (Exception ex) {
             ex.printStackTrace();
             promise.reject(ex.getClass().getSimpleName(), ex.getMessage());
-        } finally{
-            if(db!=null){
+        } finally {
+            if (db != null) {
                 db.close();
             }
         }
     }
+
+
+    @ReactMethod
+    public void updateSQLiteData(String filepath, ReadableMap config, ReadableArray updatedData, Promise promise) {
+
+        final String TABLE_NAME = "tableName";
+        final String KEY_FIELD = "keyField";
+        final String ROW_ID = "rowId";
+        final String ROW = "row";
+        FLog.d(TAG, "updating SQLite data to %s...", filepath);
+        SQLiteDatabase db = null;
+        try {
+            FLog.d(TAG, "opening SQLite db...");
+            db = SQLiteDatabase.openDatabase(filepath, null, SQLiteDatabase.OPEN_READWRITE);
+
+
+            db.beginTransaction();
+            for (int i = 0; i < updatedData.size(); ++i) {
+                ReadableMap updated = updatedData.getMap(i);
+                String tableName = updated.getString(TABLE_NAME);
+                String keyField = updated.getString(KEY_FIELD);
+                String rowId = updated.getString(ROW_ID);
+                ReadableMap row = updated.getMap(ROW);
+
+                ContentValues values = new ContentValues();
+
+                for (ReadableMapKeySetIterator iter = row.keySetIterator(); iter.hasNextKey(); ) {
+                    String fieldName = iter.nextKey();
+                    switch (row.getType(fieldName)) {
+                        case Number:
+                            values.put(fieldName, row.getDouble(fieldName));
+                            break;
+                        case String:
+                            values.put(fieldName, row.getString(fieldName));
+                            break;
+                        case Boolean:
+                            values.put(fieldName, row.getBoolean(fieldName));
+                            break;
+                    }
+                }
+
+                db.update(tableName,
+                        values,
+                        String.format("%s = ?", keyField),
+                        new String[]{rowId});
+
+            }
+
+
+            db.setTransactionSuccessful();
+
+            promise.resolve(null);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            promise.reject(ex.getClass().getSimpleName(), ex.getMessage());
+        } finally {
+            if (db != null) {
+                db.endTransaction();
+                db.close();
+            }
+        }
+    }
+
 
 }

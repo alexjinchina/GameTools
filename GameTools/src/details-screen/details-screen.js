@@ -51,6 +51,15 @@ export default class DetailesScreen extends React.Component {
     ProgressInfo.endProgress(this, { game });
   }
 
+  async _applyChanges() {
+    ProgressInfo.startProgress(this, "applying changes...");
+    this.changedValues.forEach((value, key) => {
+      this.state.game.setValueByKey(key, value)
+    })
+    await this.state.game.save();
+    ProgressInfo.endProgress(this);
+  }
+
   _renderEmptyView(name) {
     console.log(`_renderEmptyView(${name})`);
     return (

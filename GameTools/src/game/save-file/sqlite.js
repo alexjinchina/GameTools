@@ -12,12 +12,26 @@ function saveFieldToDB(obj, key, fieldType) {
       break;
   }
 }
-function loadFieldFromDB(obj, key, fieldType) {
-  switch (fieldType) {
-    case "json":
-      obj[key] = JSON.parse(obj[key]);
-      break;
-  }
+function castRowFromDB(row, config) {
+  lodash.forEach(config, (fieldType, fieldName) => {
+    switch (fieldType) {
+      case "json":
+        row[fieldName] = JSON.parse(row[fieldName]);
+        break;
+    }
+  })
+}
+
+function castRowToDB(row, config) {
+  row = lodash.cloneDeep(row)
+  lodash.forEach(config, (fieldType, fieldName) => {
+    switch (fieldType) {
+      case "json":
+        row[fieldName] = JSON.stringify(row[fieldName]);
+        break;
+    }
+  })
+  return row
 }
 
 export default class SqliteSaveFile {
@@ -26,6 +40,9 @@ export default class SqliteSaveFile {
     this.name = name;
     this.config = config;
     this.params = lodash.defaults(params || {}, this.game.params);
+    this.data = null
+    this.dbPath = null
+    this.modified = new Set()
   }
 
   toString() {
@@ -42,26 +59,44 @@ export default class SqliteSaveFile {
   async load(params) {
     try {
       params = lodash.defaults(params, this.params);
-      const data = await this._loadData(params);
+      const tables = await this._loadData(params);
       params.info(`${this}: parsing data...`);
       lodash.forEach(this.config.tables, (config, tableName) => {
-        const tableData = data[tableName];
-        if (lodash.isPlainObject(config.fields)) {
-          const fields = lodash.toPairs(config.fields);
-          // const signleField = lodash.keys(config.fields).length === 1;
-          lodash.keys(tableData).forEach(key => {
-            if (fields.length === 1) {
-              const [, fieldType] = fields[0];
-              loadFieldFromDB(tableData, key, fieldType);
-            } else {
-              fields.forEach((fieldName, fieldType) => {
-                loadFieldFromDB(tableData[key], fieldName, fieldType);
-              });
-            }
-          });
-        }
+        console.debug(`parsing table ${tableName}...`)
+        if (!lodash.isPlainObject(config.fields)) return;
+        const table = tables[tableName];
+        if (!table) return
+        lodash.forEach(table, (row, rowId) => {
+          console.debug(`parsing table ${tableName} row ${rowId}...`)
+          castRowFromDB(row, config.fields)
+        })
+
+
       });
-      this.data = data;
+      this.tables = tables;
+      this.modified.clear()
+    } catch (error) {
+      params.error(error)
+    }
+  }
+
+  async save(params = {}) {
+    try {
+      const modifiedData = lodash.map(Array.from(this.modified), modified => {
+        const [tableName, rowId] = modified.split(",")
+        const table = this.tables[tableName]
+        const config = this.config.tables[tableName]
+        const row = castRowToDB(table[rowId], config.fields)
+        return {
+          tableName,
+          keyField: config.key,
+          rowId,
+          row
+        }
+      })
+
+      await this._saveData(modifiedData, params)
+      this.modified.clear()
     } catch (error) {
       params.error(error)
     }
@@ -74,7 +109,9 @@ export default class SqliteSaveFile {
     params.info(`${this}: request permission...`);
     await Permission.request(Permission.READ_EXTERNAL_STORAGE);
     try {
-      return await SaveFileHelper.loadSQLiteData(remoteDBPath, this.config);
+      const data = await SaveFileHelper.loadSQLiteData(remoteDBPath, this.config);
+      this.dbPath = remoteDBPath
+      return data;
     } catch (error) {
       switch (error.code) {
         case "SQLiteCantOpenDatabaseException":
@@ -89,14 +126,53 @@ export default class SqliteSaveFile {
     params.info(`${this}: copying remote db...`);
     await fs.copyFile(remoteDBPath, localDBPath);
     params.info(`${this}: loading data...`);
-    return await SaveFileHelper.loadSQLiteData(localDBPath, this.config);
+    const data = await SaveFileHelper.loadSQLiteData(localDBPath, this.config);
+    this.dbPath = localDBPath
+    return data
+  }
+
+  async _saveData(data, params) {
+    params.info(`${this}: saving sqlite db ...`);
+    const remoteDBPath = this.remoteDBPath;
+    const localDBPath = this.localDBPath;
+    params.info(`${this}: request permission...`);
+    await Permission.request(Permission.WRITE_EXTERNAL_STORAGE);
+    debugger
+    await SaveFileHelper.updateSQLiteData(this.dbPath, this.config, data);
+    if (this.dbPath === localDBPath) {
+      params.info(`${this}: copying to remote db...`);
+      await fs.copyFile(localDBPath, remoteDBPath);
+
+    }
   }
 
   getValueByPath(valuePath) {
     const parts = lodash.isString(valuePath) ? valuePath.split(".") : valuePath
     const tableName = parts.shift()
-    const table = this.data[tableName]
-    return lodash.get(table, parts.join("."))
+    const table = this.tables[tableName]
+    if (!table) return undefined
+
+    const rowId = parts.shift()
+    const row = table[rowId]
+    if (!row) return undefined
+
+    return lodash.get(row, parts.join("."))
 
   }
+
+  setValueByPath(valuePath, value) {
+    const parts = lodash.isString(valuePath) ? valuePath.split(".") : valuePath
+    const tableName = parts.shift()
+    const table = this.tables[tableName]
+    if (!table) throw new Error(`sqlite db table ${tableName} not found!`)
+    const rowId = parts.shift()
+    const row = table[rowId]
+    if (!row) throw new Error(`sqlite db table ${tableName} row ${rowId} not found!`)
+    lodash.set(row, parts.join("."), value)
+
+    this.modified.add([tableName, rowId].join(","))
+
+  }
+
+
 }

@@ -2950,16 +2950,16 @@
             }
         },
         "values": {
-            "camp_goal_stars": "md_db.storage._homeStats.8",
-            "camp_score": "md_db.storage.Level_Home.5",
-            "chalices": "md_db.storage._playerData.11",
-            "chalices_max": "md_db.storage._playerData.7",
-            "dragon_gems": "md_db.storage._playerData.10",
-            "dragon_gems_max": "md_db.storage._playerData.6",
-            "magic_coins": "md_db.storage._playerData.8",
-            "magic_coins_max": "md_db.storage._playerData.4",
-            "stone_bricks": "md_db.storage._playerData.9",
-            "stone_bricks_max": "md_db.storage._playerData.5"
+            "camp_goal_stars": "md_db.storage._homeStats.data.8",
+            "camp_score": "md_db.storage.Level_Home.data.5",
+            "chalices": "md_db.storage._playerData.data.11",
+            "chalices_max": "md_db.storage._playerData.data.7",
+            "dragon_gems": "md_db.storage._playerData.data.10",
+            "dragon_gems_max": "md_db.storage._playerData.data.6",
+            "magic_coins": "md_db.storage._playerData.data.8",
+            "magic_coins_max": "md_db.storage._playerData.data.4",
+            "stone_bricks": "md_db.storage._playerData.data.9",
+            "stone_bricks_max": "md_db.storage._playerData.data.5"
         }
     }
 }
