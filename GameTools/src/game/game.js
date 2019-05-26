@@ -97,6 +97,14 @@ export default class Game {
     }
   }
 
+  isLockByKey(key) {
+    return this.getValueByKey(key);
+  }
+
+  setLockByKey(key, lock) {
+    this.setValueByKey(key, lock);
+  }
+
   getValueByKey(key) {
     const { valuePath } = this.config.values[key];
     if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
