@@ -54,7 +54,7 @@ export default class DetailesScreen extends React.Component {
 	async _applyChanges() {
 		ProgressInfo.startProgress(this, "applying changes...");
 		this.changedValues.forEach((value, key) => {
-			this.state.game.setValueByKey(key, value);
+			this.state.game.setValue(key, value);
 		});
 		await this.state.game.save();
 		ProgressInfo.endProgress(this);
@@ -79,11 +79,11 @@ export default class DetailesScreen extends React.Component {
 						values: () => (
 							<ValuesTab
 								values={lodash.reduce(
-									game.config.values,
-									(values, config, key) => {
+									game.getValueKeys(),
+									(values, key) => {
 										values[key] = {
-											config,
-											value: game.getValueByKey(key)
+											config: game.getValueConfig(key),
+											value: game.getValue(key)
 										};
 										return values;
 									},

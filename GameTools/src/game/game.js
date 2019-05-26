@@ -104,13 +104,13 @@ export default class Game {
 	getValueConfig(key) {
 		return this.config.values[key];
 	}
-	getValueByKey(key) {
+	getValue(key) {
 		const { valuePath } = this.config.values[key];
 		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
 		return this.getValueByPath(valuePath);
 	}
 
-	setValueByKey(key, value) {
+	setValue(key, value) {
 		const { valuePath } = this.config.values[key];
 		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
 		this.setValueByPath(valuePath, key, value);
@@ -141,11 +141,11 @@ export default class Game {
 		return this.config.locks[key];
 	}
 
-	isLockByKey(key) {
-		return this.getValueByKey(key);
+	isLock(key) {
+		return this.getValue(key);
 	}
 
-	setLockByKey(key, lock) {
-		this.setValueByKey(key, lock);
+	setLock(key, lock) {
+		this.setValue(key, lock);
 	}
 }
