@@ -6,7 +6,7 @@ import { View, Text, ScrollView } from "react-native";
 import styles from "../styles";
 import { lodash } from "../utils";
 
-import ValueItem from "./value-item"
+import ValueItem from "./value-item";
 
 export default class ValuesTab extends React.Component {
   constructor(props) {
@@ -15,45 +15,27 @@ export default class ValuesTab extends React.Component {
   }
 
   render() {
-    const { game } = this.props;
-    if (!game) {
+    const { values, onValueChanged } = this.props;
+    if (!values) {
       return (
         <View style={[styles.tabSceneView]}>
-          <Text>game is null</Text>
+          <Text>NO VALUES!</Text>
         </View>
       );
     }
     return (
-      <ScrollView style={styles.tabSceneView}>
+      <ScrollView style={styles.tabSceneVieww}>
         {lodash
-          .keys(game.config.values)
+          .keys(values)
           .sort()
           .map(key => {
-            // const valueConfig = game.config.values[key];
-
+            const value = values[key];
             return (
               <ValueItem
                 key={`value-item-${key}`}
                 valueKey={key}
-                game={game}
-                valueKey={key}
-                onValueChanged={
-                  ({ valueKey, oldValue, newValue }) => {
-                    const changedValues = this.props.changedValues;
-                    if (!changedValues) return
-                    if (oldValue === newValue) {
-                      changedValues.delete(valueKey)
-                    } else {
-                      changedValues.set(valueKey, newValue)
-                    }
-                    if (this.props.onValueChanged) {
-                      this.props.onValueChanged({
-                        changedValues,
-                        valueKey
-                      })
-                    }
-                  }
-                }
+                valueEntry={value}
+                onValueChanged={onValueChanged}
               />
             );
           })}
@@ -62,6 +44,4 @@ export default class ValuesTab extends React.Component {
   }
 }
 
-ValuesTab.propTypes = {
-  game: PropTypes.object
-};
+ValuesTab.propTypes = {};

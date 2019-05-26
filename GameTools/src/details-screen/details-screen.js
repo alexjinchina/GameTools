@@ -2,7 +2,7 @@ import React from "react";
 import { Dimensions, View, Text } from "react-native";
 
 import { TabView, SceneMap } from "react-native-tab-view";
-import { Button, } from "react-native-elements";
+import { Button } from "react-native-elements";
 
 import { lodash } from "../utils";
 
@@ -26,7 +26,7 @@ export default class DetailesScreen extends React.Component {
       ],
       ...ProgressInfo.stateTemplate
     };
-    this.changedValues = new Map()
+    this.changedValues = new Map();
   }
 
   componentDidMount() {
@@ -54,8 +54,8 @@ export default class DetailesScreen extends React.Component {
   async _applyChanges() {
     ProgressInfo.startProgress(this, "applying changes...");
     this.changedValues.forEach((value, key) => {
-      this.state.game.setValueByKey(key, value)
-    })
+      this.state.game.setValueByKey(key, value);
+    });
     await this.state.game.save();
     ProgressInfo.endProgress(this);
   }
@@ -69,24 +69,36 @@ export default class DetailesScreen extends React.Component {
     );
   }
   render() {
-    // const { navigation } = this.props;
-    // const { game, config } = navigation.state.params;
-    // if (game !== this.state.game || config !== this.state.config) {
-    //   // this.setState({});
-    // }
-
-    console.log("render");
-
     if (ProgressInfo.isInProgress(this)) return ProgressInfo.render(this);
+    const { game } = this.state;
     return (
       <View style={styles.screen}>
         <TabView
           navigationState={this.state}
           renderScene={SceneMap({
-            values: () => <ValuesTab
-              game={this.state.game}
-              changedValues={this.changedValues}
-              onValueChanged={() => this._checkModified()} />,
+            values: () => (
+              <ValuesTab
+                values={lodash.reduce(
+                  game.config.values,
+                  (values, config, key) => {
+                    values[key] = {
+                      config,
+                      value: game.getValueByKey(key)
+                    };
+                    return values;
+                  },
+                  {}
+                )}
+                onValueChanged={({ key, newValue, oldValue }) => {
+                  if (lodash.isUndefined(newValue) || oldValue === newValue) {
+                    this.changedValues.delete(key);
+                  } else {
+                    this.changedValues.set(key, newValue);
+                  }
+                  this._checkModified();
+                }}
+              />
+            ),
             locks: () => this._renderEmptyView("locks"),
             items: () => this._renderEmptyView("items")
           })}
@@ -103,7 +115,7 @@ export default class DetailesScreen extends React.Component {
   }
 
   _checkModified() {
-    this.refs.applyButton.setState({ changed: this.changedValues.size > 0 })
+    this.refs.applyButton.setState({ changed: this.changedValues.size > 0 });
   }
 }
 
