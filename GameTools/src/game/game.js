@@ -1,8 +1,6 @@
 import { fs, path, lodash, getPackageExternalDirectoryPath } from "../utils";
 import { createSaveFile } from "./save-file";
 
-
-
 export default class Game {
   constructor(name, config, params = {}) {
     this.name = name;
@@ -20,7 +18,7 @@ export default class Game {
     });
 
     this.saveFiles = {};
-    this.modified = new Set()
+    this.modified = new Set();
 
     this.packageName = config.package_name;
     this.externalDirectoryPath = getPackageExternalDirectoryPath(
@@ -75,7 +73,7 @@ export default class Game {
       );
 
       await saveFile.load(params);
-      this.saveFiles[saveFileName] = saveFile
+      this.saveFiles[saveFileName] = saveFile;
       // switch (saveFileConfig.type) {
 
       // }
@@ -87,49 +85,44 @@ export default class Game {
     try {
       params.info(`saving ${this.name}...`);
       for (const modifiedSaveFile of this.modified) {
-        const f = this.saveFiles[modifiedSaveFile]
-        await f.save(params)
+        const f = this.saveFiles[modifiedSaveFile];
+        await f.save(params);
       }
-      this.modified.clear()
+      this.modified.clear();
 
       params.info(`${this.name} saved.`);
     } catch (error) {
       debugger;
       params.error(error);
     }
-
   }
 
   getValueByKey(key) {
     const { valuePath } = this.config.values[key];
     if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
-    return this.getValueByPath(valuePath)
+    return this.getValueByPath(valuePath);
   }
 
   setValueByKey(key, value) {
     const { valuePath } = this.config.values[key];
     if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
-    this.setValueByPath(valuePath, key, value)
-
+    this.setValueByPath(valuePath, key, value);
   }
 
   getValueByPath(valuePath) {
     const parts = valuePath.split(".");
     const saveFileName = parts.shift();
-    const saveFile = this.saveFiles[saveFileName]
-    if (!saveFile) return undefined
-    return saveFile.getValueByPath(parts)
-
+    const saveFile = this.saveFiles[saveFileName];
+    if (!saveFile) return undefined;
+    return saveFile.getValueByPath(parts);
   }
 
-  setValueByPath(valuePath, value) {
+  setValueByPath(valuePath, key, value) {
     const parts = valuePath.split(".");
     const saveFileName = parts.shift();
-    const saveFile = this.saveFiles[saveFileName]
-    if (!saveFile) throw new Error(`save file ${saveFileName} not found`)
-    saveFile.setValueByPath(parts, value)
-    this.modified.add(saveFileName)
+    const saveFile = this.saveFiles[saveFileName];
+    if (!saveFile) throw new Error(`save file ${saveFileName} not found`);
+    saveFile.setValueByPath(parts, key, value);
+    this.modified.add(saveFileName);
   }
-
-
 }
