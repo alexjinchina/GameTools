@@ -141,11 +141,11 @@ export default class Game {
 		return this.config.locks[key];
 	}
 
-	isLock(key) {
+	isLocked(key) {
 		return this.getValue(key);
 	}
 
-	setLock(key, lock) {
+	unlock(key, lock) {
 		this.setValue(key, lock);
 	}
 }

@@ -62,12 +62,12 @@ export default class SQLiteSaveFile {
 			const tables = await this._loadData(params);
 			params.info(`${this}: parsing data...`);
 			lodash.forEach(this.config.tables, (config, tableName) => {
-				console.debug(`parsing table ${tableName}...`);
+				// console.debug(`parsing table ${tableName}...`);
 				if (!lodash.isPlainObject(config.fields)) return;
 				const table = tables[tableName];
 				if (!table) return;
 				lodash.forEach(table, (row, rowId) => {
-					console.debug(`parsing table ${tableName} row ${rowId}...`);
+					// console.debug(`parsing table ${tableName} row ${rowId}...`);
 					castRowFromDB(row, config.fields);
 				});
 			});
@@ -168,7 +168,10 @@ export default class SQLiteSaveFile {
 		if (!row)
 			throw new Error(`sqlite db table ${tableName} row ${rowId} not found!`);
 		lodash.set(row, parts.join("."), value);
+		this.setModified(tableName, rowId);
+	}
 
+	setModified(tableName, rowId) {
 		this.modified.add([tableName, rowId].join(","));
 	}
 }

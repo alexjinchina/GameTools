@@ -27,6 +27,7 @@ export default class DetailesScreen extends React.Component {
 			...ProgressInfo.stateTemplate
 		};
 		this.changedValues = new Map();
+		this.changedLockes = new Map();
 	}
 
 	componentDidMount() {
@@ -51,15 +52,6 @@ export default class DetailesScreen extends React.Component {
 		ProgressInfo.endProgress(this, { game });
 	}
 
-	async _applyChanges() {
-		ProgressInfo.startProgress(this, "applying changes...");
-		this.changedValues.forEach((value, key) => {
-			this.state.game.setValue(key, value);
-		});
-		await this.state.game.save();
-		ProgressInfo.endProgress(this);
-	}
-
 	_renderEmptyView(name) {
 		console.log(`_renderEmptyView(${name})`);
 		return (
@@ -76,6 +68,8 @@ export default class DetailesScreen extends React.Component {
 				<TabView
 					navigationState={this.state}
 					renderScene={SceneMap({
+						// values: () => this._renderEmptyView("values"),
+
 						values: () => (
 							<ValuesTab
 								values={lodash.reduce(
@@ -89,17 +83,41 @@ export default class DetailesScreen extends React.Component {
 									},
 									{}
 								)}
-								onValueChanged={({ key, newValue, oldValue }) => {
-									if (lodash.isUndefined(newValue) || oldValue === newValue) {
-										this.changedValues.delete(key);
-									} else {
-										this.changedValues.set(key, newValue);
-									}
-									this._checkModified();
-								}}
+								onValueChanged={({ key, newValue, oldValue }) =>
+									this._onValueChanged(
+										this.changedValues,
+										key,
+										newValue,
+										oldValue
+									)
+								}
 							/>
 						),
-						locks: () => this._renderEmptyView("locks"),
+						// locks: () => this._renderEmptyView("locks"),
+
+						locks: () => (
+							<ValuesTab
+								values={lodash.reduce(
+									game.getLockKeys(),
+									(values, key) => {
+										values[key] = {
+											config: game.getLockConfig(key),
+											value: game.isLocked(key)
+										};
+										return values;
+									},
+									{}
+								)}
+								onValueChanged={({ key, newValue, oldValue }) =>
+									this._onValueChanged(
+										this.changedLockes,
+										key,
+										newValue,
+										oldValue
+									)
+								}
+							/>
+						),
 						items: () => this._renderEmptyView("items")
 					})}
 					onIndexChange={index => this.setState({ index })}
@@ -113,9 +131,30 @@ export default class DetailesScreen extends React.Component {
 			</View>
 		);
 	}
-
+	_onValueChanged(values, key, newValue, oldValue) {
+		if (lodash.isUndefined(newValue) || oldValue === newValue) {
+			values.delete(key);
+		} else {
+			values.set(key, newValue);
+		}
+		this._checkModified();
+	}
 	_checkModified() {
-		this.refs.applyButton.setState({ changed: this.changedValues.size > 0 });
+		this.refs.applyButton.setState({
+			changed: this.changedValues.size > 0 || this.changedLockes.size > 0
+		});
+	}
+
+	async _applyChanges() {
+		ProgressInfo.startProgress(this, "applying changes...");
+		this.changedValues.forEach((value, key) => {
+			this.state.game.setValue(key, value);
+		});
+		this.changedLockes.forEach((lock, key) => {
+			if (!lock) this.state.game.unlock(key);
+		});
+		await this.state.game.save();
+		ProgressInfo.endProgress(this);
 	}
 }
 
