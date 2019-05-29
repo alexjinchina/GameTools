@@ -5,7 +5,7 @@ module.exports = {
 		node: true,
 		"react-native/react-native": true
 	},
-	extends: "eslint:recommended",
+	extends: ["eslint:recommended", "plugin:prettier/recommended"],
 	globals: {
 		Atomics: "readonly",
 		SharedArrayBuffer: "readonly"
@@ -17,7 +17,7 @@ module.exports = {
 		ecmaVersion: 2018,
 		sourceType: "module"
 	},
-	plugins: ["react", "react-native"],
+	plugins: ["react", "react-native", "prettier"],
 	rules: {
 		"no-debugger": "warn",
 		"no-console": "warn",

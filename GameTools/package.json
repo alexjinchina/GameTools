@@ -31,10 +31,12 @@
     "acorn": "^6.1.1",
     "babel-jest": "^24.7.1",
     "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-native": "^3.7.0",
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.53.1",
+    "prettier": "^1.17.1",
     "react-test-renderer": "16.8.3",
     "rnpm": "^1.9.0"
   },
