@@ -2,6 +2,8 @@ import { NativeModules } from "react-native";
 
 import { lodash, Permission, path, fs } from "../../utils";
 
+import SaveFile from "./save-file";
+
 const SaveFileHelper = NativeModules.SaveFileHelper;
 SaveFileHelper.setLoggingLevel(__DEV__ ? "debug" : "info");
 
@@ -34,78 +36,58 @@ function castRowToDB(row, config) {
 	return row;
 }
 
-export default class SQLiteSaveFile {
+export default class SQLiteSaveFile extends SaveFile {
 	constructor(game, name, config, params = {}) {
-		this.game = game;
-		this.name = name;
-		this.config = config;
-		this.params = lodash.defaults(params || {}, this.game.params);
+		super(game, name, config, params);
 		this.data = null;
-		this.dbPath = null;
 		this.modified = new Set();
 	}
 
-	toString() {
-		return `<${this.constructor.name}: ${this.name}>`;
-	}
+	async _load(params) {
+		const tables = await this._tryLoad(
+			async filePath =>
+				await SaveFileHelper.loadSQLiteData(filePath, this.config),
+			error => error.code === "SQLiteCantOpenDatabaseException",
+			params
+		);
 
-	get remoteDBPath() {
-		return this.game.parseFilePath(this.config.file);
-	}
-	get localDBPath() {
-		return path.join(this.game.tempSaveFilePath, this.name);
-	}
-
-	async load(params) {
-		try {
-			params = lodash.defaults(params, this.params);
-			const tables = await this._loadData(params);
-			params.info(`${this}: parsing data...`);
-			lodash.forEach(this.config.tables, (config, tableName) => {
-				// console.debug(`parsing table ${tableName}...`);
-				if (!lodash.isPlainObject(config.fields)) return;
-				const table = tables[tableName];
-				if (!table) return;
-				lodash.forEach(table, (row, rowId) => {
-					// console.debug(`parsing table ${tableName} row ${rowId}...`);
-					castRowFromDB(row, config.fields);
-				});
+		params.info(`${this}: parsing data...`);
+		lodash.forEach(this.config.tables, (config, tableName) => {
+			// console.debug(`parsing table ${tableName}...`);
+			if (!lodash.isPlainObject(config.fields)) return;
+			const table = tables[tableName];
+			if (!table) return;
+			lodash.forEach(table, (row, rowId) => {
+				// console.debug(`parsing table ${tableName} row ${rowId}...`);
+				castRowFromDB(row, config.fields);
 			});
-			this.tables = tables;
-			this.modified.clear();
-		} catch (error) {
-			params.error(error);
-		}
+		});
+		this.tables = tables;
+		this.modified.clear();
 	}
 
-	async save(params = {}) {
-		try {
-			const modifiedData = lodash.map(Array.from(this.modified), modified => {
-				const [tableName, rowId] = modified.split(",");
-				const table = this.tables[tableName];
-				const config = this.config.tables[tableName];
-				const row = castRowToDB(table[rowId], config.fields);
-				return {
-					tableName,
-					keyField: config.key,
-					rowId,
-					row
-				};
-			});
+	async _save(params) {
+		const modifiedData = lodash.map(Array.from(this.modified), modified => {
+			const [tableName, rowId] = modified.split(",");
+			const table = this.tables[tableName];
+			const config = this.config.tables[tableName];
+			const row = castRowToDB(table[rowId], config.fields);
+			return {
+				tableName,
+				keyField: config.key,
+				rowId,
+				row
+			};
+		});
 
-			await this._saveData(modifiedData, params);
-			this.modified.clear();
-		} catch (error) {
-			params.error(error);
-		}
+		await this._saveData(modifiedData, params);
+		this.modified.clear();
 	}
 
 	async _loadData(params) {
 		params.info(`${this}: loading sqlite db ...`);
-		const remoteDBPath = this.remoteDBPath;
-		const localDBPath = this.localDBPath;
-		params.info(`${this}: request permission...`);
-		await Permission.request(Permission.READ_EXTERNAL_STORAGE);
+		const remoteDBPath = this.remoteFilePath;
+		const localDBPath = this.localFilePath;
 		try {
 			const data = await SaveFileHelper.loadSQLiteData(
 				remoteDBPath,
