@@ -12,8 +12,8 @@ export default class Game {
 				if (this.infoCallback) this.infoCallback(msg);
 			},
 			error(error) {
-				console.error(error.message || error.toString());
-				if (this.errorCallback) this.infoCallback(error);
+				console.warn(error.message || error.toString());
+				if (this.errorCallback) this.errorCallback(error);
 			}
 		});
 

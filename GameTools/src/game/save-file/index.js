@@ -12,7 +12,8 @@ function detectType(filename) {
 }
 
 const SAVE_FILE_CLASSES = {
-	sqlite: SQLiteSaveFile
+	sqlite: SQLiteSaveFile,
+	xml: XMLSaveFile
 };
 
 export function createSaveFile(game, name, config, params = {}) {

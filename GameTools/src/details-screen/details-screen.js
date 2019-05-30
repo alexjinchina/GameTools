@@ -32,14 +32,14 @@ export default class DetailesScreen extends React.Component {
 
 	componentDidMount() {
 		// console.log("DetailesScreen.componentDidMount")
-		this.loadGameData(this.props.navigation.state.params);
+		this.loadGame(this.props.navigation.state.params);
 	}
 	// componentDidUpdate() {
 	//   console.log("DetailesScreen.componentDidUpdate")
-	//   this.loadGameData(this.props.navigation.state.params)
+	//   this.loadGame(this.props.navigation.state.params)
 	// }
 
-	async loadGameData({ name, config }) {
+	async loadGame({ name, config }) {
 		// if (game === this.state.game && config === this.state.config)
 		//   return
 		const game = createGame(name, config, {
@@ -47,7 +47,12 @@ export default class DetailesScreen extends React.Component {
 		});
 		ProgressInfo.startProgress(this, "loading game data...");
 
-		await game.load();
+		try {
+			await game.load();
+		} catch (error) {
+			console.warn(error.message || error);
+			game = null;
+		}
 
 		ProgressInfo.endProgress(this, { game });
 	}
@@ -61,7 +66,8 @@ export default class DetailesScreen extends React.Component {
 		);
 	}
 	render() {
-		if (ProgressInfo.isInProgress(this)) return ProgressInfo.render(this);
+		const progress = ProgressInfo.render(this);
+		if (progress) return progress;
 		const { game } = this.state;
 		return (
 			<View style={styles.screen}>

@@ -30,6 +30,11 @@ export default class SaveFile {
 			params.error(error);
 		}
 	}
+	async _load(params) {
+		throw new Error(
+			`class \`${this.constructor.name}\` not implement method \`_load\`!`
+		);
+	}
 
 	async _tryLoad(loadFunc, ignoredErrors, params) {
 		const remoteFilePath = this.remoteFilePath;
@@ -65,5 +70,39 @@ export default class SaveFile {
 		} catch (error) {
 			params.error(error);
 		}
+	}
+
+	async _save(params) {
+		throw new Error(
+			`class \`${this.constructor.name}\` not implement method \`_save\`!`
+		);
+	}
+
+	async _trySave(saveFunc, params) {
+		const remoteFilePath = this.remoteFilePath;
+		const localFilePath = this.localFilePath;
+		const r = await saveFunc(this._loadedFilePath);
+		if (this._loadedFilePath === localFilePath) {
+			params.info(`${this}: copying to remote file...`);
+			await fs.copyFile(localFilePath, remoteFilePath);
+		}
+
+		return r;
+	}
+
+	getValueByPath(valuePath) {
+		throw new Error(
+			`class \`${
+				this.constructor.name
+			}\` not implement method \`getValueByPath\`!`
+		);
+	}
+
+	setValueByPath(valuePath) {
+		throw new Error(
+			`class \`${
+				this.constructor.name
+			}\` not implement method \`setValueByPath\`!`
+		);
 	}
 }

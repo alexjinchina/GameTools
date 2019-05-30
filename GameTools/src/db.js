@@ -1,7 +1,7 @@
 /**
  *
  */
-import SQLite from "react-native-sqlite-storage";
+// import SQLite from "react-native-sqlite-storage";
 import { fs, path, lodash, Permission, castValueType } from "./utils";
 
 SQLite.DEBUG(true);

@@ -7,22 +7,17 @@
     "test": "jest"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "jsdom": "^15.1.1",
     "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-native": "^0.59.6",
+    "react-native-cheerio": "^1.0.0-rc.4",
     "react-native-device-info": "^1.7.0",
-    "react-native-dialog-input": "^1.0.7",
     "react-native-elements": "^1.1.0",
     "react-native-fs": "^2.13.3",
     "react-native-gesture-handler": "^1.1.0",
-    "react-native-numeric-input": "^1.6.5",
     "react-native-path": "0.0.5",
-    "react-native-popup-dialog": "^0.18.2",
     "react-native-reanimated": "^1.0.1",
     "react-native-scrollable-tab-view": "^0.10.0",
-    "react-native-sqlite-storage": "^3.3.10",
     "react-native-tab-view": "^2.2.0",
     "react-native-vector-icons": "^6.4.2",
     "react-navigation": "^3.9.1"
