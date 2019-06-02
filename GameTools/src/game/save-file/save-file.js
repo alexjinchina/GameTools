@@ -1,3 +1,6 @@
+import { NativeModules } from "react-native";
+const { GameHelper } = NativeModules;
+const { rootExec } = GameHelper;
 import { lodash, Permission, path, fs } from "../../utils";
 
 export default class SaveFile {
@@ -39,6 +42,7 @@ export default class SaveFile {
 	async _tryLoad(loadFunc, ignoredErrors, params) {
 		const remoteFilePath = this.remoteFilePath;
 		const localFilePath = this.localFilePath;
+
 		try {
 			params.info(`${this}: loading from ${remoteFilePath}...`);
 			const r = await loadFunc(remoteFilePath);
@@ -46,14 +50,30 @@ export default class SaveFile {
 			return r;
 		} catch (error) {
 			console.debug(error.message);
-			if (!ignoredErrors || !ignoredErrors(error)) {
-				throw error;
+			if (error.code !== "ENOENT") {
+				if (!ignoredErrors || !ignoredErrors(error)) {
+					throw error;
+				}
 			}
 		}
 		params.info(`${this}: making local dir...`);
 		await fs.mkdir(path.dirname(localFilePath));
-		params.info(`${this}: copying remote db...`);
-		await fs.copyFile(remoteFilePath, localFilePath);
+		params.info(`${this}: copying remote file...`);
+		try {
+			try {
+				await fs.copyFile(remoteFilePath, localFilePath);
+			} catch (error) {
+				if (error.code !== "ENOENT") throw error;
+				const r = await rootExec(`cp "${remoteFilePath}" "${localFilePath}"`);
+				debugger
+				if (r.exitValue !== 0) {
+					throw new Error(`root copy failed(${r})!`);
+				}
+			}
+		} catch (error) {
+			console.debug(error.message);
+			debugger;
+		}
 		params.info(`${this}: loading from ${localFilePath}...`);
 
 		const r = await loadFunc(localFilePath);

@@ -3,7 +3,7 @@ import cheerio from "react-native-cheerio";
 import SaveFile from "./save-file";
 import { fs } from "../../utils";
 
-export default class SQLiteSaveFile extends SaveFile {
+export default class XMLSaveFile extends SaveFile {
 	constructor(game, name, config, params = {}) {
 		super(game, name, config, params);
 		this.dom = null;

@@ -26,15 +26,9 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new RNDeviceInfo(),
-            new VectorIconsPackage(),
-            new ReanimatedPackage(),
-            new RNGestureHandlerPackage(),
-            new RNFSPackage(),
-            new SaveFileHelperPackage()
-      );
+      return Arrays.<ReactPackage>asList(new MainReactPackage(), new RNDeviceInfo(), new VectorIconsPackage(),
+          new ReanimatedPackage(), new RNGestureHandlerPackage(), new RNFSPackage(), new SaveFileHelperPackage(),
+          new GameHelperPackage());
     }
 
     @Override
