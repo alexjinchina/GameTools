@@ -10,20 +10,15 @@ export default class XMLSaveFile extends SaveFile {
 	}
 
 	async _load(params) {
-		this.dom = await this._tryLoad(
-			async filePath => await cheerio.load(await fs.readFile(filePath)),
-			null,
-			params
-		);
-
+		const filePath = await this._prepareLoadFile(params);
+		this.dom = await cheerio.load(await fs.readFile(filePath));
 		return;
 	}
 
 	async _save(params) {
-		await this._trySave(
-			async filePath => await fs.writeFile(filePath, this.dom.html()),
-			params
-		);
+		const filePath = await this._prepareSaveFile(params);
+		await fs.writeFile(filePath, this.dom.html());
+		await this._commitSaveFile(params);
 	}
 
 	getValueByPath(valuePath) {

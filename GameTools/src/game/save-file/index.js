@@ -1,6 +1,6 @@
 import {} from "../../utils";
 
-import SQLiteSaveFile from "./sqlite";
+import SQLiteSaveFile from "./sqlite-save-file";
 import XMLSaveFile from "./xml-save-file";
 
 function detectType(filename) {

@@ -37,12 +37,10 @@ export default class SQLiteSaveFile extends SaveFile {
 	}
 
 	async _load(params) {
-		const tables = await this._tryLoad(
-			async filePath =>
-				await SaveFileHelper.loadSQLiteData(filePath, this.config),
-			error => error.code === "SQLiteCantOpenDatabaseException",
-			params
-		);
+		const filePath = await this._prepareLoadFile(params);
+
+		params.info(`${this}: loading data...`);
+		const tables = await SaveFileHelper.loadSQLiteData(filePath, this.config);
 
 		params.info(`${this}: parsing data...`);
 		lodash.forEach(this.config.tables, (config, tableName) => {
@@ -73,15 +71,9 @@ export default class SQLiteSaveFile extends SaveFile {
 			};
 		});
 
-		await this._trySave(
-			async filePath =>
-				await SaveFileHelper.updateSQLiteData(
-					filePath,
-					this.config,
-					modifiedData
-				),
-			params
-		);
+		const filePath = await this._prepareSaveFile(params);
+		await SaveFileHelper.updateSQLiteData(filePath, this.config, modifiedData);
+		await this._commitSaveFile(params);
 		this.modified.clear();
 	}
 

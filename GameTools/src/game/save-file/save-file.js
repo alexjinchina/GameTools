@@ -39,46 +39,49 @@ export default class SaveFile {
 		);
 	}
 
-	async _tryLoad(loadFunc, ignoredErrors, params) {
+	async _prepareLoadFile(params) {
 		const remoteFilePath = this.remoteFilePath;
 		const localFilePath = this.localFilePath;
 
+		this._loadedFilePath = null;
 		try {
-			params.info(`${this}: loading from ${remoteFilePath}...`);
-			const r = await loadFunc(remoteFilePath);
+			params.info(`${this}: checking remote file...`);
+			await fs.read(remoteFilePath, 1, 0);
 			this._loadedFilePath = remoteFilePath;
-			return r;
 		} catch (error) {
-			console.debug(error.message);
 			if (error.code !== "ENOENT") {
-				if (!ignoredErrors || !ignoredErrors(error)) {
+				debugger;
+				throw error;
+			}
+			params.info(`${this}: cannot read remote file`);
+			console.debug(error.message);
+		}
+
+		if (!this._loadedFilePath) {
+			params.info(`${this}: making local dir...`);
+			await fs.mkdir(path.dirname(localFilePath));
+
+			try {
+				params.info(`${this}: root-copying remote file...`);
+				const r = await rootExec(`cp "${remoteFilePath}" "${localFilePath}"`);
+				debugger;
+				if (r.exitValue !== 0) {
+					throw new Error(
+						`root copy failed(${r.exitValue})!\n${r.stderr}\n${r.stdout}`
+					);
+				}
+
+				this._loadedFilePath = localFilePath;
+			} catch (error) {
+				if (error.code !== "ENOENT") {
+					debugger;
 					throw error;
 				}
+				console.debug(error.message);
 			}
 		}
-		params.info(`${this}: making local dir...`);
-		await fs.mkdir(path.dirname(localFilePath));
-		params.info(`${this}: copying remote file...`);
-		try {
-			try {
-				await fs.copyFile(remoteFilePath, localFilePath);
-			} catch (error) {
-				if (error.code !== "ENOENT") throw error;
-				const r = await rootExec(`cp "${remoteFilePath}" "${localFilePath}"`);
-				debugger
-				if (r.exitValue !== 0) {
-					throw new Error(`root copy failed(${r})!`);
-				}
-			}
-		} catch (error) {
-			console.debug(error.message);
-			debugger;
-		}
-		params.info(`${this}: loading from ${localFilePath}...`);
 
-		const r = await loadFunc(localFilePath);
-		this._loadedFilePath = localFilePath;
-		return r;
+		return this._loadedFilePath;
 	}
 
 	async save(params = {}) {
@@ -98,16 +101,22 @@ export default class SaveFile {
 		);
 	}
 
-	async _trySave(saveFunc, params) {
+	async _prepareSaveFile(params) {
+		return this._loadedFilePath;
+	}
+
+	async _commitSaveFile(params) {
 		const remoteFilePath = this.remoteFilePath;
 		const localFilePath = this.localFilePath;
-		const r = await saveFunc(this._loadedFilePath);
 		if (this._loadedFilePath === localFilePath) {
-			params.info(`${this}: copying to remote file...`);
-			await fs.copyFile(localFilePath, remoteFilePath);
+			params.info(`${this}: root-copying to remote file...`);
+			const r = await rootExec(`cp "${localFilePath}" "${remoteFilePath}"`);
+			if (r.exitValue !== 0) {
+				throw new Error(`root copy failed(${r})!`);
+			}
 		}
 
-		return r;
+		params.info(`${this}: save file commited`);
 	}
 
 	getValueByPath(valuePath) {
