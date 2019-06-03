@@ -1,7 +1,23 @@
-import { NativeModules } from "react-native";
+import { NativeModules, Alert } from "react-native";
 const { GameHelper } = NativeModules;
 const { rootExec } = GameHelper;
 import { lodash, Permission, path, fs } from "../../utils";
+
+async function isRooted() {
+	try {
+		const r = await rootExec("echo ROOTED");
+		console.debug(r);
+		return true;
+	} catch (error) {
+		console.debug(error);
+		if (error.code === "IOException") {
+			console.info(error.message);
+			return false;
+		}
+		debugger;
+		throw error;
+	}
+}
 
 export default class SaveFile {
 	constructor(game, name, config, params = {}) {
@@ -9,7 +25,7 @@ export default class SaveFile {
 		this.name = name;
 		this.config = config;
 		this.params = lodash.defaults(params || {}, this.game.params);
-		this._loadedFilePath = null;
+		this._loadInfo = null;
 	}
 
 	toString() {
@@ -21,6 +37,10 @@ export default class SaveFile {
 	}
 	get localFilePath() {
 		return path.join(this.game.tempSaveFilePath, this.name);
+	}
+
+	get devFilePath() {
+		return __DEV__ ? `${this.localFilePath}.dev_` : null;
 	}
 
 	async load(params = {}) {
@@ -43,45 +63,66 @@ export default class SaveFile {
 		const remoteFilePath = this.remoteFilePath;
 		const localFilePath = this.localFilePath;
 
-		this._loadedFilePath = null;
+		this._loadInfo = null;
 		try {
 			params.info(`${this}: checking remote file...`);
-			await fs.read(remoteFilePath, 1, 0);
-			this._loadedFilePath = remoteFilePath;
+			const stat = await fs.stat(remoteFilePath);
+			// await fs.read(remoteFilePath, 1, 0);
+			this._loadInfo = { filePath: remoteFilePath };
+			return this._loadInfo.filePath;
 		} catch (error) {
-			if (error.code !== "ENOENT") {
+			if (error.code !== "ENOENT" && error.code !== "EUNSPECIFIED") {
 				debugger;
 				throw error;
 			}
-			params.info(`${this}: cannot read remote file`);
-			console.debug(error.message);
+			params.info(`${this}: ${error.message}`);
 		}
-
-		if (!this._loadedFilePath) {
-			params.info(`${this}: making local dir...`);
-			await fs.mkdir(path.dirname(localFilePath));
-
-			try {
-				params.info(`${this}: root-copying remote file...`);
-				const r = await rootExec(`cp "${remoteFilePath}" "${localFilePath}"`);
-				debugger;
-				if (r.exitValue !== 0) {
-					throw new Error(
-						`root copy failed(${r.exitValue})!\n${r.stderr}\n${r.stdout}`
-					);
-				}
-
-				this._loadedFilePath = localFilePath;
-			} catch (error) {
-				if (error.code !== "ENOENT") {
-					debugger;
-					throw error;
-				}
-				console.debug(error.message);
+		if (!(await isRooted())) {
+			console.debug("not rooted!");
+			if (__DEV__) {
+				const devFilePath = this.devFilePath;
+				Alert.alert("DEV", "not rooted! use dev file?", [
+					{
+						text: "YES",
+						onPress: () =>
+							(this._loadInfo = {
+								filePath: devFilePath,
+								needCopyToRemote: true
+							})
+					},
+					{ text: "NO" }
+				]);
+				if (this._loadInfo && this._loadInfo.filePath)
+					return this._loadInfo.filePath;
 			}
+			throw new Error(`file not exists(system not rooted)!`);
 		}
 
-		return this._loadedFilePath;
+		console.debug("rooted");
+		const r = await rootExec(`ls "${remoteFilePath}"`);
+		if (r.exitValue !== 0) {
+			throw new Error(
+				`file not exists(${r.exitValue})!\n${r.stderr}\n${r.stdout}!`
+			);
+		}
+
+		params.info(`${this}: making local dir...`);
+		await fs.mkdir(path.dirname(localFilePath));
+
+		params.info(`${this}: root-copying remote file...`);
+		const copyResult = await rootExec(
+			`cp "${remoteFilePath}" "${localFilePath}"`
+		);
+		if (copyResult.exitValue !== 0) {
+			throw new Error(
+				`root copy failed(${copyResult.exitValue})!\n${copyResult.stderr}\n${
+					copyResult.stdout
+				}`
+			);
+		}
+
+		this._loadInfo = { filePath: localFilePath, needCopyToRemote: true };
+		return this._loadInfo.filePath;
 	}
 
 	async save(params = {}) {
@@ -102,17 +143,22 @@ export default class SaveFile {
 	}
 
 	async _prepareSaveFile(params) {
-		return this._loadedFilePath;
+		if (!this._loadInfo) throw new Error(`not loaded!`);
+		return this._loadInfo.filePath;
 	}
 
 	async _commitSaveFile(params) {
+		if (!this._loadInfo) throw new Error(`not loaded!`);
 		const remoteFilePath = this.remoteFilePath;
-		const localFilePath = this.localFilePath;
-		if (this._loadedFilePath === localFilePath) {
+		if (this._loadInfo.needCopyToRemote) {
 			params.info(`${this}: root-copying to remote file...`);
-			const r = await rootExec(`cp "${localFilePath}" "${remoteFilePath}"`);
+			const r = await rootExec(
+				`cp "${this._loadInfo.filePath}" "${remoteFilePath}"`
+			);
 			if (r.exitValue !== 0) {
-				throw new Error(`root copy failed(${r})!`);
+				throw new Error(
+					`root copy failed(${r.exitValue})!\n${r.stderr}\n${r.stdout}`
+				);
 			}
 		}
 

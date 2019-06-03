@@ -23,6 +23,6 @@ export default class XMLSaveFile extends SaveFile {
 
 	getValueByPath(valuePath) {
 		console.debug(valuePath);
-		debugger;
+		// debugger;
 	}
 }
