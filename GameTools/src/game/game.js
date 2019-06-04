@@ -105,15 +105,35 @@ export default class Game {
 		return this.config.values[key];
 	}
 	getValue(key) {
-		const { valuePath } = this.config.values[key];
+		const { valuePath } = this.getValueConfig(key);
 		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
 		return this.getValueByPath(valuePath);
 	}
 
 	setValue(key, value) {
-		const { valuePath } = this.config.values[key];
+		const { valuePath } = this.getValueConfig(key);
 		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
 		this.setValueByPath(valuePath, key, value);
+	}
+
+	getLockKeys() {
+		return lodash.keys(this.config.locks);
+	}
+
+	getLockConfig(key) {
+		return this.config.locks[key];
+	}
+
+	isLocked(key) {
+		const { valuePath } = this.getLockConfig(key);
+		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
+		return this.getValueByPath(valuePath);
+	}
+
+	unlock(key, lock) {
+		const { valuePath } = this.getLockConfig(key);
+		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
+		this.setValueByPath(valuePath, key, lock);
 	}
 
 	getValueByPath(valuePath) {
@@ -131,21 +151,5 @@ export default class Game {
 		if (!saveFile) throw new Error(`save file ${saveFileName} not found`);
 		saveFile.setValueByPath(parts, key, value);
 		this.modified.add(saveFileName);
-	}
-
-	getLockKeys() {
-		return lodash.keys(this.config.locks);
-	}
-
-	getLockConfig(key) {
-		return this.config.locks[key];
-	}
-
-	isLocked(key) {
-		return this.getValue(key);
-	}
-
-	unlock(key, lock) {
-		this.setValue(key, lock);
 	}
 }

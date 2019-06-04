@@ -80,20 +80,12 @@ export default class SaveFile {
 		if (!(await isRooted())) {
 			console.debug("not rooted!");
 			if (__DEV__) {
-				const devFilePath = this.devFilePath;
-				Alert.alert("DEV", "not rooted! use dev file?", [
-					{
-						text: "YES",
-						onPress: () =>
-							(this._loadInfo = {
-								filePath: devFilePath,
-								needCopyToRemote: true
-							})
-					},
-					{ text: "NO" }
-				]);
-				if (this._loadInfo && this._loadInfo.filePath)
-					return this._loadInfo.filePath;
+				console.warn(`dev mode: use dev file instead`);
+				this._loadInfo = {
+					filePath: this.devFilePath,
+					needCopyToRemote: true
+				};
+				return this._loadInfo.filePath;
 			}
 			throw new Error(`file not exists(system not rooted)!`);
 		}
