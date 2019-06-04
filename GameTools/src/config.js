@@ -15,10 +15,13 @@ export async function loadGamesConfig() {
 		gamesConfig = defaultConfig;
 	}
 
-	lodash.forEach(gamesConfig, gameConfig => {
-		lodash.forEach([gameConfig.values, gameConfig.locks], configs =>
+	lodash.forEach(gamesConfig, ({ defaultValueConfig = {}, values, locks }) => {
+		lodash.forEach([values, locks], configs =>
 			lodash.forEach(configs, (config, key) => {
-				if (lodash.isString(config)) configs[key] = { valuePath: config };
+				configs[key] = {
+					...defaultValueConfig,
+					...(lodash.isString(config) ? { valuePath: config } : {})
+				};
 			})
 		);
 	});

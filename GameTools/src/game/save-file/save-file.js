@@ -157,19 +157,19 @@ export default class SaveFile {
 		params.info(`${this}: save file commited`);
 	}
 
-	getValueByPath(valuePath) {
+	getValueByConfig() {
 		throw new Error(
 			`class \`${
 				this.constructor.name
-			}\` not implement method \`getValueByPath\`!`
+			}\` not implement method \`getValueByConfig\`!`
 		);
 	}
 
-	setValueByPath(valuePath) {
+	setValueByConfig() {
 		throw new Error(
 			`class \`${
 				this.constructor.name
-			}\` not implement method \`setValueByPath\`!`
+			}\` not implement method \`setValueByConfig\`!`
 		);
 	}
 }

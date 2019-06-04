@@ -12,20 +12,6 @@ export default class MergeDragonsGame extends Game {
 		super(name, config, params);
 	}
 
-	// async load(params = {}) {
-	// 	const r = await super.load(params);
-	// 	this.lockedAreas.clear();
-	// 	lodash.forEach(this.getLandsLockFlags(), ys => {
-	// 		lodash.forEach(ys, area => {
-	// 			if (area !== LOCK_FLAG_NONE) {
-	// 				this.lockedAreas.add(area);
-	// 			}
-	// 		});
-	// 	});
-
-	// 	return r;
-	// }
-
 	get md_db() {
 		return this.saveFiles[MD_DB];
 	}

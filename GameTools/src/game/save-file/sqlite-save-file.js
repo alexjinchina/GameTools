@@ -77,7 +77,7 @@ export default class SQLiteSaveFile extends SaveFile {
 		this.modified.clear();
 	}
 
-	getValueByPath(valuePath) {
+	getValueByConfig(key, valuePath, params = {}) {
 		const parts = lodash.isString(valuePath) ? valuePath.split(".") : valuePath;
 		const tableName = parts.shift();
 		const table = this.tables[tableName];
@@ -90,7 +90,7 @@ export default class SQLiteSaveFile extends SaveFile {
 		return lodash.get(row, parts.join("."));
 	}
 
-	setValueByPath(valuePath, key, value) {
+	setValueByConfig(key, valuePath, value, params = {}) {
 		const parts = lodash.isString(valuePath) ? valuePath.split(".") : valuePath;
 		const tableName = parts.shift();
 		const table = this.tables[tableName];

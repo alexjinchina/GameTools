@@ -5,6 +5,7 @@ export default class Game {
 	constructor(name, config, params = {}) {
 		this.name = name;
 		this.config = config;
+		this.saveFileClasses = {};
 
 		this.params = lodash.defaults(params || {}, {
 			info(msg) {
@@ -105,15 +106,11 @@ export default class Game {
 		return this.config.values[key];
 	}
 	getValue(key) {
-		const { valuePath } = this.getValueConfig(key);
-		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
-		return this.getValueByPath(valuePath);
+		return this.getValueByConfig(key, this.getValueConfig(key));
 	}
 
 	setValue(key, value) {
-		const { valuePath } = this.getValueConfig(key);
-		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
-		this.setValueByPath(valuePath, key, value);
+		this.setValueByConfig(key, this.getValueConfig(key), value);
 	}
 
 	getLockKeys() {
@@ -125,31 +122,31 @@ export default class Game {
 	}
 
 	isLocked(key) {
-		const { valuePath } = this.getLockConfig(key);
-		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
-		return this.getValueByPath(valuePath);
+		return this.getValueByConfig(key, this.getLockConfig(key));
 	}
 
 	unlock(key, lock) {
-		const { valuePath } = this.getLockConfig(key);
-		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
-		this.setValueByPath(valuePath, key, lock);
+		this.setValueByConfig(key, this.getLockConfig(key), lock);
 	}
 
-	getValueByPath(valuePath) {
+	getValueByConfig(key, config) {
+		const { valuePath } = config;
+		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
 		const parts = valuePath.split(".");
 		const saveFileName = parts.shift();
 		const saveFile = this.saveFiles[saveFileName];
 		if (!saveFile) return undefined;
-		return saveFile.getValueByPath(parts);
+		return saveFile.getValueByConfig(key, parts, config);
 	}
 
-	setValueByPath(valuePath, key, value) {
+	setValueByConfig(key, config, value) {
+		const { valuePath } = config;
+		if (!valuePath) throw new Error(`valuePath of '${key}' not defined.`);
 		const parts = valuePath.split(".");
 		const saveFileName = parts.shift();
 		const saveFile = this.saveFiles[saveFileName];
 		if (!saveFile) throw new Error(`save file ${saveFileName} not found`);
-		saveFile.setValueByPath(parts, key, value);
+		saveFile.setValueByConfig(key, parts, value, config);
 		this.modified.add(saveFileName);
 	}
 }

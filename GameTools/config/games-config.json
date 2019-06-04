@@ -1,5 +1,6 @@
 {
   "best_fiends": {
+    "defaultValueConfig": {},
     "locks": {
       "FiendGreen1": "playerprefs.class_FiendGreen1",
       "FiendGreen2": "playerprefs.class_FiendGreen2",
@@ -11,10 +12,11 @@
     "package_name": "com.Seriously.BestFiends",
     "save_files": {
       "playerprefs": {
-        "class": "playerprefs",
+        "class": "PlayerPrefsSaveFile",
         "file": "/data/user/0/com.Seriously.BestFiends/shared_prefs/com.Seriously.BestFiends.v2.playerprefs.xml"
       }
     },
+
     "values": {
       "energyCapRewards": "playerprefs.energyCapRewards",
       "fusionResource0": "playerprefs.fusionResource0",

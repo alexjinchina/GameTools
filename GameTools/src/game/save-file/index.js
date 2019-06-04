@@ -17,8 +17,10 @@ const SAVE_FILE_CLASSES = {
 };
 
 export function createSaveFile(game, name, config, params = {}) {
-	const { type, file } = config;
-	const cls = SAVE_FILE_CLASSES[type || detectType(file)];
+	const { type, file, class: className } = config;
+	const cls =
+		game.saveFileClasses[className] ||
+		SAVE_FILE_CLASSES[type || detectType(file)];
 	if (!cls) throw new Error(`unknown file type of ${file}`);
 	const saveFile = new cls(game, name, config, params || {});
 
