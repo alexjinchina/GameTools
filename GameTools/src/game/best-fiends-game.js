@@ -12,9 +12,22 @@ class PlayerPrefsSaveFile extends XMLSaveFile {
 	}
 
 	setValueByConfig(key, valuePath, value, params = {}) {
-		valuePath = `[name="${valuePath[0]}"]`;
+		const name = valuePath[0];
+		valuePath = `[name="${name}"]`;
 		const node = this.selectNode(key, valuePath, params);
-		node.attr("value", value);
+		if (!node) {
+			let type = "string";
+			switch (typeof value) {
+				case "number":
+					type = "int";
+					break;
+			}
+			this.dom(`<${type} name="${name}" value="${value}"/>`).appendTo(
+				this.dom(":root")
+			);
+		} else {
+			node.attr("value", value);
+		}
 	}
 }
 

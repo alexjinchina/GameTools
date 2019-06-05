@@ -1,14 +1,9 @@
-import { PermissionsAndroid } from "react-native";
-
-import RNFS from "react-native-fs";
-import lodash from "lodash";
-
+import fs from "react-native-fs";
 import RNPath from "react-native-path";
 
-import { name as APP_NAME, displayName as APP_DISPLAY_NAME } from "../app.json";
-export { APP_NAME, APP_DISPLAY_NAME, lodash };
+import { displayName as APP_DISPLAY_NAME } from "../../app.json";
 
-export const fs = RNFS;
+export { fs };
 
 export const path = {
 	...RNPath,
@@ -16,7 +11,6 @@ export const path = {
 		let out = base;
 		paths.forEach(p => {
 			if (!out.endsWith("/")) out += "/";
-
 			out += p;
 		});
 
@@ -24,6 +18,7 @@ export const path = {
 	}
 };
 
+import { PermissionsAndroid } from "react-native";
 export const Permission = {
 	READ_EXTERNAL_STORAGE: PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
 	WRITE_EXTERNAL_STORAGE: PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
@@ -38,28 +33,3 @@ export const Permission = {
 		return granted;
 	}
 };
-
-export function castValueType(value, type, refValue) {
-	if (!type) {
-		switch (typeof refValue) {
-			case "number":
-				type = lodash.isInteger(refValue) ? "int" : "number";
-				break;
-			default:
-				break;
-		}
-	}
-	switch (type) {
-		case "int":
-			return parseInt(value);
-		default:
-			return value;
-	}
-}
-
-const bundleId = "xyz.alexjinchina.gametools";
-
-export function getPackageExternalDirectoryPath(packageName) {
-	const p = fs.ExternalDirectoryPath;
-	return p.replace(bundleId, packageName);
-}

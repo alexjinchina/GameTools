@@ -22,6 +22,7 @@ export default class XMLSaveFile extends SaveFile {
 	constructor(game, name, config, params = {}) {
 		super(game, name, config, params);
 		this.dom = null;
+		this.modified = false;
 	}
 
 	async _load(params) {
@@ -31,6 +32,7 @@ export default class XMLSaveFile extends SaveFile {
 				normalizeWhitespace: true
 			}
 		});
+		this.modified = false;
 		return;
 	}
 
@@ -38,6 +40,7 @@ export default class XMLSaveFile extends SaveFile {
 		const filePath = await this._prepareSaveFile(params);
 		await fs.writeFile(filePath, this.dom.html());
 		await this._commitSaveFile(params);
+		this.modified = false;
 	}
 
 	_selectNode(selector) {
@@ -64,6 +67,9 @@ export default class XMLSaveFile extends SaveFile {
 
 	setValueByConfig(key, valuePath, value, params = {}) {
 		const node = this.selectNode(key, valuePath, params);
-		if (node) node.text(value);
+		if (node) {
+			node.text(value);
+			this.modified = true;
+		}
 	}
 }

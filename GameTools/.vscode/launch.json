@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "cli",
+            "program": "${workspaceFolder}/cli/index.js",
+            "args": ["--help"]
+        },
+        {
             "name": "Debug Android",
             "program": "${workspaceRoot}/.vscode/launchReactNative.js",
             "type": "reactnative",

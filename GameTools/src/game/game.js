@@ -48,7 +48,7 @@ export default class Game {
 	get tempSaveFilePath() {
 		return path.join(
 			fs.ExternalDirectoryPath,
-			"game-safe-files",
+			"game-save-files",
 			this.packageName
 		);
 	}

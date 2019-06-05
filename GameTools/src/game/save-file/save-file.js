@@ -79,14 +79,6 @@ export default class SaveFile {
 		}
 		if (!(await isRooted())) {
 			console.debug("not rooted!");
-			if (__DEV__) {
-				console.warn(`dev mode: use dev file instead`);
-				this._loadInfo = {
-					filePath: this.devFilePath,
-					needCopyToRemote: true
-				};
-				return this._loadInfo.filePath;
-			}
 			throw new Error(`file not exists(system not rooted)!`);
 		}
 
@@ -143,14 +135,19 @@ export default class SaveFile {
 		if (!this._loadInfo) throw new Error(`not loaded!`);
 		const remoteFilePath = this.remoteFilePath;
 		if (this._loadInfo.needCopyToRemote) {
-			params.info(`${this}: root-copying to remote file...`);
-			const r = await rootExec(
-				`cp "${this._loadInfo.filePath}" "${remoteFilePath}"`
-			);
-			if (r.exitValue !== 0) {
-				throw new Error(
-					`root copy failed(${r.exitValue})!\n${r.stderr}\n${r.stdout}`
+			if (!(await isRooted())) {
+				console.debug("not rooted!");
+				throw new Error(`file not exists(system not rooted)!`);
+			} else {
+				params.info(`${this}: root-copying to remote file...`);
+				const r = await rootExec(
+					`cp "${this._loadInfo.filePath}" "${remoteFilePath}"`
 				);
+				if (r.exitValue !== 0) {
+					throw new Error(
+						`root copy failed(${r.exitValue})!\n${r.stderr}\n${r.stdout}`
+					);
+				}
 			}
 		}
 
