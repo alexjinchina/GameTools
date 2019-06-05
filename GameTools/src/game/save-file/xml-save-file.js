@@ -1,7 +1,22 @@
 import cheerio from "react-native-cheerio";
 
 import SaveFile from "./save-file";
-import { fs } from "../../utils";
+import { fs, lodash } from "../../utils";
+
+export class NodeNotFoundError extends Error {
+	constructor(selector) {
+		super(`node \`${selector}\` not found!`);
+		this.selector = selector;
+	}
+}
+
+export class MultiNodesFoundError extends Error {
+	constructor(selector, nodes) {
+		super(`node \`${selector}\` get ${nodes.length} nodes!`);
+		this.selector = selector;
+		this.nodes = nodes;
+	}
+}
 
 export default class XMLSaveFile extends SaveFile {
 	constructor(game, name, config, params = {}) {
@@ -25,20 +40,30 @@ export default class XMLSaveFile extends SaveFile {
 		await this._commitSaveFile(params);
 	}
 
+	_selectNode(selector) {
+		return this.dom(":root").find(selector);
+	}
+
 	selectNode(key, valuePath, params) {
-		const selector = valuePath.join(".");
+		const selector = lodash.isArray(valuePath)
+			? valuePath.join(".")
+			: valuePath;
 		const nodes = this._selectNode(selector);
-		if (nodes.length === 0) throw new Error(`node \`${selector}\` not found! `);
-		if (nodes.length > 1)
-			throw new Error(`node \`${selector}\` get ${nodes.length} nodes! `);
-		return nodes[0];
+		if (nodes.length === 0) {
+			return null;
+			// throw new NodeNotFoundError(selector);
+		}
+		if (nodes.length > 1) throw new MultiNodesFoundError(selector, nodes);
+		return this.dom(nodes[0]);
 	}
 
 	getValueByConfig(key, valuePath, params = {}) {
-		return this.selectNode(key, valuePath, params).text();
+		const node = this.selectNode(key, valuePath, params);
+		return node ? node.text() : undefined;
 	}
 
 	setValueByConfig(key, valuePath, value, params = {}) {
-		this.selectNode(key, valuePath, params).text(value);
+		const node = this.selectNode(key, valuePath, params);
+		if (node) node.text(value);
 	}
 }
