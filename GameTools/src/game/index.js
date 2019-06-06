@@ -7,6 +7,6 @@ const GAME_CLASSES = {
 	best_fiends: BestFiendsGame
 };
 
-export default function createGame(name, config, params) {
+export default function createGame(name, config, params = {}) {
 	return new (GAME_CLASSES[name] || Game)(name, config, params);
 }

@@ -1,21 +1,29 @@
 import lodash from "lodash";
+
 import {
-	name as APP_NAME,
-	displayName as APP_DISPLAY_NAME
-} from "../../app.json";
-
-import { fs, path, Permission } from "./common-modules";
-
-export function isCLI() {
-	return process.env.GAME_TOOLS_CLI === 1;
-}
-export const IS_CLI = isCLI();
+	fs,
+	path,
+	GameToolsAppPaths,
+	Permission,
+	SaveFileHelper,
+	GameHelper,
+	DEV_MODE
+} from "./common-modules";
 
 export { lodash };
-export { APP_NAME, APP_DISPLAY_NAME };
-export { fs, path, Permission };
+export const GameToolsAppInfo = {
+	...require("../../app.json")
+};
 
-export const BUNDLE_ID = "xyz.alexjinchina.gametools";
+export {
+	fs,
+	path,
+	GameToolsAppPaths,
+	Permission,
+	SaveFileHelper,
+	GameHelper,
+	DEV_MODE
+};
 
 export function castValueType(value, type, refValue) {
 	if (!type) {
@@ -33,9 +41,4 @@ export function castValueType(value, type, refValue) {
 		default:
 			return value;
 	}
-}
-
-export function getPackageExternalDirectoryPath(packageName) {
-	const p = fs.ExternalDirectoryPath;
-	return p.replace(BUNDLE_ID, packageName);
 }

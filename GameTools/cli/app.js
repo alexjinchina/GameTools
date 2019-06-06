@@ -1,9 +1,13 @@
 import yargs from "yargs";
-process.env.GAME_TOOLS_CLI = true;
-import { lodash } from "../src/utils";
+import { lodash, GameToolsAppPaths } from "../src/utils";
 import { loadGamesConfig } from "../src/config";
 
+import getCommands from "./commands";
+import adb from "./adb";
+
 async function main(config) {
+	getCommands(config).forEach(command => yargs.command(command));
+
 	yargs
 		.options({
 			game: {
@@ -12,20 +16,7 @@ async function main(config) {
 				default: lodash.keys(config)[0]
 			}
 		})
-		// .command("$0", "", () => {}, argv => {})
-		.command(
-			"copy",
-			"copy files to local dir",
-			yargs =>
-				yargs
-					.options({
-						a: { default: "123" }
-					})
-					.help(),
-			argv => {
-				console.log(argv);
-			}
-		)
+
 		.version()
 		.help()
 		.parse();

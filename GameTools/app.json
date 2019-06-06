@@ -1,4 +1,5 @@
 {
   "name": "GameTools",
-  "displayName": "GameTools"
+  "displayName": "GameTools",
+  "bundleId": "xyz.alexjinchina.gametools"
 }

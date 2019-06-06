@@ -1,7 +1,5 @@
-import { NativeModules, Alert } from "react-native";
-const { GameHelper } = NativeModules;
+import { lodash, Permission, path, fs, GameHelper } from "../../utils";
 const { rootExec } = GameHelper;
-import { lodash, Permission, path, fs } from "../../utils";
 
 async function isRooted() {
 	try {
@@ -36,7 +34,7 @@ export default class SaveFile {
 		return this.game.parseFilePath(this.config.file);
 	}
 	get localFilePath() {
-		return path.join(this.game.tempSaveFilePath, this.name);
+		return path.join(this.game.localSaveFileDir, this.name);
 	}
 
 	get devFilePath() {

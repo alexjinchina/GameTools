@@ -1,4 +1,10 @@
-import { fs, path, lodash, getPackageExternalDirectoryPath } from "../utils";
+import {
+	fs,
+	path,
+	lodash,
+	GameToolsAppPaths,
+	GameToolsAppInfo
+} from "../utils";
 import { createSaveFile } from "./save-file";
 
 export default class Game {
@@ -22,8 +28,26 @@ export default class Game {
 		this.modified = new Set();
 
 		this.packageName = config.package_name;
-		this.externalDirectoryPath = getPackageExternalDirectoryPath(
-			this.packageName
+
+		this.appPaths = lodash.reduce(
+			GameToolsAppPaths,
+			(appPaths, path, name) => {
+				appPaths[name] = path.replace(
+					GameToolsAppInfo.bundleId,
+					this.packageName
+				);
+			},
+			{}
+		);
+
+		lodash.reduce(
+			this.config.save_files,
+			(saveFiles, config, name) => {
+				const saveFile = createSaveFile(this, name, config, params);
+				saveFiles[name] = saveFile;
+				return saveFiles;
+			},
+			{}
 		);
 	}
 
@@ -31,23 +55,23 @@ export default class Game {
 		return this.config.package_name;
 	}
 
-	get externalDirectoryPath() {
-		return getPackageExternalDirectoryPath(this.packageName);
+	resolveSaveFilePath(filePath) {
+		if (this.params.resolveSaveFilePath)
+			return this.params.resolveSaveFilePath(filePath, this);
+
+		return lodash.reduce(
+			this.appPaths,
+			(filePath, path, name) => {
+				return filePath.replace(`\${${name}}`, path);
+			},
+			filePath
+		);
 	}
 
-	parseFilePath(filePath) {
-		if (filePath.startsWith("${ExternalDirectoryPath}"))
-			return filePath.replace(
-				"${ExternalDirectoryPath}",
-				this.externalDirectoryPath
-			);
-
-		return filePath;
-	}
-
-	get tempSaveFilePath() {
+	get localSaveFileDir() {
+		if (this.params.localSaveFileDir) return this.params.localSaveFileDir;
 		return path.join(
-			fs.ExternalDirectoryPath,
+			GameToolsAppPaths.ExternalDirectoryPath,
 			"game-save-files",
 			this.packageName
 		);
@@ -62,22 +86,9 @@ export default class Game {
 		params.info(`loading ${this.name}...`);
 
 		this.saveFiles = {};
-		for (const [saveFileName, saveFileConfig] of lodash.toPairs(
-			this.config.save_files
-		)) {
-			params.info(`loading save file ${saveFileName}...`);
-			const saveFile = createSaveFile(
-				this,
-				saveFileName,
-				saveFileConfig,
-				params
-			);
-
-			await saveFile.load(params);
-			this.saveFiles[saveFileName] = saveFile;
-			// switch (saveFileConfig.type) {
-
-			// }
+		for (const name in this.saveFiles) {
+			params.info(`loading save file ${name}...`);
+			await this.saveFiles[name].load(params);
 		}
 	}
 

@@ -1,11 +1,8 @@
-import { NativeModules } from "react-native";
-
-import { lodash, Permission, path, fs } from "../../utils";
+import { SaveFileHelper, lodash, DEV_MODE } from "../../utils";
 
 import SaveFile from "./save-file";
 
-const SaveFileHelper = NativeModules.SaveFileHelper;
-SaveFileHelper.setLoggingLevel(__DEV__ ? "debug" : "info");
+SaveFileHelper.setLoggingLevel(DEV_MODE ? "debug" : "info");
 
 function castRowFromDB(row, config) {
 	lodash.forEach(config, (fieldType, fieldName) => {
