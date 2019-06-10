@@ -1,10 +1,4 @@
-import {
-	fs,
-	path,
-	lodash,
-	GameToolsAppPaths,
-	GameToolsAppInfo
-} from "../utils";
+import { fs, path, lodash, getGameToolsDirs, resolveFilePath } from "../utils";
 import { createSaveFile } from "./save-file";
 
 export default class Game {
@@ -29,18 +23,18 @@ export default class Game {
 
 		this.packageName = config.package_name;
 
-		this.appPaths = lodash.reduce(
-			GameToolsAppPaths,
-			(appPaths, path, name) => {
-				appPaths[name] = path.replace(
-					GameToolsAppInfo.bundleId,
-					this.packageName
-				);
-			},
-			{}
-		);
+		// this.appPaths = lodash.reduce(
+		// 	GameToolsAppPaths,
+		// 	(appPaths, path, name) => {
+		// 		appPaths[name] = path.replace(
+		// 			GameToolsAppInfo.bundleId,
+		// 			this.packageName
+		// 		);
+		// 	},
+		// 	{}
+		// );
 
-		lodash.reduce(
+		this.saveFiles = lodash.reduce(
 			this.config.save_files,
 			(saveFiles, config, name) => {
 				const saveFile = createSaveFile(this, name, config, params);
@@ -55,23 +49,16 @@ export default class Game {
 		return this.config.package_name;
 	}
 
-	resolveSaveFilePath(filePath) {
-		if (this.params.resolveSaveFilePath)
-			return this.params.resolveSaveFilePath(filePath, this);
-
-		return lodash.reduce(
-			this.appPaths,
-			(filePath, path, name) => {
-				return filePath.replace(`\${${name}}`, path);
-			},
-			filePath
-		);
+	resolveFilePath(filePath) {
+		if (this.params.resolveFilePath)
+			return this.params.resolveFilePath(filePath, this);
+		return resolveFilePath(this.packageName, filePath);
 	}
 
 	get localSaveFileDir() {
 		if (this.params.localSaveFileDir) return this.params.localSaveFileDir;
 		return path.join(
-			GameToolsAppPaths.ExternalDirectoryPath,
+			getGameToolsDirs().ExternalFilesDir,
 			"game-save-files",
 			this.packageName
 		);

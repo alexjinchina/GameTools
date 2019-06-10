@@ -31,7 +31,7 @@ export default class SaveFile {
 	}
 
 	get remoteFilePath() {
-		return this.game.parseFilePath(this.config.file);
+		return this.game.resolveFilePath(this.config.file);
 	}
 	get localFilePath() {
 		return path.join(this.game.localSaveFileDir, this.name);
