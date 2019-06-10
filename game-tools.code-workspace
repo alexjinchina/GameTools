@@ -16,7 +16,7 @@
       "**/.settings": true,
       "**/.factorypath": true,
       "**/.pyenv": true,
-      "GameTools/": true
+      "**/*.pyc": true
     },
     "java.configuration.updateBuildConfiguration": "interactive"
   }
