@@ -9,7 +9,7 @@
   "dependencies": {
     "lodash": "^4.17.11",
     "react": "16.8.3",
-    "react-native": "^0.59.6",
+    "react-native": "^0.59.9",
     "react-native-cheerio": "^1.0.0-rc.4",
     "react-native-device-info": "^1.7.0",
     "react-native-elements": "^1.1.0",
