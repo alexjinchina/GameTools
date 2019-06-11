@@ -72,7 +72,6 @@ export default class Game {
 
 		params.info(`loading ${this.name}...`);
 
-		this.saveFiles = {};
 		for (const name in this.saveFiles) {
 			params.info(`loading save file ${name}...`);
 			await this.saveFiles[name].load(params);

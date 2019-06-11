@@ -78,7 +78,7 @@ export class ADB {
 		try {
 			const out = this.shell(["ls", "-l", filePath]).trim();
 
-			("-rw-rw---- 1 u0_a86 u0_a86 54843 2019-05-30 19:12 /data/data/com.Seriously.BestFiends/shared_prefs/com.Seriously.BestFiends.v2.playerprefs.xml");
+			//-rw-rw---- 1 u0_a86 u0_a86 54843 2019-05-30 19:12 /data/data/com.Seriously.BestFiends/shared_prefs/com.Seriously.BestFiends.v2.playerprefs.xml
 			const m = out.match(
 				/^[-rw]+ \d+ [\w\d_]+ [\w\d_]+ \d+ (\d+-\d+-\d+ \d+:\d+) .*$/
 			);

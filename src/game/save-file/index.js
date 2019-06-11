@@ -2,6 +2,7 @@ import {} from "../../utils";
 
 import SQLiteSaveFile from "./sqlite-save-file";
 import XMLSaveFile from "./xml-save-file";
+import SharedPrefsSaveFile from "./shared-prefs-save-file";
 
 function detectType(filename) {
 	if (!filename) return undefined;
@@ -13,7 +14,8 @@ function detectType(filename) {
 
 const SAVE_FILE_CLASSES = {
 	sqlite: SQLiteSaveFile,
-	xml: XMLSaveFile
+	xml: XMLSaveFile,
+	sharedPrefs: SharedPrefsSaveFile
 };
 
 export function createSaveFile(game, name, config, params = {}) {

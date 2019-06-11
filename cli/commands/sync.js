@@ -25,6 +25,11 @@ function sync(argv, game) {
 
 		let { mtime: remoteMTime = null } = adb.stat(remoteFilePath) || {};
 		let { mtime: localMTime = null } = adb.stat(localFilePath) || {};
+		if (remoteFilePath !== null && localMTime === null) {
+			adb.shell(["mkdir", "-p", path.dirname(localFilePath)]);
+			adb.shell(["cp", remoteFilePath, localFilePath]);
+			localMTime = remoteFilePath;
+		}
 		setInterval(() => {
 			let { mtime: newRemoteMTime = null } = adb.stat(remoteFilePath) || {};
 			if (

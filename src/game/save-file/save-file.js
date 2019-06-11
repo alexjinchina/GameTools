@@ -37,10 +37,6 @@ export default class SaveFile {
 		return path.join(this.game.localSaveFileDir, this.name);
 	}
 
-	get devFilePath() {
-		return __DEV__ ? `${this.localFilePath}.dev_` : null;
-	}
-
 	async load(params = {}) {
 		try {
 			params = lodash.defaults(params, this.params);
@@ -77,7 +73,12 @@ export default class SaveFile {
 		}
 		if (!(await isRooted())) {
 			console.debug("not rooted!");
-			throw new Error(`file not exists(system not rooted)!`);
+
+			if (__DEV__) {
+				this._loadInfo = { filePath: localFilePath, needCopyToRemote: false };
+				return this._loadInfo.filePath;
+			}
+			throw new Error(`file not exists(or system not rooted)!`);
 		}
 
 		console.debug("rooted");
