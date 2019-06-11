@@ -42,7 +42,7 @@ export default class DetailesScreen extends React.Component {
 	async loadGame({ name, config }) {
 		// if (game === this.state.game && config === this.state.config)
 		//   return
-		const game = createGame(name, config, {
+		let game = createGame(name, config, {
 			...ProgressInfo.makeCallbacks(this)
 		});
 		ProgressInfo.startProgress(this, "loading game data...");

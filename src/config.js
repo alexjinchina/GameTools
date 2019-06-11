@@ -6,14 +6,14 @@ const config = {
 		"https://raw.githubusercontent.com/alexjinchina/game-tools/master/"
 };
 
-let gamesConfig;
+let gamesConfig = undefined;
 
 export default config;
 
 export async function loadGamesConfig() {
-	if (!gamesConfig) {
-		gamesConfig = defaultConfig;
-	}
+	if (gamesConfig) return gamesConfig;
+
+	gamesConfig = defaultConfig;
 
 	lodash.forEach(gamesConfig, ({ defaultValueConfig = {}, values, locks }) => {
 		lodash.forEach([values, locks], configs =>
