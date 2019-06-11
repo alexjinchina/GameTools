@@ -10,7 +10,8 @@ export const ADB_OPTIONS = {
 	"adb-device": { type: "string" },
 	"adb-usb": { type: "boolean", default: false },
 	"adb-tcp": { type: "boolean", default: false },
-	"adb-encoding": { type: "string", default: "utf8" }
+	"adb-encoding": { type: "string", default: "utf8" },
+	"adb-debug": { type: "boolean", default: false }
 };
 
 export function initYargs(yargs) {
@@ -59,7 +60,8 @@ export class ADB {
 		if (lodash.isString(args)) args = [args];
 		cmdArgs.push(...(args || []));
 
-		console.debug("adb exec: " + [this.adb, ...cmdArgs].join(" "));
+		if (this.debug)
+			console.debug("adb exec: " + [this.adb, ...cmdArgs].join(" "));
 
 		try {
 			const output = child_process.execFileSync(this.adb, cmdArgs, {

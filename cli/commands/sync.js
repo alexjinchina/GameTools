@@ -25,6 +25,8 @@ function sync(argv, game) {
 
 		let { mtime: remoteMTime = null } = adb.stat(remoteFilePath) || {};
 		let { mtime: localMTime = null } = adb.stat(localFilePath) || {};
+		console.debug(`remote file time: ${remoteMTime}`);
+		console.debug(`local file time: ${localMTime}`);
 		if (remoteFilePath !== null && localMTime === null) {
 			adb.shell(["mkdir", "-p", path.dirname(localFilePath)]);
 			adb.shell(["cp", remoteFilePath, localFilePath]);
@@ -36,6 +38,7 @@ function sync(argv, game) {
 				newRemoteMTime !== null &&
 				newRemoteMTime.valueOf() !== remoteMTime.valueOf()
 			) {
+				console.debug("copying to local...");
 				adb.shell(["mkdir", "-p", path.dirname(localFilePath)]);
 				adb.shell(["cp", remoteFilePath, localFilePath]);
 				remoteMTime = newRemoteMTime;
@@ -46,6 +49,7 @@ function sync(argv, game) {
 				newLocalMTime !== null &&
 				newLocalMTime.valueOf() !== localMTime.valueOf()
 			) {
+				console.debug("copying to remote...");
 				adb.shell(["mkdir", "-p", path.dirname(remoteFilePath)]);
 				adb.shell(["cp", localFilePath, remoteFilePath]);
 				remoteMTime = newLocalMTime;
