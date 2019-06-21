@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "cli",
       "program": "${workspaceFolder}/cli/index.js",
-      "args": ["--game", "best_fiends", "sync-save-files"]
+      "args": ["--game", "*", "sync-save-files"]
     },
     {
       "name": "Debug Android",
@@ -19,6 +19,13 @@
       "platform": "android",
       "sourceMaps": true,
       "outDir": "${workspaceRoot}/.vscode/.react"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "fix-ref-data",
+      "program": "${workspaceFolder}/cli/index.js",
+      "args": ["fix-ref-data"]
     }
   ]
 }

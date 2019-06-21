@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<map>
+    <int name="__UNITY_PLAYERPREFS_VERSION__" value="1"/>
+    <string name="androidSeriouslyId"> 112acf0dd8994b388fa25af40a51b576 </string>
+    <int name="archiveEventsCompletedBEACHBALL17" value="0"/>
+    <int name="archiveEventsCompletedBIRTHDAY16" value="0"/>
+    <int name="archiveEventsCompletedCHECKLIST_BADPOETRY19" value="19"/>
+    <int name="archiveEventsCompletedCHECKLIST_BEACH19" value="17"/>
+    <int name="archiveEventsCompletedCHECKLIST_CSI19" value="0"/>
+    <int name="archiveEventsCompletedCHECKLIST_HALLOWEEN18" value="0"/>
+    <int name="archiveEventsCompletedCHECKLIST_MOTHERSDAY19" value="17"/>
+    <int name="archiveEventsCompletedCHECKLIST_XMAS18" value="0"/>
+    <int name="archiveEventsCompletedEASTER15" value="100"/>
+    <int name="archiveEventsCompletedEASTER16" value="0"/>
+    <int name="archiveEventsCompletedEASTER17" value="0"/>
+    <int name="archiveEventsCompletedGREEN16" value="0"/>
+    <int name="archiveEventsCompletedGRIND_BIRTHDAY18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_CARNIVAL19" value="13"/>
+    <int name="archiveEventsCompletedGRIND_DOG_COOKIES18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_EASTER18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_EASTER19" value="0"/>
+    <int name="archiveEventsCompletedGRIND_FLOWERS19" value="13"/>
+    <int name="archiveEventsCompletedGRIND_FOOTBALLCUP18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_HALLOWEEN18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_HARVEST18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_ICECREAM19" value="23"/>
+    <int name="archiveEventsCompletedGRIND_MOTHERSDAY18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_MOVIES18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_NEWYEAR19" value="0"/>
+    <int name="archiveEventsCompletedGRIND_TOYS18" value="0"/>
+    <int name="archiveEventsCompletedGRIND_VALENTINE19" value="0"/>
+    <int name="archiveEventsCompletedGRIND_WINTER19" value="0"/>
+    <int name="archiveEventsCompletedHALLOWEEN15" value="0"/>
+    <int name="archiveEventsCompletedHALLOWEEN16" value="0"/>
+    <int name="archiveEventsCompletedHALLOWEEN17" value="0"/>
+    <int name="archiveEventsCompletedHIDDENOBJECT_CNY18" value="0"/>
+    <int name="archiveEventsCompletedHIDDENOBJECT_CNY19" value="0"/>
+    <int name="archiveEventsCompletedHIDDENOBJECT_EASTER18" value="0"/>
+    <int name="archiveEventsCompletedHIDDENOBJECT_EASTER19" value="0"/>
+    <int name="archiveEventsCompletedHIDDENOBJECT_SOUVENIRS18" value="0"/>
+    <int name="archiveEventsCompletedHIDDENOBJECT_THANKSGIVING18" value="0"/>
+    <int name="archiveEventsCompletedICECREAM17" value="0"/>
+    <int name="archiveEventsCompletedMOTHERSDAY17" value="0"/>
+    <int name="archiveEventsCompletedRED16" value="0"/>
+    <int name="archiveEventsCompletedTASKLIST_BABYSLUG18" value="0"/>
+    <int name="archiveEventsCompletedTASKLIST_BANDIT18" value="0"/>
+    <int name="archiveEventsCompletedTASKLIST_HOWIE19" value="0"/>
+    <int name="archiveEventsCompletedTASKLIST_MOVIES19" value="100"/>
+    <int name="archiveEventsCompletedTREASURE_HUNT15" value="0"/>
+    <int name="archiveEventsCompletedTREASURE_HUNT16" value="0"/>
+    <int name="archiveEventsCompletedVALENTINE17" value="0"/>
+    <int name="archiveEventsCompletedVALENTINE18" value="0"/>
+    <int name="archiveEventsCompletedVISITMINUTIA17" value="0"/>
+    <int name="archiveEventsCompletedWILDWEST17" value="0"/>
+    <int name="archiveEventsCompletedWINTER18" value="0"/>
+    <int name="archiveEventsCompletedXMAS14" value="0"/>
+    <int name="archiveEventsCompletedXMAS15" value="0"/>
+    <int name="archiveEventsCompletedXMAS17" value="0"/>
+    <int name="archiveEventsVersion" value="691"/>
+    <string name="area730_notification_ids"> 0%3B1%3B2%3B3%3B4%3B5%3B6%3B7%3B8%3B9%3B10%3B11%3B12%3B13%3B14%3B15%3B16%3B17%3B18%3B19%3B20%3B21%3B22%3B23%3B24%3B25%3B26%3B27%3B </string>
+    <string name="bfSessionEnd"> 636967065923804970 </string>
+    <string name="bfSessionId"> d9bf2b64-9e39-4bee-afeb-0fa2437f9f8a </string>
+    <int name="bfSessionLength" value="170"/>
+    <int name="class_achievements" value="1"/>
+    <int name="class_achievements_field_claimedAchievementCount" value="4"/>
+    <string name="class_achievements_field_claimedAchievements"> 7_0%2C6_0%2C8_0%2C4_0 </string>
+    <int name="class_babySlugData" value="1"/>
+    <int name="class_babySlugData_field_babyNameIndex" value="113"/>
+    <int name="class_babySlugData_field_carrotLevelsCompletedInCurrentEvent" value="0"/>
+    <string name="class_babySlugData_field_carrotLevelsList"/>
+    <int name="class_babySlugData_field_currentBabyLevel" value="2"/>
+    <int name="class_babySlugData_field_eventExpired" value="1"/>
+    <int name="class_babySlugData_field_eventGoldSpent" value="30"/>
+    <int name="class_babySlugData_field_eventsCompleted" value="3"/>
+    <int name="class_babySlugData_field_eventsStarted" value="11"/>
+    <int name="class_babySlugData_field_levelsCompletedInCurrentEvent" value="5"/>
+    <int name="class_babySlugData_field_levelsFailedStreakInCurrentEvent_fwdCompatible" value="0"/>
+    <int name="class_babySlugData_field_objectsCollected" value="8"/>
+    <int name="class_babySlugData_field_restartCountInCurrentWindow" value="-1"/>
+    <int name="class_babySlugData_field_restartsPromptedInCurrentWindow" value="0"/>
+    <int name="class_babySlugData_field_totalBabyLevelsCompleted" value="6"/>
+    <int name="class_babySlugData_field_totalCarrotLevelsCompleted" value="0"/>
+    <int name="class_babySlugData_field_totalObjectsCollected" value="200"/>
+    <int name="class_bootcamp_fwdCompatible" value="1"/>
+    <int name="class_bootcamp_fwdCompatible_field_currentEvent" value="1"/>
+    <int name="class_bootcamp_fwdCompatible_field_currentProgress" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_eventCompletedCounter" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_eventGoldSpent" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_eventLevelsCompleted" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_eventLevelsStarted" value="0"/>
+    <string name="class_bootcamp_fwdCompatible_field_eventLog"/>
+    <int name="class_bootcamp_fwdCompatible_field_eventPeakSum" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_eventRetryCountForCurrentEvent" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_eventStartCounter" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_furthestLevelFailedCount" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_furthestProgressInCurrentEvent" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_goldSpentInCurrentEvent" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_levelsStartedInCurrentEvent" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_restartCountInCurrentWindow" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_restartsPromptedInCurrentWindow" value="0"/>
+    <int name="class_bootcamp_fwdCompatible_field_strikeCount" value="0"/>
+    <int name="class_championshipData" value="1"/>
+    <string name="class_championshipData_field_bestRanksList"/>
+    <int name="class_championshipData_field_bestScore" value="0"/>
+    <string name="class_championshipData_field_lastRanksList"> JP%3A-1 </string>
+    <int name="class_championshipData_field_leaderboardsEnabled" value="0"/>
+    <string name="class_championshipData_field_locationCode"/>
+    <string name="class_championshipData_field_medalsList"/>
+    <int name="class_CheckList_Beach19_fwdCompatible" value="1"/>
+    <string name="class_CheckList_Beach19_fwdCompatible_field_checkListData">0%7C2105%2C100%7C601%2C200%7C121%2C10000%7C2%2C10100%7C11%2C10200%7C16 </string>
+    <int name="class_CheckList_Beach19_fwdCompatible_field_currentCheckListIndex" value="1"/>
+    <int name="class_CheckList_Beach19_fwdCompatible_field_lastClaimedChecklistReward" value="0"/>
+    <int name="class_CheckList_Beach19_fwdCompatible_field_tasksCompleted" value="5"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime" value="1"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime_field_day" value="1"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime_field_hour" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime_field_millisecond" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime_field_minute" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime_field_month" value="1"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime_field_second" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_endTime_field_year" value="1"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime" value="1"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_field_day" value="1"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_field_hour" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_field_millisecond" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_field_minute" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_field_month" value="1"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_field_second" value="0"/>
+    <int name="class_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_field_year" value="1"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate" value="1"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate_field_day" value="1"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate_field_hour" value="0"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate_field_millisecond" value="0"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate_field_minute" value="0"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate_field_month" value="1"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate_field_second" value="0"/>
+    <int name="class_class_customUserData_field_lastCollectedGiveawayEndDate_field_year" value="1"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected" value="1"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected_field_day" value="1"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected_field_hour" value="0"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected_field_millisecond" value="0"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected_field_minute" value="0"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected_field_month" value="1"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected_field_second" value="0"/>
+    <int name="class_class_customUserData_field_lastFiendGiftCollected_field_year" value="1"/>
+    <int name="class_class_customUserData_field_lastSessionDate" value="1"/>
+    <int name="class_class_customUserData_field_lastSessionDate_field_day" value="11"/>
+    <int name="class_class_customUserData_field_lastSessionDate_field_hour" value="11"/>
+    <int name="class_class_customUserData_field_lastSessionDate_field_millisecond" value="396"/>
+    <int name="class_class_customUserData_field_lastSessionDate_field_minute" value="43"/>
+    <int name="class_class_customUserData_field_lastSessionDate_field_month" value="6"/>
+    <int name="class_class_customUserData_field_lastSessionDate_field_second" value="22"/>
+    <int name="class_class_customUserData_field_lastSessionDate_field_year" value="2019"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay" value="1"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay_field_day" value="1"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay_field_hour" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay_field_millisecond" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay_field_minute" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay_field_month" value="1"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay_field_second" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdDay_field_year" value="1"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate" value="1"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate_field_day" value="1"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate_field_hour" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate_field_millisecond" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate_field_minute" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate_field_month" value="1"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate_field_second" value="0"/>
+    <int name="class_class_customUserData_field_lastVideoAdShownDate_field_year" value="1"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime" value="1"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime_field_day" value="1"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime_field_hour" value="0"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime_field_millisecond" value="0"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime_field_minute" value="0"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime_field_month" value="1"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime_field_second" value="0"/>
+    <int name="class_class_customUserData_field_lootballoonLevelStartTime_field_year" value="1"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast" value="1"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast_field_day" value="1"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast_field_hour" value="0"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast_field_millisecond" value="0"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast_field_minute" value="0"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast_field_month" value="1"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast_field_second" value="0"/>
+    <int name="class_class_customUserDataLocal_field_crossPromoForeverSeenLast_field_year" value="1"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload" value="1"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload_field_day" value="11"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload_field_hour" value="3"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload_field_millisecond" value="696"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload_field_minute" value="43"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload_field_month" value="6"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload_field_second" value="13"/>
+    <int name="class_class_customUserDataLocal_field_lastSuccessfulUpload_field_year" value="2019"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt" value="1"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt_field_day" value="1"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt_field_hour" value="0"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt_field_millisecond" value="0"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt_field_minute" value="0"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt_field_month" value="1"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt_field_second" value="0"/>
+    <int name="class_class_customUserDataLocal_field_watchStateReadAt_field_year" value="1"/>
+    <int name="class_class_EarthwormQuests_field_captainData" value="1"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_goldSpendInCurrentEvent" value="0"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_insaneDifficultyConversionWarningsDisplayed" value="0"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_lastSelectedLevelPackCurrentFailCount" value="0"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_lastSelectedLevelPackDifficulty" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_lastSelectedLevelPackFailCount" value="0"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_lastSelectedLevelPackIndex" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_lastSelectedLevelPackProgress" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_lastSelectedLevelPackTotalFailCount" value="0"/>
+    <string name="class_class_EarthwormQuests_field_captainData_field_starsSerialized"> 0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0 </string>
+    <int name="class_class_EarthwormQuests_field_captainData_field_totalGoldSpend" value="0"/>
+    <int name="class_class_EarthwormQuests_field_captainData_field_totalStars" value="0"/>
+    <int name="class_class_EarthwormQuests_field_generalData" value="1"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_goldSpendInCurrentEvent" value="0"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_insaneDifficultyConversionWarningsDisplayed" value="0"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_lastSelectedLevelPackCurrentFailCount" value="0"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_lastSelectedLevelPackDifficulty" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_lastSelectedLevelPackFailCount" value="0"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_lastSelectedLevelPackIndex" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_lastSelectedLevelPackProgress" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_lastSelectedLevelPackTotalFailCount" value="0"/>
+    <string name="class_class_EarthwormQuests_field_generalData_field_starsSerialized"> 0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0 </string>
+    <int name="class_class_EarthwormQuests_field_generalData_field_totalGoldSpend" value="0"/>
+    <int name="class_class_EarthwormQuests_field_generalData_field_totalStars" value="0"/>
+    <int name="class_class_EarthwormQuests_field_grannyData" value="1"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_goldSpendInCurrentEvent" value="0"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_insaneDifficultyConversionWarningsDisplayed" value="0"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_lastSelectedLevelPackCurrentFailCount" value="0"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_lastSelectedLevelPackDifficulty" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_lastSelectedLevelPackFailCount" value="0"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_lastSelectedLevelPackIndex" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_lastSelectedLevelPackProgress" value="-1"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_lastSelectedLevelPackTotalFailCount" value="0"/>
+    <string name="class_class_EarthwormQuests_field_grannyData_field_starsSerialized"> 0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0 </string>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_totalGoldSpend" value="0"/>
+    <int name="class_class_EarthwormQuests_field_grannyData_field_totalStars" value="0"/>
+    <int name="class_class_energyData_field_energyRefillStartTime" value="1"/>
+    <int name="class_class_energyData_field_energyRefillStartTime_field_day" value="1"/>
+    <int name="class_class_energyData_field_energyRefillStartTime_field_hour" value="0"/>
+    <int name="class_class_energyData_field_energyRefillStartTime_field_millisecond" value="0"/>
+    <int name="class_class_energyData_field_energyRefillStartTime_field_minute" value="0"/>
+    <int name="class_class_energyData_field_energyRefillStartTime_field_month" value="1"/>
+    <int name="class_class_energyData_field_energyRefillStartTime_field_second" value="0"/>
+    <int name="class_class_energyData_field_energyRefillStartTime_field_year" value="1"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil" value="1"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil_field_day" value="1"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil_field_hour" value="0"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil_field_millisecond" value="0"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil_field_minute" value="0"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil_field_month" value="1"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil_field_second" value="0"/>
+    <int name="class_class_energyData_field_energyUnlimitedUntil_field_year" value="1"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck" value="1"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck_field_day" value="1"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck_field_hour" value="0"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck_field_millisecond" value="0"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck_field_minute" value="0"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck_field_month" value="1"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck_field_second" value="0"/>
+    <int name="class_class_lostTreasure_field_lastExtraTimeCheck_field_year" value="1"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime" value="1"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime_field_day" value="1"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime_field_hour" value="0"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime_field_millisecond" value="0"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime_field_minute" value="0"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime_field_month" value="1"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime_field_second" value="0"/>
+    <int name="class_class_lostTreasure_field_nextChestEndTime_field_year" value="1"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime" value="1"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime_field_day" value="1"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime_field_hour" value="0"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime_field_millisecond" value="0"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime_field_minute" value="0"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime_field_month" value="1"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime_field_second" value="0"/>
+    <int name="class_class_lostTreasure_field_timeOutDisplayTime_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark" value="1"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate" value="1"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_firstPurchaseDate_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil" value="1"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_forcedSaleValidUntil_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil" value="1"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_freeFiendOfFortuneUntil_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSaleTeaserShownTime_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_lastSuccesfullIAPTime_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil" value="1"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_field_year" value="1"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil" value="1"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil_field_day" value="1"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil_field_hour" value="0"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil_field_millisecond" value="0"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil_field_minute" value="0"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil_field_month" value="1"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil_field_second" value="0"/>
+    <int name="class_class_purchaseInformation2_field_subscriptionUntil_field_year" value="1"/>
+    <int name="class_class_Seriously_Identity_Info_field_attachedSocialIds" value="1"/>
+    <int name="class_class_slugHouse_field_endTime" value="1"/>
+    <int name="class_class_slugHouse_field_endTime_field_day" value="1"/>
+    <int name="class_class_slugHouse_field_endTime_field_hour" value="0"/>
+    <int name="class_class_slugHouse_field_endTime_field_millisecond" value="0"/>
+    <int name="class_class_slugHouse_field_endTime_field_minute" value="0"/>
+    <int name="class_class_slugHouse_field_endTime_field_month" value="1"/>
+    <int name="class_class_slugHouse_field_endTime_field_second" value="0"/>
+    <int name="class_class_slugHouse_field_endTime_field_year" value="1"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime" value="1"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime_field_day" value="1"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime_field_hour" value="0"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime_field_millisecond" value="0"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime_field_minute" value="0"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime_field_month" value="1"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime_field_second" value="0"/>
+    <int name="class_class_slugHouse_field_timeOutDisplayTime_field_year" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime_field_day" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime_field_hour" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime_field_millisecond" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime_field_minute" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime_field_month" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime_field_second" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_endTime_field_year" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime_field_day" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime_field_hour" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime_field_millisecond" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime_field_minute" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime_field_month" value="1"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime_field_second" value="0"/>
+    <int name="class_class_tenLevelsTreasure_field_timeOutDisplayTime_field_year" value="1"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil" value="1"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_field_day" value="1"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_field_hour" value="0"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_field_millisecond" value="0"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_field_minute" value="0"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_field_month" value="1"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_field_second" value="0"/>
+    <int name="class_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_field_year" value="1"/>
+    <int name="class_customUserData" value="1"/>
+    <int name="class_customUserData_field_ABTestCategory" value="858"/>
+    <string name="class_customUserData_field_activeSupportTicketId"/>
+    <int name="class_customUserData_field_appRaterLastRating" value="4"/>
+    <int name="class_customUserData_field_appRaterLastShownOnLevel" value="129"/>
+    <int name="class_customUserData_field_appRaterTimesPrompted" value="1"/>
+    <int name="class_customUserData_field_bestFiendsAnimationsWatched" value="3"/>
+    <int name="class_customUserData_field_biggestDamageDuringLevel" value="59784"/>
+    <int name="class_customUserData_field_codesRedeemed" value="0"/>
+    <int name="class_customUserData_field_coppaBirthYear" value="1977"/>
+    <string name="class_customUserData_field_countryCode"> JP </string>
+    <int name="class_customUserData_field_dailyGiftCollectedCounter" value="3"/>
+    <int name="class_customUserData_field_dailyGiftMaxStreak" value="3"/>
+    <int name="class_customUserData_field_dailyGiftRewardsCollected" value="0"/>
+    <int name="class_customUserData_field_dailyGiftsCalendarCompletedCounter" value="0"/>
+    <int name="class_customUserData_field_deleteOldDataIndex2" value="29"/>
+    <int name="class_customUserData_field_didOnSaveCheck" value="1"/>
+    <int name="class_customUserData_field_facebookFriendsRewardCounter" value="2"/>
+    <int name="class_customUserData_field_fiendSkinChangedCounter" value="0"/>
+    <int name="class_customUserData_field_fiendSkinSelectorOpenedCounter" value="3"/>
+    <int name="class_customUserData_field_giveAwayCollectedCounter" value="0"/>
+    <int name="class_customUserData_field_hasFacebookFriendsReward" value="0"/>
+    <int name="class_customUserData_field_hasFirstFacebookLoginReward" value="1"/>
+    <int name="class_customUserData_field_hasPlayedOnAmazon" value="0"/>
+    <int name="class_customUserData_field_hasPlayedOnAndroid" value="1"/>
+    <int name="class_customUserData_field_hasPlayedOnFacebook" value="0"/>
+    <int name="class_customUserData_field_hasPlayedOnIOS" value="1"/>
+    <int name="class_customUserData_field_heroTourInfoShownLastTimeVersion" value="0"/>
+    <string name="class_customUserData_field_inventoryOwnerPublicSeriouslyId"> psiC3D683A0EF0E40919EF5077D8C58098F </string>
+    <int name="class_customUserData_field_lastGameUpdateRewardGiven" value="694"/>
+    <int name="class_customUserData_field_levelsPlayedSinceLastVideoShown" value="31"/>
+    <int name="class_customUserData_field_longestDailyLoginStreak" value="4"/>
+    <int name="class_customUserData_field_longestMatchDuringLevel" value="29"/>
+    <int name="class_customUserData_field_longestWinStreak" value="12"/>
+    <int name="class_customUserData_field_lootballoonLevelSeed" value="0"/>
+    <int name="class_customUserData_field_lootballoonLevelStartedCounter" value="0"/>
+    <int name="class_customUserData_field_lootballoonLevelWonCounter" value="0"/>
+    <int name="class_customUserData_field_mapGatesPassedUntil" value="130"/>
+    <string name="class_customUserData_field_mostUsedFiendID"> Red2%2CGreen3%2CBlue3%2CPurple2%2CYellow3 </string>
+    <int name="class_customUserData_field_newsCenterItemsOpened" value="0"/>
+    <string name="class_customUserData_field_pendingRedeemCode"/>
+    <string name="class_customUserData_field_regionCode"> 26 </string>
+    <int name="class_customUserData_field_saveNumber" value="812"/>
+    <int name="class_customUserData_field_serverOverrideCounter" value="0"/>
+    <int name="class_customUserData_field_staticRedeemCodesUsed" value="0"/>
+    <string name="class_customUserData_field_supportEmail"/>
+    <string name="class_customUserData_field_supportName"/>
+    <string name="class_customUserData_field_surveyInstallReason"> NoAnswer </string>
+    <int name="class_customUserData_field_totalDailyGiftsClaimed" value="19"/>
+    <int name="class_customUserData_field_totalEnergyGiftsClaimed" value="0"/>
+    <int name="class_customUserData_field_totalEnergyGiftsSent" value="0"/>
+    <int name="class_customUserData_field_totalEventScore" value="64"/>
+    <int name="class_customUserData_field_totalGachaKeysUsed" value="689"/>
+    <int name="class_customUserData_field_totalGachaKeysUsedSinceLastFiend" value="0"/>
+    <int name="class_customUserData_field_totalGiftsClaimed" value="66"/>
+    <int name="class_customUserData_field_totalGiftsSent" value="128"/>
+    <int name="class_customUserData_field_totalHoursForVIP" value="17"/>
+    <int name="class_customUserData_field_totalInvitationsSent" value="0"/>
+    <int name="class_customUserData_field_totalLevelPlayed" value="538"/>
+    <int name="class_customUserData_field_totalLevelWon" value="142"/>
+    <int name="class_customUserData_field_totalSlugsKilled" value="2260"/>
+    <int name="class_customUserData_field_totalVideoAdsJackpot" value="3"/>
+    <int name="class_customUserData_field_totalVideoAdsWatchedCounter" value="13"/>
+    <int name="class_customUserData_field_userFlags" value="422615272"/>
+    <int name="class_customUserData_field_userFlags2" value="59523138"/>
+    <int name="class_customUserData_field_userFlags3" value="33"/>
+    <int name="class_customUserData_field_videoAdsCurrentStreak" value="0"/>
+    <int name="class_customUserData_field_videoAdsMaxStreak" value="1"/>
+    <int name="class_customUserData_field_videoCenterVideosWatched" value="0"/>
+    <int name="class_customUserData_field_winStreak" value="0"/>
+    <int name="class_customUserData_field_youtubeCarouselFBShareRewardCollected" value="0"/>
+    <int name="class_customUserData_field_youtubeCarouselRewardCollected" value="0"/>
+    <int name="class_customUserData_field_youtubeCarouselRewardCollected2" value="0"/>
+    <string name="class_customUserData_field_youtubeCarouselShownLastInVersion"/>
+    <int name="class_customUserData_field_youtubeCarouselTWShareRewardCollected" value="0"/>
+    <int name="class_customUserDataLocal" value="1"/>
+    <int name="class_customUserDataLocal_field_ABTestGroupData" value="0"/>
+    <int name="class_customUserDataLocal_field_batterySaveOn" value="0"/>
+    <int name="class_customUserDataLocal_field_counterFacebookLoginReminderShownAtStart" value="0"/>
+    <int name="class_customUserDataLocal_field_counterFacebookLoginReminderShownInPopup" value="0"/>
+    <int name="class_customUserDataLocal_field_crossPromoForeverClicked" value="0"/>
+    <int name="class_customUserDataLocal_field_crossPromoForeverClickedPreReg" value="0"/>
+    <int name="class_customUserDataLocal_field_crossPromoForeverLastSeenLevel" value="0"/>
+    <int name="class_customUserDataLocal_field_crossPromoForeverSeen" value="0"/>
+    <int name="class_customUserDataLocal_field_crossPromoForeverSeenPreReg" value="0"/>
+    <int name="class_customUserDataLocal_field_fiendStylePriceTier" value="0"/>
+    <int name="class_customUserDataLocal_field_fiendStyleSalePopUpOpened" value="0"/>
+    <int name="class_customUserDataLocal_field_fiendStyleSaleTeaserShown" value="0"/>
+    <int name="class_customUserDataLocal_field_hasDeselectedCloudSaveReminder" value="0"/>
+    <int name="class_customUserDataLocal_field_hasShownInitialIntro" value="1"/>
+    <int name="class_customUserDataLocal_field_lastAnimationsPopUpShownVersion" value="0"/>
+    <int name="class_customUserDataLocal_field_lastAppRaterReminderShownAtLevel" value="0"/>
+    <int name="class_customUserDataLocal_field_lastFacebookLoginRecordedAtLevel" value="138"/>
+    <int name="class_customUserDataLocal_field_lastFacebookLoginReminderShownAtLevel" value="0"/>
+    <int name="class_customUserDataLocal_field_lastFiendSaleOfferPopupShownLevel" value="0"/>
+    <int name="class_customUserDataLocal_field_lastFiendSkinSaleOfferPopupShownLevel" value="0"/>
+    <int name="class_customUserDataLocal_field_lastHeroAreaLevelAutoOpenedOnMap" value="0"/>
+    <int name="class_customUserDataLocal_field_lastMinutianNewsCenterPopupShownLevel" value="0"/>
+    <int name="class_customUserDataLocal_field_lastStoryLevelAutoFiendSuggestionMatchRate" value="0"/>
+    <int name="class_customUserDataLocal_field_lastStoryLevelPlayedOnVersion" value="0"/>
+    <int name="class_customUserDataLocal_field_memoryOptimizationOn" value="0"/>
+    <int name="class_customUserDataLocal_field_sendGiftsPopupLastShownAtLevel" value="0"/>
+    <int name="class_customUserDataLocal_field_unlockedDefaultStickers" value="0"/>
+    <int name="class_customUserDataLocal_field_UpdateGameDialogShownCounter" value="0"/>
+    <int name="class_customUserDataLocal_field_UpdateGameDialogShownVersion" value="0"/>
+    <int name="class_customUserDataLocal_field_userAllowLocalNotifications" value="1"/>
+    <int name="class_customUserDataLocal_field_userFlags" value="5"/>
+    <int name="class_customUserDataLocal_field_userFlags2" value="0"/>
+    <int name="class_customUserDataLocal_field_VipHeroSpotAlreadyVisible" value="0"/>
+    <int name="class_customUserDataLocal_field_VipHeroSpotPendingActivation" value="0"/>
+    <int name="class_dynamicDifficultyData" value="1"/>
+    <int name="class_dynamicDifficultyData_field_difficultyPoint" value="0"/>
+    <int name="class_dynamicDifficultyData_field_inactivityBoostUsedCount" value="2"/>
+    <int name="class_dynamicDifficultyData_field_lastStoryLevelFailCount" value="0"/>
+    <int name="class_dynamicDifficultyData_field_storyLevelMovesAdjustment" value="0"/>
+    <int name="class_dynamicDifficultyData_field_userWantFreeExtraMoves" value="0"/>
+    <int name="class_EarthwormQuests" value="1"/>
+    <int name="class_EarthwormQuests_field_lastSelectedQuestType" value="0"/>
+    <int name="class_EarthwormQuests_field_totalCollectedRewardCount" value="0"/>
+    <int name="class_EarthwormQuests_field_totalGoldSpend" value="0"/>
+    <int name="class_EarthwormQuests_field_totalLevelPackProgress" value="0"/>
+    <int name="class_EarthwormQuests_field_totalLevelProgress" value="0"/>
+    <int name="class_EarthwormQuests_field_totalStars" value="0"/>
+    <int name="class_energyData" value="1"/>
+    <int name="class_energyData_field_energy" value="16"/>
+    <int name="class_energyData_field_energyBarCap" value="18"/>
+    <int name="class_energyData_field_pendingUnlimitedEnergy" value="0"/>
+    <int name="class_energyData_field_pendingUnlimitedVIP" value="0"/>
+    <int name="class_Fiend_QuestBlue1" value="1"/>
+    <int name="class_Fiend_QuestBlue1_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestBlue1_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestBlue1_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestBlue1_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestBlue1_field_progress" value="0"/>
+    <int name="class_Fiend_QuestBlue1_field_questUnlocked" value="0"/>
+    <int name="class_Fiend_QuestBlue2" value="1"/>
+    <int name="class_Fiend_QuestBlue2_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestBlue2_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestBlue2_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestBlue2_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestBlue2_field_progress" value="4"/>
+    <int name="class_Fiend_QuestBlue2_field_questUnlocked" value="1"/>
+    <int name="class_Fiend_QuestGreen1" value="1"/>
+    <int name="class_Fiend_QuestGreen1_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestGreen1_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestGreen1_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestGreen1_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestGreen1_field_progress" value="0"/>
+    <int name="class_Fiend_QuestGreen1_field_questUnlocked" value="0"/>
+    <int name="class_Fiend_QuestGreen2" value="1"/>
+    <int name="class_Fiend_QuestGreen2_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestGreen2_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestGreen2_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestGreen2_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestGreen2_field_progress" value="0"/>
+    <int name="class_Fiend_QuestGreen2_field_questUnlocked" value="0"/>
+    <int name="class_Fiend_QuestPurple2" value="1"/>
+    <int name="class_Fiend_QuestPurple2_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestPurple2_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestPurple2_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestPurple2_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestPurple2_field_progress" value="0"/>
+    <int name="class_Fiend_QuestPurple2_field_questUnlocked" value="0"/>
+    <int name="class_Fiend_QuestPurple4" value="1"/>
+    <int name="class_Fiend_QuestPurple4_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestPurple4_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestPurple4_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestPurple4_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestPurple4_field_progress" value="0"/>
+    <int name="class_Fiend_QuestPurple4_field_questUnlocked" value="0"/>
+    <int name="class_Fiend_QuestRed2" value="1"/>
+    <int name="class_Fiend_QuestRed2_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestRed2_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestRed2_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestRed2_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestRed2_field_progress" value="0"/>
+    <int name="class_Fiend_QuestRed2_field_questUnlocked" value="0"/>
+    <int name="class_Fiend_QuestYellow2" value="1"/>
+    <int name="class_Fiend_QuestYellow2_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestYellow2_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestYellow2_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestYellow2_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestYellow2_field_progress" value="0"/>
+    <int name="class_Fiend_QuestYellow2_field_questUnlocked" value="1"/>
+    <int name="class_Fiend_QuestYellow5" value="1"/>
+    <int name="class_Fiend_QuestYellow5_field_failCountCumulative" value="0"/>
+    <int name="class_Fiend_QuestYellow5_field_failCountLastLevel" value="0"/>
+    <int name="class_Fiend_QuestYellow5_field_goldUsed" value="0"/>
+    <int name="class_Fiend_QuestYellow5_field_lastRewardCollectedProgress" value="0"/>
+    <int name="class_Fiend_QuestYellow5_field_progress" value="0"/>
+    <int name="class_Fiend_QuestYellow5_field_questUnlocked" value="0"/>
+    <int name="class_FiendBlue1" value="1"/>
+    <int name="class_FiendBlue1_field_fiendFoundAtLevel" value="10"/>
+    <int name="class_FiendBlue1_field_fiendLevel" value="8"/>
+    <int name="class_FiendBlue1_field_fiendLevelMax40_fwdCompatible" value="8"/>
+    <int name="class_FiendBlue1_field_fiendUsedForLevelVictory" value="10"/>
+    <int name="class_FiendBlue1_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendBlue1_field_purchasedSkins" value="3"/>
+    <int name="class_FiendBlue1_field_selected" value="0"/>
+    <int name="class_FiendBlue1_field_upgradeResource" value="0"/>
+    <int name="class_FiendBlue2" value="1"/>
+    <int name="class_FiendBlue2_field_fiendFoundAtLevel" value="25"/>
+    <int name="class_FiendBlue2_field_fiendLevel" value="9"/>
+    <int name="class_FiendBlue2_field_fiendLevelMax40_fwdCompatible" value="9"/>
+    <int name="class_FiendBlue2_field_fiendUsedForLevelVictory" value="10"/>
+    <int name="class_FiendBlue2_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendBlue2_field_purchasedSkins" value="3"/>
+    <int name="class_FiendBlue2_field_selected" value="0"/>
+    <int name="class_FiendBlue2_field_upgradeResource" value="0"/>
+    <int name="class_FiendBlue3" value="1"/>
+    <int name="class_FiendBlue3_field_fiendFoundAtLevel" value="94"/>
+    <int name="class_FiendBlue3_field_fiendLevel" value="5"/>
+    <int name="class_FiendBlue3_field_fiendLevelMax40_fwdCompatible" value="5"/>
+    <int name="class_FiendBlue3_field_fiendUsedForLevelVictory" value="25"/>
+    <int name="class_FiendBlue3_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendBlue3_field_purchasedSkins" value="3"/>
+    <int name="class_FiendBlue3_field_selected" value="1"/>
+    <int name="class_FiendBlue3_field_upgradeResource" value="0"/>
+    <int name="class_FiendGreen1" value="1"/>
+    <int name="class_FiendGreen1_field_fiendFoundAtLevel" value="1"/>
+    <int name="class_FiendGreen1_field_fiendLevel" value="6"/>
+    <int name="class_FiendGreen1_field_fiendLevelMax40_fwdCompatible" value="6"/>
+    <int name="class_FiendGreen1_field_fiendUsedForLevelVictory" value="1"/>
+    <int name="class_FiendGreen1_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendGreen1_field_purchasedSkins" value="3"/>
+    <int name="class_FiendGreen1_field_selected" value="0"/>
+    <int name="class_FiendGreen1_field_upgradeResource" value="0"/>
+    <int name="class_FiendGreen2" value="1"/>
+    <int name="class_FiendGreen2_field_fiendFoundAtLevel" value="21"/>
+    <int name="class_FiendGreen2_field_fiendLevel" value="10"/>
+    <int name="class_FiendGreen2_field_fiendLevelMax40_fwdCompatible" value="10"/>
+    <int name="class_FiendGreen2_field_fiendUsedForLevelVictory" value="11"/>
+    <int name="class_FiendGreen2_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendGreen2_field_purchasedSkins" value="7"/>
+    <int name="class_FiendGreen2_field_selected" value="1"/>
+    <int name="class_FiendGreen2_field_upgradeResource" value="0"/>
+    <int name="class_FiendGreen3" value="1"/>
+    <int name="class_FiendGreen3_field_fiendFoundAtLevel" value="81"/>
+    <int name="class_FiendGreen3_field_fiendLevel" value="10"/>
+    <int name="class_FiendGreen3_field_fiendLevelMax40_fwdCompatible" value="10"/>
+    <int name="class_FiendGreen3_field_fiendUsedForLevelVictory" value="33"/>
+    <int name="class_FiendGreen3_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendGreen3_field_purchasedSkins" value="7"/>
+    <int name="class_FiendGreen3_field_selected" value="0"/>
+    <int name="class_FiendGreen3_field_upgradeResource" value="0"/>
+    <int name="class_FiendPurple1" value="1"/>
+    <int name="class_FiendPurple1_field_fiendFoundAtLevel" value="15"/>
+    <int name="class_FiendPurple1_field_fiendLevel" value="10"/>
+    <int name="class_FiendPurple1_field_fiendLevelMax40_fwdCompatible" value="10"/>
+    <int name="class_FiendPurple1_field_fiendUsedForLevelVictory" value="6"/>
+    <int name="class_FiendPurple1_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendPurple1_field_purchasedSkins" value="7"/>
+    <int name="class_FiendPurple1_field_selected" value="0"/>
+    <int name="class_FiendPurple1_field_upgradeResource" value="0"/>
+    <int name="class_FiendPurple2" value="1"/>
+    <int name="class_FiendPurple2_field_fiendFoundAtLevel" value="41"/>
+    <int name="class_FiendPurple2_field_fiendLevel" value="10"/>
+    <int name="class_FiendPurple2_field_fiendLevelMax40_fwdCompatible" value="10"/>
+    <int name="class_FiendPurple2_field_fiendUsedForLevelVictory" value="24"/>
+    <int name="class_FiendPurple2_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendPurple2_field_purchasedSkins" value="7"/>
+    <int name="class_FiendPurple2_field_selected" value="0"/>
+    <int name="class_FiendPurple2_field_upgradeResource" value="0"/>
+    <int name="class_FiendPurple3" value="1"/>
+    <int name="class_FiendPurple3_field_fiendFoundAtLevel" value="104"/>
+    <int name="class_FiendPurple3_field_fiendLevel" value="10"/>
+    <int name="class_FiendPurple3_field_fiendLevelMax40_fwdCompatible" value="10"/>
+    <int name="class_FiendPurple3_field_fiendUsedForLevelVictory" value="15"/>
+    <int name="class_FiendPurple3_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendPurple3_field_purchasedSkins" value="7"/>
+    <int name="class_FiendPurple3_field_selected" value="1"/>
+    <int name="class_FiendPurple3_field_upgradeResource" value="0"/>
+    <int name="class_FiendRed1" value="1"/>
+    <int name="class_FiendRed1_field_fiendFoundAtLevel" value="18"/>
+    <int name="class_FiendRed1_field_fiendLevel" value="6"/>
+    <int name="class_FiendRed1_field_fiendLevelMax40_fwdCompatible" value="6"/>
+    <int name="class_FiendRed1_field_fiendUsedForLevelVictory" value="3"/>
+    <int name="class_FiendRed1_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendRed1_field_purchasedSkins" value="3"/>
+    <int name="class_FiendRed1_field_selected" value="0"/>
+    <int name="class_FiendRed1_field_upgradeResource" value="0"/>
+    <int name="class_FiendRed2" value="1"/>
+    <int name="class_FiendRed2_field_fiendFoundAtLevel" value="51"/>
+    <int name="class_FiendRed2_field_fiendLevel" value="8"/>
+    <int name="class_FiendRed2_field_fiendLevelMax40_fwdCompatible" value="8"/>
+    <int name="class_FiendRed2_field_fiendUsedForLevelVictory" value="33"/>
+    <int name="class_FiendRed2_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendRed2_field_purchasedSkins" value="3"/>
+    <int name="class_FiendRed2_field_selected" value="0"/>
+    <int name="class_FiendRed2_field_upgradeResource" value="0"/>
+    <int name="class_FiendRed3" value="1"/>
+    <int name="class_FiendRed3_field_fiendFoundAtLevel" value="61"/>
+    <int name="class_FiendRed3_field_fiendLevel" value="8"/>
+    <int name="class_FiendRed3_field_fiendLevelMax40_fwdCompatible" value="8"/>
+    <int name="class_FiendRed3_field_fiendUsedForLevelVictory" value="9"/>
+    <int name="class_FiendRed3_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendRed3_field_purchasedSkins" value="3"/>
+    <int name="class_FiendRed3_field_selected" value="1"/>
+    <int name="class_FiendRed3_field_upgradeResource" value="0"/>
+    <int name="class_FiendYellow1" value="1"/>
+    <int name="class_FiendYellow1_field_fiendFoundAtLevel" value="5"/>
+    <int name="class_FiendYellow1_field_fiendLevel" value="10"/>
+    <int name="class_FiendYellow1_field_fiendLevelMax40_fwdCompatible" value="10"/>
+    <int name="class_FiendYellow1_field_fiendUsedForLevelVictory" value="10"/>
+    <int name="class_FiendYellow1_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendYellow1_field_purchasedSkins" value="7"/>
+    <int name="class_FiendYellow1_field_selected" value="1"/>
+    <int name="class_FiendYellow1_field_upgradeResource" value="0"/>
+    <int name="class_FiendYellow2" value="1"/>
+    <int name="class_FiendYellow2_field_fiendFoundAtLevel" value="31"/>
+    <int name="class_FiendYellow2_field_fiendLevel" value="8"/>
+    <int name="class_FiendYellow2_field_fiendLevelMax40_fwdCompatible" value="8"/>
+    <int name="class_FiendYellow2_field_fiendUsedForLevelVictory" value="11"/>
+    <int name="class_FiendYellow2_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendYellow2_field_purchasedSkins" value="3"/>
+    <int name="class_FiendYellow2_field_selected" value="0"/>
+    <int name="class_FiendYellow2_field_upgradeResource" value="0"/>
+    <int name="class_FiendYellow3" value="1"/>
+    <int name="class_FiendYellow3_field_fiendFoundAtLevel" value="94"/>
+    <int name="class_FiendYellow3_field_fiendLevel" value="6"/>
+    <int name="class_FiendYellow3_field_fiendLevelMax40_fwdCompatible" value="6"/>
+    <int name="class_FiendYellow3_field_fiendUsedForLevelVictory" value="24"/>
+    <int name="class_FiendYellow3_field_preferredSkinLevel" value="-1"/>
+    <int name="class_FiendYellow3_field_purchasedSkins" value="3"/>
+    <int name="class_FiendYellow3_field_selected" value="0"/>
+    <int name="class_FiendYellow3_field_upgradeResource" value="0"/>
+    <int name="class_FirstInstallDate" value="1"/>
+    <int name="class_FirstInstallDate_field_day" value="1"/>
+    <int name="class_FirstInstallDate_field_hour" value="22"/>
+    <int name="class_FirstInstallDate_field_millisecond" value="0"/>
+    <int name="class_FirstInstallDate_field_minute" value="37"/>
+    <int name="class_FirstInstallDate_field_month" value="6"/>
+    <int name="class_FirstInstallDate_field_second" value="53"/>
+    <int name="class_FirstInstallDate_field_year" value="2019"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible" value="1"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_currentGoalCounter" value="390"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_currentGoalIndex" value="7"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_currentGoalRewardAmount" value="8400"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_currentGoalTarget" value="640"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_currentRewardType" value="4"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_extraGoalIndex" value="-1"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_failCounter" value="1"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_finalRewardIndex" value="-1"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_hasShownExtraRewardsInfo" value="0"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_hasShownInfo" value="1"/>
+    <int name="class_GrindChallenge_IceCream19_fwdCompatible_field_state" value="4"/>
+    <int name="class_heroArea" value="1"/>
+    <int name="class_heroArea_field_failCountCumulative" value="0"/>
+    <int name="class_heroArea_field_failCountLastLevel" value="0"/>
+    <int name="class_heroArea_field_lastLevelRewardCollected" value="-1"/>
+    <int name="class_heroArea_field_progress" value="0"/>
+    <int name="class_lostTreasure" value="1"/>
+    <string name="class_lostTreasure_field_chestLevelList"/>
+    <int name="class_lostTreasure_field_chestsCollected" value="2"/>
+    <int name="class_lostTreasure_field_currentChestIndex" value="0"/>
+    <int name="class_lostTreasure_field_currentChestIndex590_fwdCompatible" value="2"/>
+    <int name="class_lostTreasure_field_deluxeAreaCurrentProgress" value="0"/>
+    <string name="class_lostTreasure_field_deluxeAreaLevelList"/>
+    <int name="class_lostTreasure_field_eventDataVersion_fwdCompatible" value="1"/>
+    <int name="class_lostTreasure_field_eventExpired590_fwdCompatible" value="1"/>
+    <int name="class_lostTreasure_field_eventGoldSpent" value="0"/>
+    <int name="class_lostTreasure_field_eventsCompleted" value="0"/>
+    <int name="class_lostTreasure_field_eventsStarted" value="2"/>
+    <int name="class_lostTreasure_field_extraTimeReceived" value="0"/>
+    <int name="class_lostTreasure_field_levelsCompleted" value="5"/>
+    <int name="class_lostTreasure_field_levelsCompletedInCurrentEvent_fwdCompatible" value="5"/>
+    <int name="class_lostTreasure_field_levelsFailedStreakInCurrentEvent_fwdCompatible" value="0"/>
+    <int name="class_lostTreasure_field_restartCountInCurrentWindow" value="0"/>
+    <int name="class_lostTreasure_field_restartCountInCurrentWindow590_fwdCompatible" value="-1"/>
+    <int name="class_lostTreasure_field_restartsPromptedInCurrentWindow" value="0"/>
+    <int name="class_lostTreasure_field_restartsPromptedInCurrentWindow590_fwdCompatible" value="0"/>
+    <int name="class_lostTreasure_field_startLevel" value="0"/>
+    <int name="class_minutiasMostWanted" value="1"/>
+    <int name="class_minutiasMostWanted_field_banditBoardsCompleted" value="0"/>
+    <int name="class_minutiasMostWanted_field_banditCrimeIndex600_fwdCompatible" value="90"/>
+    <int name="class_minutiasMostWanted_field_banditLevel600_fwdCompatible" value="3"/>
+    <int name="class_minutiasMostWanted_field_banditNameIndex600_fwdCompatible" value="13"/>
+    <int name="class_minutiasMostWanted_field_banditSelectionPoints600_fwdCompatible" value="0"/>
+    <int name="class_minutiasMostWanted_field_banditTypeInt600_fwdCompatible" value="0"/>
+    <string name="class_minutiasMostWanted_field_caughtBanditData"> 0%3A131%3A12%3A83%3A15%3A6%3A2019%3A0 </string>
+    <string name="class_minutiasMostWanted_field_deluxeLevelList_fwdCompatible"/>
+    <int name="class_minutiasMostWanted_field_eventDataVersion_fwdCompatible" value="1"/>
+    <int name="class_minutiasMostWanted_field_eventExpired600_fwdCompatible" value="0"/>
+    <int name="class_minutiasMostWanted_field_eventGoldSpent" value="0"/>
+    <int name="class_minutiasMostWanted_field_eventsCompleted" value="1"/>
+    <int name="class_minutiasMostWanted_field_eventsStarted" value="8"/>
+    <int name="class_minutiasMostWanted_field_levelsCompleted600_fwdCompatible" value="1"/>
+    <int name="class_minutiasMostWanted_field_levelsFailedStreakInCurrentEvent_fwdCompatible" value="0"/>
+    <string name="class_minutiasMostWanted_field_levelTypesInCurrentEvent_fwdCompatible"> Story </string>
+    <int name="class_minutiasMostWanted_field_restartCountInCurrentWindow600_fwdCompatible" value="0"/>
+    <int name="class_minutiasMostWanted_field_restartsPromptedInCurrentWindow600_fwdCompatible" value="0"/>
+    <int name="class_purchaseInformation2" value="1"/>
+    <int name="class_purchaseInformation2_field_alltimeEnergyPurchaseTotal" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeEnergyPurchaseWithGoldsTotal" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeGemPurchaseTotal" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeGoldEarnedFromInactivity" value="20"/>
+    <int name="class_purchaseInformation2_field_alltimeGoldEarnedFromPlayerSupport" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeGoldPurchaseTotal" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeGoldRewardsEarnedTotal" value="10"/>
+    <int name="class_purchaseInformation2_field_alltimeGoldSpendForEnergy" value="0"/>
+    <int name="class_purchaseInformation2_field_allTimeGoldSpendForFiends" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeGoldSpendForMoreMoves" value="30"/>
+    <int name="class_purchaseInformation2_field_allTimeMoneySpendInDollars" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeMoreMovesPurchaseTotal" value="0"/>
+    <int name="class_purchaseInformation2_field_alltimeMoreMovesPurchaseWithGoldsTotal" value="0"/>
+    <int name="class_purchaseInformation2_field_amountOfHackedReceipts" value="0"/>
+    <int name="class_purchaseInformation2_field_amountOfPurchases" value="0"/>
+    <int name="class_purchaseInformation2_field_amountOfSuspiciousReceipts" value="0"/>
+    <int name="class_purchaseInformation2_field_amountOfValidReceipts" value="0"/>
+    <int name="class_purchaseInformation2_field_dailyPurchaseCapMoneySpend" value="0"/>
+    <string name="class_purchaseInformation2_field_firstDiscountName"/>
+    <int name="class_purchaseInformation2_field_firstPurchaseLevel" value="0"/>
+    <string name="class_purchaseInformation2_field_firstPurchaseName"/>
+    <string name="class_purchaseInformation2_field_lastMarkedDiscounName"> VIP_05 </string>
+    <int name="class_purchaseInformation2_field_lastMarkedDiscountType" value="3"/>
+    <int name="class_purchaseInformation2_field_lastPurchaseAmountInDollars1" value="0"/>
+    <int name="class_purchaseInformation2_field_lastPurchaseAmountInDollars2" value="0"/>
+    <int name="class_purchaseInformation2_field_lastPurchaseAmountInDollars3" value="0"/>
+    <string name="class_purchaseInformation2_field_previousDiscountName"/>
+    <string name="class_purchaseInformation2_field_previousPurchaseName"/>
+    <int name="class_purchaseInformation2_field_supportCodeForceIsPaying" value="0"/>
+    <int name="class_Seriously_Identity_Info" value="1"/>
+    <string name="class_Seriously_Identity_Info_field_attachedSocialIdsJson"> %7B%22Facebook%22%3A%22106891776426534%22%7D </string>
+    <string name="class_Seriously_Identity_Info_field_seriouslyId"> 112acf0dd8994b388fa25af40a51b576 </string>
+    <int name="class_slugHouse" value="1"/>
+    <int name="class_slugHouse_field_currentEvent" value="1"/>
+    <int name="class_slugHouse_field_currentProgress" value="0"/>
+    <int name="class_slugHouse_field_eventCompletedCounter" value="0"/>
+    <int name="class_slugHouse_field_eventGoldSpent" value="0"/>
+    <int name="class_slugHouse_field_eventLevelsCompleted" value="0"/>
+    <int name="class_slugHouse_field_eventLevelsStarted" value="0"/>
+    <string name="class_slugHouse_field_eventLog"/>
+    <int name="class_slugHouse_field_eventPeakSum" value="0"/>
+    <int name="class_slugHouse_field_eventRetryCountForCurrentEvent" value="0"/>
+    <int name="class_slugHouse_field_eventStartCounter" value="0"/>
+    <int name="class_slugHouse_field_furthestLevelFailedCount" value="0"/>
+    <int name="class_slugHouse_field_furthestProgressInCurrentEvent" value="0"/>
+    <int name="class_slugHouse_field_goldSpentInCurrentEvent" value="0"/>
+    <int name="class_slugHouse_field_levelsStartedInCurrentEvent" value="0"/>
+    <int name="class_slugHouse_field_restartCountInCurrentWindow" value="0"/>
+    <int name="class_slugHouse_field_restartsPromptedInCurrentWindow" value="0"/>
+    <int name="class_slugHouse_field_strikeCount" value="0"/>
+    <int name="class_TaskList_Movies19_fwdCompatible" value="1"/>
+    <int name="class_TaskList_Movies19_fwdCompatible_field_introSeen" value="1"/>
+    <int name="class_TaskList_Movies19_fwdCompatible_field_progressWhenPopupWasLastOpened" value="63"/>
+    <int name="class_TaskList_Movies19_fwdCompatible_field_rewardCollected" value="0"/>
+    <int name="class_TaskList_Movies19_fwdCompatible_field_slugKilledDuringEvent" value="237"/>
+    <int name="class_TaskList_Movies19_fwdCompatible_field_storyProgressDuringEvent" value="25"/>
+    <int name="class_tenLevelsTreasure" value="1"/>
+    <int name="class_tenLevelsTreasure_field_currentEvent" value="1"/>
+    <int name="class_tenLevelsTreasure_field_currentProgress" value="0"/>
+    <int name="class_tenLevelsTreasure_field_eventCompletedCounter" value="0"/>
+    <int name="class_tenLevelsTreasure_field_eventGoldSpent" value="0"/>
+    <int name="class_tenLevelsTreasure_field_eventLevelsCompleted" value="0"/>
+    <int name="class_tenLevelsTreasure_field_eventLevelsStarted" value="0"/>
+    <string name="class_tenLevelsTreasure_field_eventLog"/>
+    <int name="class_tenLevelsTreasure_field_eventPeakSum" value="0"/>
+    <int name="class_tenLevelsTreasure_field_eventRetryCountForCurrentEvent" value="0"/>
+    <int name="class_tenLevelsTreasure_field_eventStartCounter" value="0"/>
+    <int name="class_tenLevelsTreasure_field_furthestLevelFailedCount" value="0"/>
+    <int name="class_tenLevelsTreasure_field_furthestProgressInCurrentEvent" value="0"/>
+    <int name="class_tenLevelsTreasure_field_goldSpentInCurrentEvent" value="0"/>
+    <int name="class_tenLevelsTreasure_field_levelsStartedInCurrentEvent" value="0"/>
+    <int name="class_tenLevelsTreasure_field_restartCountInCurrentWindow" value="0"/>
+    <int name="class_tenLevelsTreasure_field_restartsPromptedInCurrentWindow" value="0"/>
+    <int name="class_tenLevelsTreasure_field_strikeCount" value="0"/>
+    <int name="class_VisitMinutia17_fwdCompatible" value="1"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_currentGoalCounter" value="0"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_currentGoalIndex" value="-1"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_currentGoalRewardAmount" value="0"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_currentGoalTarget" value="0"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_currentRewardType" value="0"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_failCounter" value="0"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_hasShownInfo" value="0"/>
+    <int name="class_VisitMinutia17_fwdCompatible_field_state" value="0"/>
+    <string name="cloudConfiguration"> %7B%0A%20%20%22server%22%20%3A%20%7B%0A%20%20%20%20%22server_time%22%20%3A%20%222019-06-21T09%3A35%3A18.465Z%22%2C%0A%20%20%20%20%22max_energy_gifts%22%20%3A%20%225%22%2C%0A%20%20%20%20%22environment%22%20%3A%20%22Production%22%2C%0A%20%20%20%20%22max_gifts%22%20%3A%20%2220%22%2C%0A%20%20%20%20%22friends_requests_pending_count%22%20%3A%20%220%22%2C%0A%20%20%20%20%22recommended_client_version%22%20%3A%20%224.0.0%22%2C%0A%20%20%20%20%22minimum_client_version%22%20%3A%20%220.0.1%22%2C%0A%20%20%20%20%22required_online_client_version_text%22%20%3A%20%22%22%2C%0A%20%20%20%20%22maintenance_web%22%20%3A%20%22false%22%2C%0A%20%20%20%20%22recommended_client_version_text%22%20%3A%20%22%22%2C%0A%20%20%20%20%22minimum_client_version_text%22%20%3A%20%22%22%2C%0A%20%20%20%20%22required_online_client_version%22%20%3A%20%220.0.1%22%0A%20%20%7D%2C%0A%20%20%22levelConfig%22%20%3A%20%7B%0A%20%20%20%20%22Level%200190%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200350%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201880%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200150%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200195%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201883%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200355%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201884%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200352%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%204.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200353%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200347%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200348%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201877%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201910%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200345%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201797%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201874%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201878%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201879%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201912%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%204.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Hero%20Area_033%20Level_20%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201917%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201915%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201919%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201890%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200120%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200360%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201850%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200322%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201851%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201895%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%204.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201892%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%204.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200358%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201447%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201722%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201843%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201887%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201920%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200359%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201844%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201888%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200356%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201841%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201885%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200357%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201842%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201886%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201847%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201889%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200372%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200332%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%204.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200333%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200330%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201782%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201860%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200369%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%207.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201898%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201899%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200323%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201852%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200841%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201897%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201858%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200767%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200328%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200340%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201792%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%200.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201790%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200343%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201872%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201870%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200342%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Hero%20Area_033%20Level_17%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%200.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201788%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201865%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200337%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201866%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Hero%20Area_033%20Level_19%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201863%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200335%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201864%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Hero%20Area_033%20Level_13%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201429%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%205.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201902%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201903%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%200.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%200338%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-2.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201867%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201900%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Hero%20Area_033%20Level_14%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201901%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201906%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201907%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201904%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%201.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201905%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%20-1.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201908%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%203.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22Level%201909%22%20%3A%20%7B%0A%20%20%20%20%20%20%22moveDelta%22%20%3A%202.0%2C%0A%20%20%20%20%20%20%22levelDifficultyDelta%22%20%3A%200.0%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%20%20%22network%22%20%3A%20%7B%0A%20%20%20%20%22client_country_code%22%20%3A%20%22HK%22%0A%20%20%7D%2C%0A%20%20%22events3%22%20%3A%20%5B%20%7B%0A%20%20%20%20%22id%22%20%3A%205735549497245696%2C%0A%20%20%20%20%22hash%22%20%3A%20-730674275%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-05-24T08%3A33%3A00.861%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-08-31T11%3A45%3A00.757%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205198481033527296%2C%0A%20%20%20%20%22hash%22%20%3A%20-540546397%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-04-14T07%3A57%3A00.742%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205650214587203584%2C%0A%20%20%20%20%22hash%22%20%3A%20-1326690111%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-04-14T05%3A51%3A00.127%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205659283679084544%2C%0A%20%20%20%20%22hash%22%20%3A%201714055589%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-04-14T05%3A57%3A00.568%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205674916890279936%2C%0A%20%20%20%20%22hash%22%20%3A%20380331227%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-04-14T05%3A53%3A00.024%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205689277297983488%2C%0A%20%20%20%20%22hash%22%20%3A%20-842217953%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-03-07T14%3A33%3A00.023%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205709333771845632%2C%0A%20%20%20%20%22hash%22%20%3A%201315750771%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-04-14T05%3A52%3A00.363%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205746419220611072%2C%0A%20%20%20%20%22hash%22%20%3A%20-1499521202%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-03-07T14%3A32%3A00.827%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205748958913626112%2C%0A%20%20%20%20%22hash%22%20%3A%201915085920%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-03-07T14%3A31%3A00.020%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205769478665142272%2C%0A%20%20%20%20%22hash%22%20%3A%201818734669%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-04-14T05%3A55%3A00.210%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T14%3A45%3A00.536%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205674074908917760%2C%0A%20%20%20%20%22hash%22%20%3A%20-1317534420%2C%0A%20%20%20%20%22type%22%20%3A%20%22VCVideo%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-04-14T08%3A57%3A00.945%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-14T15%3A45%3A00.123%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205735294902992896%2C%0A%20%20%20%20%22hash%22%20%3A%20-865735845%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-06-07T09%3A37%3A00.406%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-30T11%3A45%3A00.153%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205680833073512448%2C%0A%20%20%20%20%22hash%22%20%3A%201289007920%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-05-28T08%3A33%3A00.541%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-30T11%3A45%3A00.173%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%206290049689714688%2C%0A%20%20%20%20%22hash%22%20%3A%201897955424%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-06-07T09%3A34%3A00.661%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-30T11%3A45%3A00.188%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205760874855792640%2C%0A%20%20%20%20%22hash%22%20%3A%20-926484225%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-06-11T09%3A37%3A00.892%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-30T11%3A45%3A00.338%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205683881392996352%2C%0A%20%20%20%20%22hash%22%20%3A%20-846233895%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-06-04T09%3A30%3A00.362%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-30T11%3A45%3A00.539%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205164149782872064%2C%0A%20%20%20%20%22hash%22%20%3A%20358726700%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-05-31T08%3A35%3A00.052%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-09-30T11%3A45%3A00.939%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205677779116883968%2C%0A%20%20%20%20%22hash%22%20%3A%201418452925%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-06-20T07%3A37%3A00.645%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-10-31T11%3A45%3A00.278%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205761430986948608%2C%0A%20%20%20%20%22hash%22%20%3A%20778065693%2C%0A%20%20%20%20%22type%22%20%3A%20%22NewsItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222019-06-18T09%3A37%3A00.285%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222019-10-31T11%3A45%3A00.278%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205644435104727040%2C%0A%20%20%20%20%22hash%22%20%3A%20-945130991%2C%0A%20%20%20%20%22type%22%20%3A%20%22ShopItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222018-04-11T01%3A05%3A00.031%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222020-04-04T16%3A27%3A00.464%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%2C%20%7B%0A%20%20%20%20%22id%22%20%3A%205729463344037888%2C%0A%20%20%20%20%22hash%22%20%3A%201773424550%2C%0A%20%20%20%20%22type%22%20%3A%20%22ShopItem%22%2C%0A%20%20%20%20%22activeFrom%22%20%3A%20%222018-04-11T01%3A05%3A00.031%22%2C%0A%20%20%20%20%22activeUntil%22%20%3A%20%222020-04-04T16%3A27%3A00.464%22%2C%0A%20%20%20%20%22useDeviceLocalTimezone%22%20%3A%20false%2C%0A%20%20%20%20%22timezone%22%20%3A%20%22Etc%2FGMT%22%2C%0A%20%20%20%20%22enabled%22%20%3A%20true%0A%20%20%7D%20%5D%2C%0A%20%20%22config%22%20%3A%20%7B%20%7D%2C%0A%20%20%22events%22%20%3A%20%5B%20%5D%2C%0A%20%20%22events2%22%20%3A%20%5B%20%5D%0A%7D </string>
+    <string name="date_class_babySlugData_field_eventEndTime_unixTime"> 1560711600 </string>
+    <string name="date_class_babySlugData_field_timeOutDisplayTime_unixTime"> 1560741807 </string>
+    <string name="date_class_bootcamp_fwdCompatible_field_endTime_unixTime"> -62135596800 </string>
+    <string name="date_class_bootcamp_fwdCompatible_field_timeOutDisplayTime_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserData_field_biggestDeviceTimeUTC_unixTime"> 1561109773 </string>
+    <string name="date_class_customUserData_field_lastCollectedGiveawayEndDate_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserData_field_lastDailyGiftCollected_fwdCompatible_unixTime"> 1560770615 </string>
+    <string name="date_class_customUserData_field_lastFiendGiftCollected_unixTime"> 1560770615 </string>
+    <string name="date_class_customUserData_field_lastSaveDeviceTimeUTC_unixTime"> 1561109773 </string>
+    <string name="date_class_customUserData_field_lastSessionDate_unixTime"> 1561138572 </string>
+    <string name="date_class_customUserData_field_lastVideoAdDay_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserData_field_lastVideoAdShownDate_unixTime"> 1558874347 </string>
+    <string name="date_class_customUserData_field_latestServerTimeUTC_unixTime"> 1561109770 </string>
+    <string name="date_class_customUserData_field_lootballoonLevelStartTime_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserData_field_videoAdsCurrentStreakLastDay_unixTime"> 1560069083 </string>
+    <string name="date_class_customUserDataLocal_field_crossPromoForeverSeenLast_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserDataLocal_field_lastSuccessfulUpload_unixTime"> 1561109774 </string>
+    <string name="date_class_customUserDataLocal_field_lastWinStreakViaAdsPopupShownDateUTC_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserDataLocal_field_UpdateGameDialogShownDateUtc_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserDataLocal_field_VipHeroSpotActiveUntil_unixTime"> -62135596800 </string>
+    <string name="date_class_customUserDataLocal_field_watchStateReadAt_unixTime"> -62135596800 </string>
+    <string name="date_class_energyData_field_energyRefillStartTime_unixTime"> 1560771111 </string>
+    <string name="date_class_energyData_field_energyUnlimitedUntil_unixTime"> 1560626039 </string>
+    <string name="date_class_GrindChallenge_IceCream19_fwdCompatible_field_currentGoalTimeUntilUTC_unixTime"> 1560828205 </string>
+    <string name="date_class_lostTreasure_field_lastExtraTimeCheck_unixTime"> -62135596800 </string>
+    <string name="date_class_lostTreasure_field_nextChestEndTime590_fwdCompatible_unixTime"> 1559934000 </string>
+    <string name="date_class_lostTreasure_field_nextChestEndTime_unixTime"> -62135596800 </string>
+    <string name="date_class_lostTreasure_field_timeOutDisplayTime590_fwdCompatible_unixTime"> 1560741807 </string>
+    <string name="date_class_lostTreasure_field_timeOutDisplayTime_unixTime"> -62135596800 </string>
+    <string name="date_class_minutiasMostWanted_field_nextChestEndTime600_fwdCompatible_unixTime"> 1560798000 </string>
+    <string name="date_class_minutiasMostWanted_field_timeOutDisplayTime600_fwdCompatible_unixTime"> 1560741807 </string>
+    <string name="date_class_purchaseInformation2_field_dailyPurchaseCapTimeMark_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_firstPurchaseDate_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_forcedSaleValidUntil_unixTime"> 1560684685 </string>
+    <string name="date_class_purchaseInformation2_field_freeFiendOfFortuneUntil_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_lastSaleTeaserShownTime_unixTime"> 1560618857 </string>
+    <string name="date_class_purchaseInformation2_field_lastSuccesfullIAPTime_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_LimitedTimeSaleLockedUntil_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_OnePerPlayerSaleLockedUntil_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_runOutOfGoldDate_unixTime"> 1552427271 </string>
+    <string name="date_class_purchaseInformation2_field_subscriptionUntil_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_subscriptionUntilUTC_unixTime"> -62135596800 </string>
+    <string name="date_class_purchaseInformation2_field_vipUntilUTC_unixTime"> 1560083425 </string>
+    <string name="date_class_slugHouse_field_endTime_unixTime"> -62135596800 </string>
+    <string name="date_class_slugHouse_field_timeOutDisplayTime_unixTime"> -62135596800 </string>
+    <string name="date_class_tenLevelsTreasure_field_endTime_unixTime"> -62135596800 </string>
+    <string name="date_class_tenLevelsTreasure_field_timeOutDisplayTime_unixTime"> -62135596800 </string>
+    <string name="date_class_VisitMinutia17_fwdCompatible_field_currentGoalTimeUntil_unixTime"> -62135596800 </string>
+    <string name="date_FirstInstallDate_unixTime"> 1408492800 </string>
+    <int name="FastProgress" value="138"/>
+    <int name="FIEND_INTERNAL_STATE" value="0"/>
+    <int name="Fiend_Quest_Count_NewFormat" value="9"/>
+    <int name="Fiend_Quest_TotalProgress_NewFormat" value="4"/>
+    <int name="FIEND_SKILL_ACQUIRED" value="0"/>
+    <int name="FIEND_SKILL_LOST" value="1"/>
+    <int name="fiendCountNewFormat" value="15"/>
+    <int name="fiendFestivalDidParticipate" value="1"/>
+    <int name="fiendFestivalEndTime" value="4"/>
+    <int name="fiendFestivalParticipatedCount" value="4"/>
+    <int name="fiendFestivalStartTime" value="4"/>
+    <int name="fiendFestivalTimeSpent" value="0"/>
+    <int name="fiendLevelAverage" value="8"/>
+    <int name="fiendSkinCountNewFormat" value="0"/>
+    <int name="FirstVersionAfterInstall" value="100"/>
+    <string name="FRAMEWORK_VERSION"> 1.0.0 </string>
+    <int name="fusionResource0" value="2852"/>
+    <int name="fusionResource1" value="345"/>
+    <int name="fusionResourceRareRewards0" value="6"/>
+    <int name="fusionResourceRareRewards1" value="10"/>
+    <int name="gemRareRewardCounter" value="4"/>
+    <int name="gems" value="289"/>
+    <int name="golds" value="9"/>
+    <int name="hasEnabledGooglePlay" value="0"/>
+    <int name="keys" value="0"/>
+    <string name="Language"> sm-ch </string>
+    <string name="lastBackwardsCompatibleVersion"> 1.5.0 </string>
+    <int name="LastMarkedGameVersion" value="691"/>
+    <int name="list_class_customUserDataLocal_field_seenEventIds_count" value="0"/>
+    <int name="list_class_customUserDataLocal_field_videoCenterRewardsClaimed_count" value="0"/>
+    <int name="list_class_customUserDataLocal_field_videoCenterSeenVideos_count" value="0"/>
+    <int name="list_facebookFriendsInviteRewards_0" value="0"/>
+    <int name="list_facebookFriendsInviteRewards_1" value="0"/>
+    <int name="list_facebookFriendsInviteRewards_2" value="0"/>
+    <int name="list_facebookFriendsInviteRewards_3" value="0"/>
+    <int name="list_facebookFriendsInviteRewards_4" value="0"/>
+    <int name="list_facebookFriendsInviteRewards_count" value="5"/>
+    <string name="list_seriouslyAnalytics_events_0"> %7B%22saEventName%22%3A%22saUnload%22%2C%22saEventTime%22%3A1561109793%2C%22saEventLocalTime%22%3A%222019-06-21T17%3A36%3A32%2B08%3A00%22%2C%22saAnalyticsVersion%22%3A3%2C%22saUserAnalyticsId%22%3A%22153627ab-7215-4b52-8be5-54e72d524bd6%22%2C%22saSeriouslyId%22%3A%22112acf0dd8994b388fa25af40a51b576%22%2C%22saPlatform%22%3A%22Android%22%2C%22saHacker%22%3Afalse%2C%22saActiveScene%22%3A%22Map%22%2C%22saSuspicious%22%3Afalse%2C%22saGameVersion%22%3A%226.9.1%22%2C%22saGraphicsDeviceType%22%3A%22OpenGLES3%22%2C%22saCellular%22%3Afalse%2C%22saOSShort%22%3A%22Android%22%2C%22saOS%22%3A%22Android%20OS%204.4.4%20%2F%20API-19%20(HuaweiY635-CL00%2FC92B272)%22%2C%22saDeviceModel%22%3A%22HUAWEI%20HUAWEI%20Y635-CL00%22%2C%22saEventNonce%22%3A814660609%2C%22saSessionId%22%3A%2200c25d02-4dbb-4f26-98a6-c0430882abda%22%2C%22saEventData%22%3A%7B%7D%2C%22saIsKPI%22%3Atrue%2C%22saPersonalData%22%3A%7B%22saAdvertiserId%22%3A%22153627ab-7215-4b52-8be5-54e72d524bd6%22%2C%22saTrackingId%22%3A%22153627ab-7215-4b52-8be5-54e72d524bd6%22%7D%7D </string>
+    <string name="list_seriouslyAnalytics_events_1"> %7B%22saEventName%22%3A%22saUnload%22%2C%22saEventTime%22%3A1559399882%2C%22saEventLocalTime%22%3A%222019-06-01T22%3A38%3A02%2B08%3A00%22%2C%22saAnalyticsVersion%22%3A1%2C%22saUserAnalyticsId%22%3A%22153627ab-7215-4b52-8be5-54e72d524bd6%22%2C%22saSeriouslyId%22%3A%224f1aececfa1f41de97b32044b224ff9c%22%2C%22saPlatform%22%3A%22Android%22%2C%22saHacker%22%3Afalse%2C%22saSuspicious%22%3Afalse%2C%22saGameVersion%22%3A%224.8.0%22%2C%22saEventNonce%22%3A54913677%2C%22saEventData%22%3A%7B%7D%2C%22saUserProperties%22%3A%7B%22firstVersion%22%3A480%2C%22firstVersionMajor%22%3A48%2C%22gameVersionMajor%22%3A%224.8%22%2C%22storyProgress%22%3A1%2C%22heroProgress%22%3A0%2C%22FiendQuestProgress%22%3A0%2C%22gems%22%3A0%2C%22gold%22%3A0%2C%22keys%22%3A0%2C%22yellowMites%22%3A0%2C%22blueMites%22%3A0%2C%22energyCap%22%3A5%2C%22energyCapPerLevel%22%3A5%2C%22EnergyRemaining%22%3A5%2C%22abTestPool%22%3A9%2C%22abTestPoolFull%22%3A966%2C%22fiendCount%22%3A1%2C%22fiendAverageLevel%22%3A1%2C%22payingUserLevel%22%3A0%2C%22allTimeMoneySpendInDollars%22%3A0%2C%22payingUser%22%3Afalse%2C%22distributor%22%3A%22GooglePlay%22%2C%22edwardQuestProgress%22%3A0%2C%22geneQuestProgress%22%3A0%2C%22jojoQuestProgress%22%3A0%2C%22whisperQuestProgress%22%3A0%2C%22howieQuestProgress%22%3A0%2C%22temperQuestProgress%22%3A0%2C%22boQuestProgress%22%3A0%2C%22giftsAccepted%22%3A0%2C%22energyGiftsAccepted%22%3A0%2C%22dailyGiftsAccepted%22%3A0%2C%22wheelSpinAmount%22%3A0%2C%22isSubscribed%22%3Afalse%2C%22isSampleUser%22%3Afalse%2C%22seriouslyTester%22%3Afalse%2C%22daysSinceInstall%22%3A0%2C%22dailyGiftCalendarsCompleted%22%3A0%2C%22GrannyAverageProgress%22%3A0%2C%22GrannyAverageGoldSpend%22%3A0%2C%22GrannyAverageLevels%22%3A0%2C%22GrannyTotalEventCount%22%3A0%2C%22GrannyTotalEventWonCount%22%3A0%2C%22GrannyEventRestartCount%22%3A-1%2C%22PirateAverageProgress%22%3A0%2C%22PirateAverageGoldSpend%22%3A0%2C%22PirateAverageLevels%22%3A0%2C%22PirateTotalEventCount%22%3A0%2C%22PirateTotalEventWonCount%22%3A0%2C%22PirateEventRestartCount%22%3A-1%2C%22BootcampAverageProgress%22%3A0%2C%22BootcampAverageGoldSpend%22%3A0%2C%22BootcampAverageLevels%22%3A0%2C%22BootcampTotalEventCount%22%3A0%2C%22BootcampTotalEventWonCount%22%3A0%2C%22BootcampEventRestartCount%22%3A-1%2C%22LugsLootAverageGoldSpend%22%3A0%2C%22LugsLootAverageLevels%22%3A0%2C%22LugsLootTotalEventCount%22%3A0%2C%22LugsLootTotalEventWonCount%22%3A0%2C%22LugsLootEventRestartCount%22%3A-1%2C%22abTestGroupData%22%3A0%2C%22surveyInstallReason%22%3A%22%22%2C%22activeSale%22%3A%22None%22%2C%22GrindChallengeActive%22%3Afalse%2C%22GrindChallengeIndex%22%3A-1%2C%22GrannyActiveLevelPack%22%3A-1%2C%22PirateActiveLevelPack%22%3A-1%2C%22BootCampActiveLevelPack%22%3A-1%2C%22LugsLootActiveChest%22%3A-1%2C%22WinStreak%22%3A-1%2C%22SessionId%22%3A%22da1b6a55-bc79-4a7d-a686-3a0741ee7313%22%2C%22seriouslyFriendCount%22%3A0%7D%7D </string>
+    <string name="list_seriouslyAnalytics_events_2"> %7B%22saEventName%22%3A%22saLoad%22%2C%22saEventTime%22%3A1559399888%2C%22saEventLocalTime%22%3A%222019-06-01T22%3A38%3A08%2B08%3A00%22%2C%22saAnalyticsVersion%22%3A1%2C%22saUserAnalyticsId%22%3A%22153627ab-7215-4b52-8be5-54e72d524bd6%22%2C%22saSeriouslyId%22%3A%224f1aececfa1f41de97b32044b224ff9c%22%2C%22saPlatform%22%3A%22Android%22%2C%22saHacker%22%3Afalse%2C%22saSuspicious%22%3Afalse%2C%22saGameVersion%22%3A%224.8.0%22%2C%22saEventNonce%22%3A154997463%2C%22saEventData%22%3A%7B%22saDeviceModel%22%3A%22HUAWEI%20HUAWEI%20Y635-CL00%22%2C%22saRuntime%22%3A%22Android%22%2C%22saOS%22%3A%22Android%20OS%204.4.4%20%2F%20API-19%20(HuaweiY635-CL00%2FC92B272)%22%2C%22saOSShort%22%3A%22Android%22%2C%22saDeviceType%22%3A%22Handheld%22%2C%22saPlatform%22%3A%22Android%22%2C%22saNetworkReachability%22%3A%22ReachableViaLocalAreaNetwork%22%2C%22saCellular%22%3Afalse%2C%22saProcessorType%22%3A%22ARMv7%20VFPv3%20NEON%22%2C%22saProcessorCount%22%3A4%2C%22saProcessorFrequency%22%3A1209%2C%22saSystemMemorySize%22%3A896%2C%22saGraphicsDeviceType%22%3A%22OpenGLES2%22%2C%22saGraphicsDeviceVendor%22%3A%22Qualcomm%22%2C%22saGraphicsDeviceName%22%3A%22Adreno%20(TM)%20306%22%2C%22saGraphicsMemorySize%22%3A256%2C%22saScreenOrientation%22%3A%22Portrait%22%2C%22saScreenDpi%22%3A240%2C%22saScreenResolutionHorizontal%22%3A480%2C%22saScreenResolutionVertical%22%3A854%2C%22saAndroidTextureCompressionScheme%22%3A%22ATC%22%2C%22saAndroidAppStore%22%3A%22GooglePlay%22%7D%2C%22saUserProperties%22%3A%7B%22firstVersion%22%3A480%2C%22firstVersionMajor%22%3A48%2C%22gameVersionMajor%22%3A%224.8%22%2C%22storyProgress%22%3A1%2C%22heroProgress%22%3A0%2C%22FiendQuestProgress%22%3A0%2C%22gems%22%3A0%2C%22gold%22%3A0%2C%22keys%22%3A0%2C%22yellowMites%22%3A0%2C%22blueMites%22%3A0%2C%22energyCap%22%3A5%2C%22energyCapPerLevel%22%3A5%2C%22EnergyRemaining%22%3A5%2C%22abTestPool%22%3A9%2C%22abTestPoolFull%22%3A966%2C%22fiendCount%22%3A1%2C%22fiendAverageLevel%22%3A1%2C%22payingUserLevel%22%3A0%2C%22allTimeMoneySpendInDollars%22%3A0%2C%22payingUser%22%3Afalse%2C%22distributor%22%3A%22GooglePlay%22%2C%22edwardQuestProgress%22%3A0%2C%22geneQuestProgress%22%3A0%2C%22jojoQuestProgress%22%3A0%2C%22whisperQuestProgress%22%3A0%2C%22howieQuestProgress%22%3A0%2C%22temperQuestProgress%22%3A0%2C%22boQuestProgress%22%3A0%2C%22giftsAccepted%22%3A0%2C%22energyGiftsAccepted%22%3A0%2C%22dailyGiftsAccepted%22%3A0%2C%22wheelSpinAmount%22%3A0%2C%22isSubscribed%22%3Afalse%2C%22isSampleUser%22%3Afalse%2C%22seriouslyTester%22%3Afalse%2C%22daysSinceInstall%22%3A0%2C%22dailyGiftCalendarsCompleted%22%3A0%2C%22GrannyAverageProgress%22%3A0%2C%22GrannyAverageGoldSpend%22%3A0%2C%22GrannyAverageLevels%22%3A0%2C%22GrannyTotalEventCount%22%3A0%2C%22GrannyTotalEventWonCount%22%3A0%2C%22GrannyEventRestartCount%22%3A-1%2C%22PirateAverageProgress%22%3A0%2C%22PirateAverageGoldSpend%22%3A0%2C%22PirateAverageLevels%22%3A0%2C%22PirateTotalEventCount%22%3A0%2C%22PirateTotalEventWonCount%22%3A0%2C%22PirateEventRestartCount%22%3A-1%2C%22BootcampAverageProgress%22%3A0%2C%22BootcampAverageGoldSpend%22%3A0%2C%22BootcampAverageLevels%22%3A0%2C%22BootcampTotalEventCount%22%3A0%2C%22BootcampTotalEventWonCount%22%3A0%2C%22BootcampEventRestartCount%22%3A-1%2C%22LugsLootAverageGoldSpend%22%3A0%2C%22LugsLootAverageLevels%22%3A0%2C%22LugsLootTotalEventCount%22%3A0%2C%22LugsLootTotalEventWonCount%22%3A0%2C%22LugsLootEventRestartCount%22%3A-1%2C%22abTestGroupData%22%3A0%2C%22surveyInstallReason%22%3A%22%22%2C%22activeSale%22%3A%22None%22%2C%22GrindChallengeActive%22%3Afalse%2C%22GrindChallengeIndex%22%3A-1%2C%22GrannyActiveLevelPack%22%3A-1%2C%22PirateActiveLevelPack%22%3A-1%2C%22BootCampActiveLevelPack%22%3A-1%2C%22LugsLootActiveChest%22%3A-1%2C%22WinStreak%22%3A-1%2C%22SessionId%22%3A%22da1b6a55-bc79-4a7d-a686-3a0741ee7313%22%2C%22seriouslyFriendCount%22%3A0%7D%7D </string>
+    <string name="list_seriouslyAnalytics_events_3"> %7B%22saEventName%22%3A%22saUnload%22%2C%22saEventTime%22%3A1559399906%2C%22saEventLocalTime%22%3A%222019-06-01T22%3A38%3A26%2B08%3A00%22%2C%22saAnalyticsVersion%22%3A1%2C%22saUserAnalyticsId%22%3A%22153627ab-7215-4b52-8be5-54e72d524bd6%22%2C%22saSeriouslyId%22%3A%224f1aececfa1f41de97b32044b224ff9c%22%2C%22saPlatform%22%3A%22Android%22%2C%22saHacker%22%3Afalse%2C%22saSuspicious%22%3Afalse%2C%22saGameVersion%22%3A%224.8.0%22%2C%22saEventNonce%22%3A586568619%2C%22saEventData%22%3A%7B%7D%2C%22saUserProperties%22%3A%7B%22firstVersion%22%3A480%2C%22firstVersionMajor%22%3A48%2C%22gameVersionMajor%22%3A%224.8%22%2C%22storyProgress%22%3A1%2C%22heroProgress%22%3A0%2C%22FiendQuestProgress%22%3A0%2C%22gems%22%3A0%2C%22gold%22%3A0%2C%22keys%22%3A0%2C%22yellowMites%22%3A0%2C%22blueMites%22%3A0%2C%22energyCap%22%3A5%2C%22energyCapPerLevel%22%3A5%2C%22EnergyRemaining%22%3A5%2C%22abTestPool%22%3A9%2C%22abTestPoolFull%22%3A966%2C%22fiendCount%22%3A1%2C%22fiendAverageLevel%22%3A1%2C%22payingUserLevel%22%3A0%2C%22allTimeMoneySpendInDollars%22%3A0%2C%22payingUser%22%3Afalse%2C%22distributor%22%3A%22GooglePlay%22%2C%22edwardQuestProgress%22%3A0%2C%22geneQuestProgress%22%3A0%2C%22jojoQuestProgress%22%3A0%2C%22whisperQuestProgress%22%3A0%2C%22howieQuestProgress%22%3A0%2C%22temperQuestProgress%22%3A0%2C%22boQuestProgress%22%3A0%2C%22giftsAccepted%22%3A0%2C%22energyGiftsAccepted%22%3A0%2C%22dailyGiftsAccepted%22%3A0%2C%22wheelSpinAmount%22%3A0%2C%22isSubscribed%22%3Afalse%2C%22isSampleUser%22%3Afalse%2C%22seriouslyTester%22%3Afalse%2C%22daysSinceInstall%22%3A0%2C%22dailyGiftCalendarsCompleted%22%3A0%2C%22GrannyAverageProgress%22%3A0%2C%22GrannyAverageGoldSpend%22%3A0%2C%22GrannyAverageLevels%22%3A0%2C%22GrannyTotalEventCount%22%3A0%2C%22GrannyTotalEventWonCount%22%3A0%2C%22GrannyEventRestartCount%22%3A-1%2C%22PirateAverageProgress%22%3A0%2C%22PirateAverageGoldSpend%22%3A0%2C%22PirateAverageLevels%22%3A0%2C%22PirateTotalEventCount%22%3A0%2C%22PirateTotalEventWonCount%22%3A0%2C%22PirateEventRestartCount%22%3A-1%2C%22BootcampAverageProgress%22%3A0%2C%22BootcampAverageGoldSpend%22%3A0%2C%22BootcampAverageLevels%22%3A0%2C%22BootcampTotalEventCount%22%3A0%2C%22BootcampTotalEventWonCount%22%3A0%2C%22BootcampEventRestartCount%22%3A-1%2C%22LugsLootAverageGoldSpend%22%3A0%2C%22LugsLootAverageLevels%22%3A0%2C%22LugsLootTotalEventCount%22%3A0%2C%22LugsLootTotalEventWonCount%22%3A0%2C%22LugsLootEventRestartCount%22%3A-1%2C%22abTestGroupData%22%3A0%2C%22surveyInstallReason%22%3A%22%22%2C%22activeSale%22%3A%22None%22%2C%22GrindChallengeActive%22%3Afalse%2C%22GrindChallengeIndex%22%3A-1%2C%22GrannyActiveLevelPack%22%3A-1%2C%22PirateActiveLevelPack%22%3A-1%2C%22BootCampActiveLevelPack%22%3A-1%2C%22LugsLootActiveChest%22%3A-1%2C%22WinStreak%22%3A-1%2C%22SessionId%22%3A%22da1b6a55-bc79-4a7d-a686-3a0741ee7313%22%2C%22seriouslyFriendCount%22%3A0%7D%7D </string>
+    <int name="list_seriouslyAnalytics_events_count" value="1"/>
+    <string name="MY_FRAMEWORK_VERSION"> 1.0.0 </string>
+    <int name="progress" value="138"/>
+    <string name="SAVE_VERSION"> 6.9.1 </string>
+    <int name="Screenmanager%20Is%20Fullscreen%20mode" value="0"/>
+    <int name="Screenmanager%20Resolution%20Height" value="854"/>
+    <int name="Screenmanager%20Resolution%20Width" value="480"/>
+    <int name="shouldCheckCloudReachabilityAtInitialLogin" value="0"/>
+    <string name="surveyResult_surveyInstallReason"> NoAnswer </string>
+    <int name="surveysCompleted" value="5"/>
+    <int name="surveysLastLevel" value="119"/>
+    <int name="surveysVersion" value="0"/>
+    <int name="SystemLanguageApplied" value="1"/>
+    <string name="unity.cloud_userid"> 702c683cced6f4738877a7bc50b44542 </string>
+    <string name="unity.player_session_count"> 1 </string>
+    <string name="unity.player_sessionid"> 6089761448832216517 </string>
+    <int name="USE_MAX_DIVERGENCE_FACTOR2" value="1"/>
+</map>

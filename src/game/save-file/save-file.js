@@ -60,8 +60,9 @@ export default class SaveFile {
 		this._loadInfo = null;
 		try {
 			params.info(`${this}: checking remote file...`);
-			const stat = await fs.stat(remoteFilePath);
-			await fs.read(remoteFilePath, 1, 0);
+			await fs.statASync(remoteFilePath);
+			await fs.readFileAsync(remoteFilePath, 1, 0);
+			// debugger;
 			this._loadInfo = { filePath: remoteFilePath };
 			return this._loadInfo.filePath;
 		} catch (error) {
@@ -168,4 +169,6 @@ export default class SaveFile {
 			}\` not implement method \`setValueByConfig\`!`
 		);
 	}
+
+	fix() {}
 }

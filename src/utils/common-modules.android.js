@@ -1,11 +1,18 @@
 import { PermissionsAndroid, NativeModules } from "react-native";
 
-import fs from "react-native-fs";
+import RNFS from "react-native-fs";
 import RNPath from "react-native-path";
 
 import appInfo from "../../app.json";
 
-export { fs };
+export { RNFS };
+export const fs = {
+	...RNFS,
+	statASync: async (path, options) => RNFS.stat(path),
+	readFileAsync: RNFS.readFile,
+	writeFileAsync: RNFS.writeFile
+	// }
+};
 
 export const path = {
 	...RNPath,

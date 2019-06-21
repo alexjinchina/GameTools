@@ -19,7 +19,8 @@
     "react-native-scrollable-tab-view": "^0.10.0",
     "react-native-tab-view": "^2.2.0",
     "react-native-vector-icons": "^6.4.2",
-    "react-navigation": "^3.9.1"
+    "react-navigation": "^3.9.1",
+    "xml-formatter": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

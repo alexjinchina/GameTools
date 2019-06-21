@@ -1,5 +1,5 @@
 {
-  "best_fiends": {
+  "best-fiends": {
     "defaultValueConfig": {},
     "locks": {
       "FiendGreen1": "playerprefs.class_FiendGreen1",
@@ -26,7 +26,7 @@
       "keys": "playerprefs.keys"
     }
   },
-  "merge_dragons": {
+  "merge-dragons": {
     "locks": {
       "A": {
         "is_premium_Land": false,

@@ -3,8 +3,8 @@ import MergeDragonsGame from "./merge-dragons-game";
 import BestFiendsGame from "./best-fiends-game";
 
 const GAME_CLASSES = {
-	merge_dragons: MergeDragonsGame,
-	best_fiends: BestFiendsGame
+	"merge-dragons": MergeDragonsGame,
+	"best-fiends": BestFiendsGame
 };
 
 export default function createGame(name, config, params = {}) {

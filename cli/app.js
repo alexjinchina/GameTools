@@ -1,5 +1,5 @@
 import yargs from "yargs";
-import { lodash, GameToolsAppPaths } from "../src/utils";
+import { lodash } from "../src/utils";
 import { loadGamesConfig } from "../src/config";
 
 import getCommands from "./commands";
@@ -16,11 +16,12 @@ async function main(config) {
 	});
 
 	yargs
+		.command("$0", "show help", () => {}, () => yargs.showHelp("log"))
 		.options({
 			game: {
 				alias: "g",
-				choices: lodash.keys(config),
-				default: lodash.keys(config)[0]
+				choices: ["*", ...lodash.keys(config)],
+				default: "*"
 			}
 		})
 

@@ -28,4 +28,23 @@ export default class SharedPrefsSaveFile extends XMLSaveFile {
 			node.attr("value", value);
 		}
 	}
+
+	async fix() {
+		function cmp(s1, s2) {
+			return s1 < s2 ? -1 : s2 > s1 ? 1 : 0;
+		}
+		const $ = this.$;
+		const root = this.root;
+		const children = root
+			.children()
+			.toArray()
+			.sort((n1, n2) =>
+				cmp(n1.attribs.name.toLowerCase(), n2.attribs.name.toLowerCase())
+			);
+		root.empty();
+
+		children.forEach(node => {
+			$(node).appendTo(root);
+		});
+	}
 }

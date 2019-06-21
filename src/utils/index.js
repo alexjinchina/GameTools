@@ -1,20 +1,16 @@
 import lodash from "lodash";
-
+import formatXml from "xml-formatter";
 import {
+	DEV_MODE,
 	fs,
-	path,
-	GameToolsAppPaths,
-	Permission,
-	SaveFileHelper,
 	GameHelper,
-	DEV_MODE
+	GameToolsAppPaths,
+	path,
+	Permission,
+	SaveFileHelper
 } from "./common-modules";
 
 export { lodash };
-export const GameToolsAppInfo = {
-	...require("../../app.json")
-};
-
 export {
 	fs,
 	path,
@@ -22,7 +18,11 @@ export {
 	Permission,
 	SaveFileHelper,
 	GameHelper,
+	formatXml,
 	DEV_MODE
+};
+export const GameToolsAppInfo = {
+	...require("../../app.json")
 };
 
 export function castValueType(value, type, refValue) {
@@ -43,11 +43,30 @@ export function castValueType(value, type, refValue) {
 	}
 }
 
+export const DATA_ROOT = "/sdcard/Android/data";
+export const EXTERNAL_DATA_ROOT = "/sdcard/Android/data";
+export const MAPPED_DIRS = {
+	SharedPreferencesDir: {
+		prefix: DATA_ROOT,
+		suffix: "shared_prefs"
+	},
+	ExternalFilesDir: {
+		prefix: EXTERNAL_DATA_ROOT,
+		suffix: "files"
+	}
+};
+
 export function getDirs(bundleId) {
-	return {
-		SharedPreferencesDir: `/data/data/${bundleId}/shared_prefs`,
-		ExternalFilesDir: `/sdcard/Android/data/${bundleId}/files`
-	};
+	return lodash.reduce(
+		MAPPED_DIRS,
+		(out, info, key) => {
+			out[key] = lodash.isString(bundleId)
+				? path.join(info.prefix, bundleId, info.suffix)
+				: bundleId(info);
+			return out;
+		},
+		{}
+	);
 }
 
 export function getGameToolsDirs() {
@@ -60,7 +79,7 @@ export function resolveFilePath(bundleId, filePath) {
 		if (lodash.isArray(results) && results.length === 1) return results[0];
 		else return results;
 	}
-	const dirs = getDirs(bundleId);
+	const dirs = lodash.isPlainObject(bundleId) ? bundleId : getDirs(bundleId);
 
 	return lodash.reduce(
 		filePath,

@@ -1,7 +1,7 @@
 import cheerio from "react-native-cheerio";
 
 import SaveFile from "./save-file";
-import { fs, lodash } from "../../utils";
+import { fs, lodash, formatXml } from "../../utils";
 
 export class NodeNotFoundError extends Error {
 	constructor(selector) {
@@ -27,7 +27,7 @@ export default class XMLSaveFile extends SaveFile {
 
 	async _load(params) {
 		const filePath = await this._prepareLoadFile(params);
-		this.dom = await cheerio.load(await fs.readFile(filePath), {
+		this.dom = await cheerio.load(await fs.readFileAsync(filePath), {
 			xml: {
 				normalizeWhitespace: true
 			}
@@ -38,13 +38,26 @@ export default class XMLSaveFile extends SaveFile {
 
 	async _save(params) {
 		const filePath = await this._prepareSaveFile(params);
-		await fs.writeFile(filePath, this.dom.html());
+		await fs.writeFileAsync(
+			filePath,
+			formatXml(this.dom.xml(), {
+				collapseContent: true
+			})
+		);
 		await this._commitSaveFile(params);
 		this.modified = false;
 	}
 
+	get root() {
+		return this.$(":root");
+	}
+
+	get $() {
+		return this.dom;
+	}
+
 	_selectNode(selector) {
-		return this.dom(":root").find(selector);
+		return this.root.find(selector);
 	}
 
 	selectNode(key, valuePath, params) {
