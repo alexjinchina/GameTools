@@ -43,7 +43,7 @@ export function castValueType(value, type, refValue) {
 	}
 }
 
-export const DATA_ROOT = "/sdcard/Android/data";
+export const DATA_ROOT = "/data/data";
 export const EXTERNAL_DATA_ROOT = "/sdcard/Android/data";
 export const MAPPED_DIRS = {
 	SharedPreferencesDir: {

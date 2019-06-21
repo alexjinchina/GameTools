@@ -18,7 +18,7 @@
     },
 
     "values": {
-      "energyCapRewards": "playerprefs.energyCapRewards",
+      "energyBarCap": "playerprefs.class_energyData_field_energyBarCap",
       "fusionResource0": "playerprefs.fusionResource0",
       "fusionResource1": "playerprefs.fusionResource1",
       "gems": "playerprefs.gems",
